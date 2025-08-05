@@ -39,49 +39,49 @@ LivingWorldCampaign WOTRScenario101
 			Teams = 1 2
 			NumControlledRegionsLessOrEqualTo = -1
 		End
+
+        ;///////////////////
+        ; OwnershipSets
+        ;///////////////////
+        ; Player One
+        OwnershipSet
+            Regions = Rhun
+            StartRegion = Rhun
+
+            SpawnArmies
+                Armies = HeroArmy1
+                Region = Rhun
+            End
+            SpawnArmies
+                Armies = HeroArmy2
+                Region = Belfalas
+            End
+            SpawnBuildings
+                Buildings = LW_FORT LW_ARMORY
+                Region = Rhun
+            End
+        End
+
+        ; Player Two
+        OwnershipSet
+            Regions = Belfalas
+            StartRegion = Belfalas
+
+            SpawnArmies
+                Armies = HeroArmy1
+                Region = Belfalas
+            End
+            SpawnArmies
+                Armies = HeroArmy2
+                Region = Rhun
+            End
+            SpawnBuildings
+                Buildings = LW_FORT LW_ARMORY
+                Region = Belfalas
+            End
+        End
+
 	End
-
-    ;///////////////////
-    ; OwnershipSets
-    ;///////////////////
-    ; Player One
-    OwnershipSet
-        Regions = Rhun
-        StartRegion = Rhun
-
-        SpawnArmies
-            Armies = HeroArmy1
-            Region = Rhun
-        End
-        SpawnArmies
-            Armies = HeroArmy2
-            Region = Belfalas
-        End
-        SpawnBuildings
-            Buildings = LW_FORT LW_ARMORY
-            Region = Rhun
-        End
-    End
-
-    ; Player Two
-    OwnershipSet
-        Regions = Belfalas
-        StartRegion = Belfalas
-
-        SpawnArmies
-            Armies = HeroArmy1
-            Region = Belfalas
-        End
-        SpawnArmies
-            Armies = HeroArmy2
-            Region = Rhun
-        End
-        SpawnBuildings
-            Buildings = LW_FORT LW_ARMORY
-            Region = Belfalas
-        End
-    End
-
 
 	;//////////////////////////////////////////////////
 	Act One

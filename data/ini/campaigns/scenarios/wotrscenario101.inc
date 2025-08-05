@@ -13,8 +13,8 @@ LivingWorldCampaign WOTRScenario101
     #include "..\Common\LivingWorldDefaultRTSSettings.inc"
 
     Scenario
-        DisplayName         = 2 Corner Chaos
-        DisplayDescription     = Chaotic war of two corners
+        DisplayName         = "2 Corner Chaos"
+        DisplayDescription     = "Chaotic war of two corners"
         DisplayGameType     = LWScenario:WOTRGameType001
         DisplayObjectives     = LWScenario:WOTRObjectives001
         DisplayFiction         = LWScenario:WOTRScenarioFiction003
@@ -25,9 +25,8 @@ LivingWorldCampaign WOTRScenario101
 
         MaxPlayers = 6
 
-        ;DisallowStartInRegions = Buckland Celduin Dagorlad Dol_Guldur Erebor Forlindon Anfalas Grey_Havens Harad Harlindon Helms_Deep Isengard Ithilien Minas_Morgul Minas_Tirith Minhiriath Mirkwood Osgiliath Redhorn_Pass Rivendell The_Black_Gate The_Dead_Marshes The_Shire Tower_Hills Umbar Angmar Carrock The_Brown_Lands Fornost Amon_Sul Lostriand Rhudaur Barrow_Downs CarnDum Forodwaith MountGundabad Enedwaith Mount_Doom Ettenmoors Cair_Andros Mordor Iron_Hills Rohan Lothlorien Cardolan Arnor
-        DefaultStartSpots = Rhun Belfalas Fangorn Gap_Of_Rohan High_Pass Dunland
-        ;
+        DisallowStartInRegions = Amon_Sul Anfalas Angmar Arnor Barrow_Downs Buckland Cair_Andros Cardolan CarnDum Carrock Celduin Dagorlad Dol_Guldur Enedwaith Erebor Ettenmoors Forlindon Fornost Forodwaith Grey_Havens Harad Harlindon Helms_Deep Isengard Ithilien Lostriand Lothlorien Minas_Morgul Minas_Tirith Minhiriath Mirkwood Mordor Mount_Doom MountGundabad Osgiliath Redhorn_Pass Rhudaur Rhun Rivendell Rohan The_Black_Gate The_Brown_Lands The_Dead_Marshes The_Shire Tower_Hills Umbar
+        DefaultStartSpots = Iron_Hills Belfalas Fangorn Gap_Of_Rohan High_Pass Dunland
 
         PlayerDefeatCondition
             Teams = 1 2
@@ -45,20 +44,20 @@ LivingWorldCampaign WOTRScenario101
         ;///////////////////
         ; Player One
         OwnershipSet
-            Regions = Rhun
-            StartRegion = Rhun
+            Regions = Iron_Hills
+            StartRegion = Iron_Hills
 
             SpawnArmies
                 Armies = HeroArmy1
-                Region = Rhun
+                Region = Iron_Hills
             End
             SpawnArmies
                 Armies = HeroArmy2
                 Region = Belfalas
             End
             SpawnBuildings
-                Buildings = LW_FORT LW_ARMORY
-                Region = Rhun
+                Buildings = LW_FORT LW_ARMORY LW_BARRACKS
+                Region = Iron_Hills
             End
         End
 
@@ -73,10 +72,10 @@ LivingWorldCampaign WOTRScenario101
             End
             SpawnArmies
                 Armies = HeroArmy2
-                Region = Rhun
+                Region = Iron_Hills
             End
             SpawnBuildings
-                Buildings = LW_FORT LW_ARMORY
+                Buildings = LW_FORT LW_ARMORY LW_BARRACKS
                 Region = Belfalas
             End
         End

@@ -59,7 +59,7 @@ LivingWorldCampaign WOTRScenario101
             StartRegion = Iron_Hills
 
             SpawnArmies
-                Armies = HeroArmy1
+                Armies = HeroArmy1 GarrisonArmy1
                 Region = Iron_Hills
             End
             SpawnArmies
@@ -67,7 +67,7 @@ LivingWorldCampaign WOTRScenario101
                 Region = Iron_Hills
             End
             SpawnArmies
-                Armies = HeroArmy3
+                Armies = HeroArmy3 GarrisonArmy1
                 Region = Belfalas
             End
             SpawnArmies
@@ -86,7 +86,7 @@ LivingWorldCampaign WOTRScenario101
             StartRegion = Belfalas
 
             SpawnArmies
-                Armies = HeroArmy1
+                Armies = HeroArmy1 GarrisonArmy1
                 Region = Belfalas
             End
             SpawnArmies
@@ -94,7 +94,7 @@ LivingWorldCampaign WOTRScenario101
                 Region = Belfalas
             End
             SpawnArmies
-                Armies = HeroArmy3
+                Armies = HeroArmy3 GarrisonArmy1
                 Region = Iron_Hills
             End
             SpawnArmies
@@ -107,6 +107,94 @@ LivingWorldCampaign WOTRScenario101
             End
         End
 
+        ; Computer 1
+        OwnershipSet
+            Regions = Fangorn
+            StartRegion = Fangorn
+
+            SpawnArmies
+                Armies = HeroArmy1 GarrisonArmy1
+                Region = Fangorn
+            End
+            SpawnArmies
+                Armies = HeroArmy2
+                Region = Gap_Of_Rohan
+            End
+            SpawnArmies
+                Armies = HeroArmy3
+                Region = High_Pass
+            End
+            SpawnArmies
+                Armies = HeroArmy4
+                Region = Dunland
+            End
+        End
+        ; Computer 2
+        OwnershipSet
+            Regions = Gap_Of_Rohan
+            StartRegion = Gap_Of_Rohan
+
+            SpawnArmies
+                Armies = HeroArmy1
+                Region = Fangorn
+            End
+            SpawnArmies
+                Armies = HeroArmy2 GarrisonArmy1
+                Region = Gap_Of_Rohan
+            End
+            SpawnArmies
+                Armies = HeroArmy3
+                Region = High_Pass
+            End
+            SpawnArmies
+                Armies = HeroArmy4
+                Region = Dunland
+            End
+        End
+        ; Computer 3
+        OwnershipSet
+            Regions = High_Pass
+            StartRegion = High_Pass
+
+            SpawnArmies
+                Armies = HeroArmy1
+                Region = Fangorn
+            End
+            SpawnArmies
+                Armies = HeroArmy2
+                Region = Gap_Of_Rohan
+            End
+            SpawnArmies
+                Armies = HeroArmy3 GarrisonArmy1
+                Region = High_Pass
+            End
+            SpawnArmies
+                Armies = HeroArmy4
+                Region = Dunland
+            End
+        End
+        ; Computer 4
+        OwnershipSet
+            Regions = Dunland
+            StartRegion = Dunland
+
+            SpawnArmies
+                Armies = HeroArmy1
+                Region = Fangorn
+            End
+            SpawnArmies
+                Armies = HeroArmy2
+                Region = Gap_Of_Rohan
+            End
+            SpawnArmies
+                Armies = HeroArmy3
+                Region = High_Pass
+            End
+            SpawnArmies
+                Armies = HeroArmy4 GarrisonArmy1
+                Region = Dunland
+            End
+        End
     End
 
     ;//////////////////////////////////////////////////

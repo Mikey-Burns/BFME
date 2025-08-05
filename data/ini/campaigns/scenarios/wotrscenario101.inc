@@ -23,9 +23,10 @@ LivingWorldCampaign WOTRScenario101
 
         RegionCampaign = DefaultCampaign
 
+        MinPlayers = 6
         MaxPlayers = 6
 
-        DisallowStartInRegions = Buckland Rhun Celduin Dagorlad Dol_Guldur Erebor Forlindon Anfalas Grey_Havens Harad Harlindon Helms_Deep Isengard Ithilien Minas_Morgul Minas_Tirith Minhiriath Mirkwood Osgiliath Redhorn_Pass Rivendell The_Black_Gate The_Dead_Marshes The_Shire Tower_Hills Umbar Angmar Carrock The_Brown_Lands Fornost Amon_Sul Lostriand Rhudaur Barrow_Downs CarnDum Forodwaith MountGundabad Enedwaith Mount_Doom Ettenmoors Cair_Andros Mordor Rohan Lothlorien Cardolan Arnor
+        DisallowStartInRegions = Buckland Cair_Andros Celduin Dagorlad Dol_Guldur Enedwaith Erebor Ettenmoors Forlindon Anfalas Harad Harlindon Isengard Ithilien Minas_Morgul Minas_Tirith Minhiriath Mirkwood Mount_Doom Osgiliath Redhorn_Pass Rhun Rivendell The_Black_Gate The_Dead_Marshes The_Shire Tower_Hills Umbar Angmar Cardolan Carrock The_Brown_Lands Fornost Amon_Sul Lostriand Rhudaur Barrow_Downs CarnDum Forodwaith MountGundabad Grey_Havens Helms_Deep Arnor Mordor Rohan Lothlorien
         DefaultStartSpots = Iron_Hills Belfalas Fangorn Gap_Of_Rohan High_Pass Dunland
 
         PlayerDefeatCondition
@@ -37,6 +38,16 @@ LivingWorldCampaign WOTRScenario101
         TeamDefeatCondition
             Teams = 1 2
             NumControlledRegionsLessOrEqualTo = -1
+        End
+
+        StartingRestriction
+            Regions = Iron_Hills
+            Teams = 1
+        End
+
+        StartingRestriction
+            Regions = Belfalas
+            Teams = 1
         End
 
         ;///////////////////

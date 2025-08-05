@@ -25,7 +25,7 @@ LivingWorldCampaign WOTRScenario101
 
         MaxPlayers = 6
 
-        DisallowStartInRegions = Amon_Sul Anfalas Angmar Arnor Barrow_Downs Buckland Cair_Andros Cardolan CarnDum Carrock Celduin Dagorlad Dol_Guldur Enedwaith Erebor Ettenmoors Forlindon Fornost Forodwaith Grey_Havens Harad Harlindon Helms_Deep Isengard Ithilien Lostriand Lothlorien Minas_Morgul Minas_Tirith Minhiriath Mirkwood Mordor Mount_Doom MountGundabad Osgiliath Redhorn_Pass Rhudaur Rhun Rivendell Rohan The_Black_Gate The_Brown_Lands The_Dead_Marshes The_Shire Tower_Hills Umbar
+        DisallowStartInRegions = Buckland Rhun Celduin Dagorlad Dol_Guldur Erebor Forlindon Anfalas Grey_Havens Harad Harlindon Helms_Deep Isengard Ithilien Minas_Morgul Minas_Tirith Minhiriath Mirkwood Osgiliath Redhorn_Pass Rivendell The_Black_Gate The_Dead_Marshes The_Shire Tower_Hills Umbar Angmar Carrock The_Brown_Lands Fornost Amon_Sul Lostriand Rhudaur Barrow_Downs CarnDum Forodwaith MountGundabad Enedwaith Mount_Doom Ettenmoors Cair_Andros Mordor Rohan Lothlorien Cardolan Arnor
         DefaultStartSpots = Iron_Hills Belfalas Fangorn Gap_Of_Rohan High_Pass Dunland
 
         PlayerDefeatCondition

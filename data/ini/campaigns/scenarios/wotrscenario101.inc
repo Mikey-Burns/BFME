@@ -13,13 +13,13 @@ LivingWorldCampaign WOTRScenario101
     #include "..\Common\LivingWorldDefaultRTSSettings.inc"
 
     Scenario
-        DisplayName         = "2 Corner Chaos"
-        DisplayDescription     = "Chaotic war of two corners"
-        DisplayGameType     = LWScenario:WOTRGameType001
-        DisplayObjectives     = LWScenario:WOTRObjectives001
+        DisplayName         = LWScenario:WOTRScenario101
+        DisplayDescription     = LWScenario:WOTRScenario101Description
+        DisplayGameType     = LWScenario:WOTRGameType003
+        DisplayObjectives     = LWScenario:WOTRObjectives005
         DisplayFiction         = LWScenario:WOTRScenarioFiction003
-        DisplayVictoriousText    = LWScenario:WOTRCapitalAssaultWin001
-        DisplayDefeatedText    = LWScenario:WOTRCapitalAssaultLose001
+        DisplayVictoriousText    = LWScenario:WOTRScenarioWin101
+        DisplayDefeatedText    = LWScenario:WOTRScenarioLose101
 
         RegionCampaign = DefaultCampaign
 

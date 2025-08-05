@@ -1,0 +1,15 @@
+LWScenario:WOTRScenario101
+"2 Corner Chaos"
+END
+
+LWScenario:WOTRScenario101Description
+"# Of Players: 6\nObjective: Begin with your forces split between the North East and South West. Unite your armies and conquer all the lands of Middle Earth."
+END
+
+LWScenario:WOTRScenarioWin101
+"You have successfully conquered all of Middle Earth!"
+END
+
+LWScenario:WOTRScenarioLose101
+"You have failed to conquer Middle Earth and have allowed evil to reign supreme!"
+END

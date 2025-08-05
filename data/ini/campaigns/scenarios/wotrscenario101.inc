@@ -64,6 +64,14 @@ LivingWorldCampaign WOTRScenario101
             End
             SpawnArmies
                 Armies = HeroArmy2
+                Region = Iron_Hills
+            End
+            SpawnArmies
+                Armies = HeroArmy3
+                Region = Belfalas
+            End
+            SpawnArmies
+                Armies = HeroArmy4
                 Region = Belfalas
             End
             SpawnBuildings
@@ -83,6 +91,14 @@ LivingWorldCampaign WOTRScenario101
             End
             SpawnArmies
                 Armies = HeroArmy2
+                Region = Belfalas
+            End
+            SpawnArmies
+                Armies = HeroArmy3
+                Region = Iron_Hills
+            End
+            SpawnArmies
+                Armies = HeroArmy4
                 Region = Iron_Hills
             End
             SpawnBuildings

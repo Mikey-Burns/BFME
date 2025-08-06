@@ -50,6 +50,26 @@ LivingWorldCampaign WOTRScenario101
             Teams = 1
         End
 
+        StartingRestriction
+            Regions = Fangorn
+            Teams = 2
+        End
+
+        StartingRestriction
+            Regions = Gap_Of_Rohan
+            Teams = 2
+        End
+
+        StartingRestriction
+            Regions = High_Pass
+            Teams = 2
+        End
+
+        StartingRestriction
+            Regions = Dunland
+            Teams = 2
+        End
+
         ;///////////////////
         ; OwnershipSets
         ;///////////////////

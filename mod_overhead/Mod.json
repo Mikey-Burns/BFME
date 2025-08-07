@@ -1,0 +1,33 @@
+{
+  "Guid": "1fe460d4-ef25-4b0d-b507-d1d3a97be608",
+  "Name": "War of the Ring Extended",
+  "Version": "0.1.2",
+  "Description": "Custom WotR scenarios pitting 2 humans against 4 AI",
+  "Changelog": "Initial deployment of a single scenario",
+  "SocialLinks": [],
+  "Language": "EN",
+  "ArtworkUrl": "https://workshop-files.bfmeladder.com/3d891665-b82e-46f9-873c-5fd5cb64021e/c5df9c17-d38a-409c-8c30-abd82c1da95a-1_0_0-artwork.png",
+  "ScreenshotUrls": [
+    "https://workshop-files.bfmeladder.com/3d891665-b82e-46f9-873c-5fd5cb64021e/27d7ea9c-5238-4036-87f4-9a3ffe5b356a.png"
+  ],
+  "Author": "InfernoMB",
+  "Owner": "3d891665-b82e-46f9-873c-5fd5cb64021e",
+  "Game": 2,
+  "Type": 1,
+  "CreationTime": 1754487713144,
+  "Files": [
+    {
+      "Guid": "ee5c0791c75a55a5123d0c21b5fd680f",
+      "Name": "WotRExpanded.big",
+      "Url": "https://workshop-files.bfmeladder.com/3d891665-b82e-46f9-873c-5fd5cb64021e/ee5c0791c75a55a5123d0c21b5fd680f",
+      "Md5": "b88c1db329dfa9e446302f21bb0beb33",
+      "Language": "ALL",
+      "Size": 1775508
+    }
+  ],
+  "Maps": [],
+  "Factions": [],
+  "Dependencies": [
+    "official-2"
+  ]
+}

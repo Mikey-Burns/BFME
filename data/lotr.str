@@ -61621,3 +61621,11 @@ END
 LWScenario:WOTRScenarioLose101
 "You have failed to conquer Middle Earth and have allowed evil to reign supreme!"
 END
+
+LWScenario:WOTRScenario102
+"2 Corner Chaos (Create A Hero)"
+END
+
+LWScenario:WOTRScenario102Description
+"# Of Players: 6\nObjective: Begin with your forces split between the North East and South West. Unite your armies and conquer all the lands of Middle Earth.\nAll factions begin with a Create A Hero army."
+END

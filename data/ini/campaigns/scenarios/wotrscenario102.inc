@@ -13,8 +13,8 @@ LivingWorldCampaign WOTRScenario102
     #include "..\Common\LivingWorldDefaultRTSSettings.inc"
 
     Scenario
-        DisplayName         = LWScenario:WOTRScenario101
-        DisplayDescription     = LWScenario:WOTRScenario101Description
+        DisplayName         = LWScenario:WOTRScenario102
+        DisplayDescription     = LWScenario:WOTRScenario102Description
         DisplayGameType     = LWScenario:WOTRGameType003
         DisplayObjectives     = LWScenario:WOTRObjectives005
         DisplayFiction         = LWScenario:WOTRScenarioFiction003

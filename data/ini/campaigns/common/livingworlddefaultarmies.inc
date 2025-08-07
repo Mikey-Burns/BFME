@@ -51,7 +51,7 @@ SpawnArmy
     SpawnForTemplates = PlayerMen
     HeroTemplateName = CreateAHero
     PlayerArmy = MoW_CreateAHeroArmy
-    Icon = MoWArmyIcon
+    Icon = Mow_HeroCreateAHeroIcon
     Banner = BannerMen
 End
 
@@ -109,7 +109,7 @@ SpawnArmy
     SpawnForTemplates = PlayerElves
     HeroTemplateName = CreateAHero
     PlayerArmy = Elven_CreateAHeroArmy
-    Icon = ElfArmyIcon
+    Icon = Elven_HeroCreateAHeroIcon
     Banner = BannerElves
 End
 
@@ -167,7 +167,7 @@ SpawnArmy
     SpawnForTemplates = PlayerDwarves
     HeroTemplateName = CreateAHero
     PlayerArmy = Dwarven_CreateAHeroArmy
-    Icon = DwarfArmyIcon
+    Icon = Dwarven_HeroCreateAHeroIcon
     Banner = BannerDwarves
 End
 
@@ -225,7 +225,7 @@ SpawnArmy
     SpawnForTemplates = PlayerMordor
     HeroTemplateName = CreateAHero
     PlayerArmy = Mordor_CreateAHeroArmy
-    Icon = MordorArmyIcon
+    Icon = Mordor_HeroCreateAHeroIcon
     Banner = BannerMorder
 End
 
@@ -283,7 +283,7 @@ SpawnArmy
     SpawnForTemplates = PlayerIsengard
     HeroTemplateName = CreateAHero
     PlayerArmy = Isengard_CreateAHeroArmy
-    Icon = IsengardArmyIcon
+    Icon = Isengard_HeroCreateAHeroIcon
     Banner = BannerIsengard
 End
 
@@ -341,7 +341,7 @@ SpawnArmy
     SpawnForTemplates = PlayerWild
     HeroTemplateName = CreateAHero
     PlayerArmy = Wild_CreateAHeroArmy
-    Icon = WildArmyIcon
+    Icon = Wild_HeroCreateAHeroIcon
     Banner = BannerWild
 End
 
@@ -398,7 +398,7 @@ SpawnArmy
     SpawnForTemplates = PlayerAngmar
     HeroTemplateName = CreateAHero
     PlayerArmy = Angmar_CreateAHeroArmy
-    Icon = AngmarArmyIcon
+    Icon = Angmar_HeroCreateAHeroIcon
     Banner = BannerAngmar
 End
 

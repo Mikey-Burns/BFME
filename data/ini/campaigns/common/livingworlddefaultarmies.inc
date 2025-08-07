@@ -38,6 +38,7 @@ End
 
 SpawnArmy
     ScriptingName = HeroArmy4
+    SpawnAtActStart = No
     SpawnForTemplates = PlayerMen
     HeroTemplateName = RohanEomer
     PlayerArmy = EomerPlayerArmy
@@ -95,6 +96,7 @@ End
 
 SpawnArmy
     ScriptingName = HeroArmy4
+    SpawnAtActStart = No
     SpawnForTemplates = PlayerElves
     HeroTemplateName = ElvenGlorfindel
     PlayerArmy = GlorfindelPlayerArmy
@@ -152,6 +154,7 @@ End
 
 SpawnArmy
     ScriptingName = HeroArmy4
+    SpawnAtActStart = No
     SpawnForTemplates = PlayerDwarves
     HeroTemplateName = DwarvenCaptainofDale
     PlayerArmy = CaptainofDalePlayerArmy
@@ -209,6 +212,7 @@ End
 
 SpawnArmy
     ScriptingName = HeroArmy4
+    SpawnAtActStart = No
     SpawnForTemplates = PlayerMordor
     HeroTemplateName = MordorGothmog
     PlayerArmy = GothmogPlayerArmy
@@ -266,6 +270,7 @@ End
 
 SpawnArmy
     ScriptingName = HeroArmy4
+    SpawnAtActStart = No
     SpawnForTemplates = PlayerIsengard
     HeroTemplateName = IsengardWormTongue
     PlayerArmy = WormTongueArmy
@@ -323,6 +328,7 @@ End
 
 SpawnArmy
     ScriptingName = HeroArmy4
+    SpawnAtActStart = No
     SpawnForTemplates = PlayerWild
     HeroTemplateName = WildAzog
     PlayerArmy = AzogPlayerArmy
@@ -379,6 +385,7 @@ End
 
 SpawnArmy
     ScriptingName = HeroArmy4
+    SpawnAtActStart = No
     SpawnForTemplates = PlayerAngmar
     HeroTemplateName = AngmarHwaldar
     PlayerArmy = HwaldarPlayerArmy

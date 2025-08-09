@@ -61629,3 +61629,11 @@ END
 LWScenario:WOTRScenario102Description
 "# Of Players: 6\nObjective: Begin with your forces split between the North East and South West. Unite your armies and conquer all the lands of Middle Earth.\nAll factions begin with a Create A Hero army."
 END
+
+LWScenario:WOTRGameType101
+"Total Domination"
+END
+
+LWScenario:WOTRObjectives101
+"Rule the lands of Middle-earth by conquering all territories and eliminating all enemy armies."
+END

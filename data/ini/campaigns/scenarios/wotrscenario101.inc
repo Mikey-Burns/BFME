@@ -100,7 +100,7 @@ LivingWorldCampaign WOTRScenario101
             End
             SpawnBuildings
                 Buildings = LW_FORT LW_BARRACKS
-                Region = Iron_Hills
+                Region = Anfalas
             End
         End
 

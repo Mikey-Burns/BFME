@@ -75,7 +75,7 @@ LivingWorldCampaign WOTRScenario102
         ;///////////////////
         ; Player One
         OwnershipSet
-            Regions = Iron_Hills
+            Regions = Iron_Hills Anfalas
             StartRegion = Iron_Hills
 
             SpawnArmies
@@ -98,11 +98,15 @@ LivingWorldCampaign WOTRScenario102
                 Buildings = LW_FORT LW_ARMORY LW_BARRACKS
                 Region = Iron_Hills
             End
+            SpawnBuildings
+                Buildings = LW_FORT LW_BARRACKS
+                Region = Iron_Hills
+            End
         End
 
         ; Player Two
         OwnershipSet
-            Regions = Belfalas
+            Regions = Belfalas Rhun
             StartRegion = Belfalas
 
             SpawnArmies
@@ -125,11 +129,15 @@ LivingWorldCampaign WOTRScenario102
                 Buildings = LW_FORT LW_ARMORY LW_BARRACKS
                 Region = Belfalas
             End
+            SpawnBuildings
+                Buildings = LW_FORT LW_ARMORY LW_BARRACKS
+                Region = Rhun
+            End
         End
 
         ; Computer 1
         OwnershipSet
-            Regions = Fangorn
+            Regions = Fangorn Forlindon
             StartRegion = Fangorn
 
             SpawnArmies
@@ -138,7 +146,7 @@ LivingWorldCampaign WOTRScenario102
             End
             SpawnArmies
                 Armies = HeroArmy2
-                Region = Gap_Of_Rohan
+                Region = Forlindon
             End
             SpawnArmies
                 Armies = HeroArmy3
@@ -151,12 +159,12 @@ LivingWorldCampaign WOTRScenario102
         End
         ; Computer 2
         OwnershipSet
-            Regions = Gap_Of_Rohan
+            Regions = Gap_Of_Rohan Harlindon
             StartRegion = Gap_Of_Rohan
 
             SpawnArmies
                 Armies = HeroArmy1
-                Region = Fangorn
+                Region = Harlindon
             End
             SpawnArmies
                 Armies = HeroArmy2 GarrisonArmy1
@@ -173,7 +181,7 @@ LivingWorldCampaign WOTRScenario102
         End
         ; Computer 3
         OwnershipSet
-            Regions = High_Pass
+            Regions = High_Pass Forodwaith
             StartRegion = High_Pass
 
             SpawnArmies
@@ -190,12 +198,12 @@ LivingWorldCampaign WOTRScenario102
             End
             SpawnArmies
                 Armies = HeroArmy5
-                Region = Dunland
+                Region = Forodwaith
             End
         End
         ; Computer 4
         OwnershipSet
-            Regions = Dunland
+            Regions = Dunland Arthedain
             StartRegion = Dunland
 
             SpawnArmies
@@ -208,7 +216,7 @@ LivingWorldCampaign WOTRScenario102
             End
             SpawnArmies
                 Armies = HeroArmy3
-                Region = High_Pass
+                Region = Arthedain
             End
             SpawnArmies
                 Armies = HeroArmy5 GarrisonArmy1

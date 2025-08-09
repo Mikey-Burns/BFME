@@ -168,12 +168,12 @@ LivingWorldVictoryType
     PlayerDefeatCondition
         Teams = 1 2
         LoseIfCapitalLost = No
-        NumControlledRegionsLessOrEqualTo = 0
+        NumControlledRegionsLessOrEqualTo = -1
     End
         
     TeamDefeatCondition
         Teams = 1 2
-        NumControlledRegionsLessOrEqualTo = 0
+        NumControlledRegionsLessOrEqualTo = -1
     End
         
     TeamVictoryCondition

@@ -203,7 +203,7 @@ LivingWorldCampaign WOTRScenario101
         End
         ; Computer 4
         OwnershipSet
-            Regions = Dunland Arthedain
+            Regions = Dunland Arnor
             StartRegion = Dunland
 
             SpawnArmies
@@ -216,7 +216,7 @@ LivingWorldCampaign WOTRScenario101
             End
             SpawnArmies
                 Armies = HeroArmy3
-                Region = Arthedain
+                Region = Arnor
             End
             SpawnArmies
                 Armies = HeroArmy4 GarrisonArmy1

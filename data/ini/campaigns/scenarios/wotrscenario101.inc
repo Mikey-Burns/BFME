@@ -156,6 +156,14 @@ LivingWorldCampaign WOTRScenario101
                 Armies = HeroArmy4
                 Region = Dunland
             End
+            SpawnBuildings
+                Buildings = LW_FARM LW_FARM
+                Region = Fangorn
+            End
+            SpawnBuildings
+                Buildings = LW_FORT LW_BARRACKS
+                Region = Forlindon
+            End
         End
         ; Computer 2
         OwnershipSet
@@ -177,6 +185,14 @@ LivingWorldCampaign WOTRScenario101
             SpawnArmies
                 Armies = HeroArmy4
                 Region = Dunland
+            End
+            SpawnBuildings
+                Buildings = LW_FARM LW_FARM
+                Region = Gap_Of_Rohan
+            End
+            SpawnBuildings
+                Buildings = LW_FORT LW_BARRACKS
+                Region = Harlindon
             End
         End
         ; Computer 3
@@ -200,6 +216,14 @@ LivingWorldCampaign WOTRScenario101
                 Armies = HeroArmy4
                 Region = Forodwaith
             End
+            SpawnBuildings
+                Buildings = LW_FARM LW_FARM
+                Region = High_Pass
+            End
+            SpawnBuildings
+                Buildings = LW_FORT LW_BARRACKS
+                Region = Forodwaith
+            End
         End
         ; Computer 4
         OwnershipSet
@@ -221,6 +245,14 @@ LivingWorldCampaign WOTRScenario101
             SpawnArmies
                 Armies = HeroArmy4 GarrisonArmy1
                 Region = Dunland
+            End
+            SpawnBuildings
+                Buildings = LW_FARM LW_FARM
+                Region = Dunland
+            End
+            SpawnBuildings
+                Buildings = LW_FORT LW_BARRACKS
+                Region = Arnor
             End
         End
     End

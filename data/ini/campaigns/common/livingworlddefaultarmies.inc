@@ -62,6 +62,20 @@ SpawnArmy
     Icon = MoWArmyIcon
 End
 
+SpawnArmy
+    ScriptingName = FortressDefenseArmy
+    SpawnForTemplates = PlayerMen
+    PlayerArmy = MenOfTheWest_FortressDefenseArmy
+    Icon = MoWArmyIcon
+End
+
+SpawnArmy
+    ScriptingName = FortressAttackArmy
+    SpawnForTemplates = PlayerMen
+    PlayerArmy = MenOfTheWest_FortressAttackArmy
+    Icon = MoWArmyIcon
+End
+
 
 //-------------------------------------------------------------------------------------------------
 // Elves
@@ -117,6 +131,20 @@ SpawnArmy
     ScriptingName = GarrisonArmy1
     SpawnForTemplates = PlayerElves
     PlayerArmy = Elven_StartingArmy
+    Icon = ElfArmyIcon
+End
+
+SpawnArmy
+    ScriptingName = FortressDefenseArmy
+    SpawnForTemplates = PlayerElves
+    PlayerArmy = Elven_FortressDefenseArmy
+    Icon = ElfArmyIcon
+End
+
+SpawnArmy
+    ScriptingName = FortressAttackArmy
+    SpawnForTemplates = PlayerElves
+    PlayerArmy = Elven_FortressAttackArmy
     Icon = ElfArmyIcon
 End
 
@@ -178,6 +206,20 @@ SpawnArmy
     Icon = DwarfArmyIcon
 End
 
+SpawnArmy
+    ScriptingName = FortressDefenseArmy
+    SpawnForTemplates = PlayerDwarves
+    PlayerArmy = Dwarven_FortressDefenseArmy
+    Icon = DwarfArmyIcon
+End
+
+SpawnArmy
+    ScriptingName = FortressAttackArmy
+    SpawnForTemplates = PlayerDwarves
+    PlayerArmy = Dwarven_FortressAttackArmy
+    Icon = DwarfArmyIcon
+End
+
 
 //-------------------------------------------------------------------------------------------------
 // Mordor
@@ -233,6 +275,20 @@ SpawnArmy
     ScriptingName = GarrisonArmy1
     SpawnForTemplates = PlayerMordor
     PlayerArmy = Mordor_StartingArmy
+    Icon = MordorArmyIcon
+End
+
+SpawnArmy
+    ScriptingName = FortressDefenseArmy
+    SpawnForTemplates = PlayerMordor
+    PlayerArmy = Mordor_FortressDefenseArmy
+    Icon = MordorArmyIcon
+End
+
+SpawnArmy
+    ScriptingName = FortressAttackArmy
+    SpawnForTemplates = PlayerMordor
+    PlayerArmy = Mordor_FortressAttackArmy
     Icon = MordorArmyIcon
 End
 
@@ -294,6 +350,20 @@ SpawnArmy
     Icon = IsengardArmyIcon
 End
 
+SpawnArmy
+    ScriptingName = FortressDefenseArmy
+    SpawnForTemplates = PlayerIsengard
+    PlayerArmy = Isengard_FortressDefenseArmy
+    Icon = IsengardArmyIcon
+End
+
+SpawnArmy
+    ScriptingName = FortressAttackArmy
+    SpawnForTemplates = PlayerIsengard
+    PlayerArmy = Isengard_FortressAttackArmy
+    Icon = IsengardArmyIcon
+End
+
 
 //-------------------------------------------------------------------------------------------------
 // Wild
@@ -352,6 +422,20 @@ SpawnArmy
     Icon = WildArmyIcon
 End
 
+SpawnArmy
+    ScriptingName = FortressDefenseArmy
+    SpawnForTemplates = PlayerWild
+    PlayerArmy = CorruptedWild_FortressDefenseArmy
+    Icon = WildArmyIcon
+End
+
+SpawnArmy
+    ScriptingName = FortressAttackArmy
+    SpawnForTemplates = PlayerWild
+    PlayerArmy = CorruptedWild_FortressAttackArmy
+    Icon = WildArmyIcon
+End
+
 //-------------------------------------------------------------------------------------------------
 // Angmar
 //-------------------------------------------------------------------------------------------------
@@ -406,6 +490,20 @@ SpawnArmy
     ScriptingName = GarrisonArmy1
     SpawnForTemplates = PlayerAngmar
     PlayerArmy = Angmar_StartingArmy
+    Icon = AngmarArmyIcon
+End
+
+SpawnArmy
+    ScriptingName = FortressDefenseArmy
+    SpawnForTemplates = PlayerAngmar
+    PlayerArmy = Angmar_FortressDefenseArmy
+    Icon = AngmarArmyIcon
+End
+
+SpawnArmy
+    ScriptingName = FortressAttackArmy
+    SpawnForTemplates = PlayerAngmar
+    PlayerArmy = Angmar_FortressAttackArmy
     Icon = AngmarArmyIcon
 End
 

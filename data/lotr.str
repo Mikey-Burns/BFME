@@ -61637,3 +61637,11 @@ END
 LWScenario:WOTRObjectives101
 "Rule the lands of Middle-earth by conquering all territories and eliminating all enemy armies."
 END
+
+LWScenario:WOTRScenario103
+"Fortress Defense"
+END
+
+LWScenario:WOTRScenario103Description
+"# Of Players: 6\nObjective: Begin with control of the fortesses of Middle Earth, but no heroes nearby.\nSend your armies forth to defend your lands."
+END

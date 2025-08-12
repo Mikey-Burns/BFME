@@ -308,7 +308,7 @@ LivingWorldCampaign WOTRScenario103
                 Region = Mount_Doom
             End
             SpawnBuildings
-                Buildings = LW_FORT LW_FARM
+                Buildings = LW_FORT LW_FARM LW_BARRACKS
                 Region = Arnor
             End
             SpawnBuildings
@@ -347,7 +347,7 @@ LivingWorldCampaign WOTRScenario103
             End
             SpawnArmies
                 Armies = HeroArmy2 FortressAttackArmy
-                Region = Gap_Of_Rohan
+                Region = Mirkwood
             End
             SpawnArmies
                 Armies = HeroArmy3 FortressAttackArmy

@@ -70,6 +70,56 @@ LivingWorldPlayerArmy
     End
 End
 
+LivingWorldPlayerArmy
+    Name = MenOfTheWest_FortressDefenseArmy
+    DisplayNameTag = LWA:Garrison
+    ArmyEntry
+        ThingTemplate = GondorFighterHorde
+        Quantity = 1
+    End
+    ArmyEntry
+        ThingTemplate = RohanSpearmenHorde
+        Quantity = 1
+    End
+    ArmyEntry
+        ThingTemplate = GondorArcherHorde
+        Quantity = 1
+    End
+    ArmyEntry
+        ThingTemplate = GondorArcherHorde
+        Quantity = 1
+    End
+    ArmyEntry
+        ThingTemplate = GondorKnightHorde
+        Quantity = 1
+    End
+    ArmyEntry
+        ThingTemplate = GondorKnightHorde
+        Quantity = 1
+    End
+End
+
+LivingWorldPlayerArmy
+    Name = MenOfTheWest_FortressAttackArmy
+    DisplayNameTag = LWA:Garrison
+    ArmyEntry
+        ThingTemplate = GondorArcherHorde
+        Quantity = 1
+    End
+    ArmyEntry
+        ThingTemplate = GondorFighterHorde
+        Quantity = 1
+    End
+    ArmyEntry
+        ThingTemplate = RohanSpearmenHorde
+        Quantity = 1
+    End
+    ArmyEntry
+        ThingTemplate = GondorTrebuchet
+        Quantity = 1
+    End
+End
+
 
 //-------------------------------------------------------------------------------------------------
 // Elven starting armies
@@ -133,6 +183,56 @@ LivingWorldPlayerArmy
     End
     ArmyEntry
         ThingTemplate = ElvenRivendellLancerHorde
+        Quantity = 1
+    End
+End
+
+LivingWorldPlayerArmy
+    Name = Elven_FortressDefenseArmy
+    DisplayNameTag = LWA:Garrison
+    ArmyEntry
+        ThingTemplate = ElvenLorienWarriorHorde
+        Quantity = 1
+    End
+    ArmyEntry
+        ThingTemplate = ElvenMithlondSentryHorde
+        Quantity = 1
+    End
+    ArmyEntry
+        ThingTemplate = ElvenLorienArcherHorde
+        Quantity = 1
+    End
+    ArmyEntry
+        ThingTemplate = ElvenLorienArcherHorde
+        Quantity = 1
+    End
+    ArmyEntry
+        ThingTemplate = ElvenRivendellLancerHorde
+        Quantity = 1
+    End
+    ArmyEntry
+        ThingTemplate = ElvenRivendellLancerHorde
+        Quantity = 1
+    End
+End
+
+LivingWorldPlayerArmy
+    Name = Elven_FortressAttackArmy
+    DisplayNameTag = LWA:Garrison
+    ArmyEntry
+        ThingTemplate = ElvenLorienArcherHorde
+        Quantity = 1
+    End
+    ArmyEntry
+        ThingTemplate = ElvenLorienWarriorHorde
+        Quantity = 1
+    End
+    ArmyEntry
+        ThingTemplate = ElvenMithlondSentryHorde
+        Quantity = 1
+    End
+    ArmyEntry
+        ThingTemplate = RohanEntBirch
         Quantity = 1
     End
 End
@@ -204,6 +304,56 @@ LivingWorldPlayerArmy
     End
 End
 
+LivingWorldPlayerArmy
+    Name = Dwarven_FortressDefenseArmy
+    DisplayNameTag = LWA:DwarvesGarrison
+    ArmyEntry
+        ThingTemplate = DwarvenGuardianHorde
+        Quantity = 1
+    End
+    ArmyEntry
+        ThingTemplate = DwarvenMenOfDaleHorde
+        Quantity = 1
+    End
+    ArmyEntry
+        ThingTemplate = DwarvenAxeThrowerHorde
+        Quantity = 1
+    End
+    ArmyEntry
+        ThingTemplate = DwarvenAxeThrowerHorde
+        Quantity = 1
+    End
+    ArmyEntry
+        ThingTemplate = DwarvenBattleWagon
+        Quantity = 1
+    End
+    ArmyEntry
+        ThingTemplate = DwarvenBattleWagon
+        Quantity = 1
+    End
+End
+
+LivingWorldPlayerArmy
+    Name = Dwarven_FortressAttackArmy
+    DisplayNameTag = LWA:DwarvesGarrison
+    ArmyEntry
+        ThingTemplate = DwarvenAxeThrowerHorde
+        Quantity = 1
+    End
+    ArmyEntry
+        ThingTemplate = DwarvenBattleWagon
+        Quantity = 1
+    End
+    ArmyEntry
+        ThingTemplate = DwarvenMenOfDaleHorde
+        Quantity = 1
+    End
+    ArmyEntry
+        ThingTemplate = DwarvenCatapult
+        Quantity = 1
+    End
+End
+
 
 //-------------------------------------------------------------------------------------------------
 // Corrupted Wild starting armies
@@ -271,6 +421,55 @@ LivingWorldPlayerArmy
     End
 End    
 
+LivingWorldPlayerArmy
+    Name = CorruptedWild_FortressDefenseArmy
+    DisplayNameTag = LWA:Garrison
+    ArmyEntry
+        ThingTemplate = GoblinFighterHorde
+        Quantity = 1
+    End
+    ArmyEntry
+        ThingTemplate = WildMarauderHorde
+        Quantity = 1
+    End
+    ArmyEntry
+        ThingTemplate = GoblinArcherHorde
+        Quantity = 1
+    End
+    ArmyEntry
+        ThingTemplate = GoblinArcherHorde
+        Quantity = 1
+    End
+    ArmyEntry
+        ThingTemplate = GoblinCaveTroll
+        Quantity = 1
+    End
+    ArmyEntry
+        ThingTemplate = GoblinCaveTroll
+        Quantity = 1
+    End
+End
+
+LivingWorldPlayerArmy
+    Name = CorruptedWild_FortressAttackArmy
+    DisplayNameTag = LWA:Garrison
+    ArmyEntry
+        ThingTemplate = GoblinArcherHorde
+        Quantity = 1
+    End
+    ArmyEntry
+        ThingTemplate = GoblinCaveTroll
+        Quantity = 1
+    End
+    ArmyEntry
+        ThingTemplate = WildMarauderHorde
+        Quantity = 1
+    End
+    ArmyEntry
+        ThingTemplate = WildMountainGiant
+        Quantity = 1
+    End
+End
 
 //-------------------------------------------------------------------------------------------------
 // Mordor starting armies
@@ -338,6 +537,55 @@ LivingWorldPlayerArmy
     End
 End    
 
+LivingWorldPlayerArmy
+    Name = Mordor_FortressDefenseArmy
+    DisplayNameTag = LWA:Garrison
+    ArmyEntry
+        ThingTemplate = MordorFighterHorde
+        Quantity = 1
+    End
+    ArmyEntry
+        ThingTemplate = MordorEasterlingHorde
+        Quantity = 1
+    End
+    ArmyEntry
+        ThingTemplate = MordorArcherHorde
+        Quantity = 1
+    End
+    ArmyEntry
+        ThingTemplate = MordorArcherHorde
+        Quantity = 1
+    End
+    ArmyEntry
+        ThingTemplate = MordorMountainTroll
+        Quantity = 1
+    End
+    ArmyEntry
+        ThingTemplate = MordorMountainTroll
+        Quantity = 1
+    End
+End
+
+LivingWorldPlayerArmy
+    Name = Mordor_FortressAttackArmy
+    DisplayNameTag = LWA:Garrison
+    ArmyEntry
+        ThingTemplate = MordorArcherHorde
+        Quantity = 1
+    End
+    ArmyEntry
+        ThingTemplate = MordorMountainTroll
+        Quantity = 1
+    End
+    ArmyEntry
+        ThingTemplate = MordorEasterlingHorde
+        Quantity = 1
+    End
+    ArmyEntry
+        ThingTemplate = MordorCatapult
+        Quantity = 1
+    End
+End
 
 //-------------------------------------------------------------------------------------------------
 // Isengard starting armies
@@ -405,6 +653,55 @@ LivingWorldPlayerArmy
     End
 End 
 
+LivingWorldPlayerArmy
+    Name = Isengard_FortressDefenseArmy
+    DisplayNameTag = LWA:Garrison
+    ArmyEntry
+        ThingTemplate = IsengardFighterHorde
+        Quantity = 1
+    End
+    ArmyEntry
+        ThingTemplate = IsengardPikemanHorde
+        Quantity = 1
+    End
+    ArmyEntry
+        ThingTemplate = IsengardUrukCrossbowHorde
+        Quantity = 1
+    End
+    ArmyEntry
+        ThingTemplate = IsengardUrukCrossbowHorde
+        Quantity = 1
+    End
+    ArmyEntry
+        ThingTemplate = IsengardWargRiderHorde
+        Quantity = 1
+    End
+    ArmyEntry
+        ThingTemplate = IsengardWargRiderHorde
+        Quantity = 1
+    End
+End
+
+LivingWorldPlayerArmy
+    Name = Isengard_FortressAttackArmy
+    DisplayNameTag = LWA:Garrison
+    ArmyEntry
+        ThingTemplate = IsengardUrukCrossbowHorde
+        Quantity = 1
+    End
+    ArmyEntry
+        ThingTemplate = IsengardWargRiderHorde
+        Quantity = 1
+    End
+    ArmyEntry
+        ThingTemplate = IsengardPikemanHorde
+        Quantity = 1
+    End
+    ArmyEntry
+        ThingTemplate = IsengardBallista
+        Quantity = 1
+    End
+End
 //-------------------------------------------------------------------------------------------------
 // Angmar starting armies
 //-------------------------------------------------------------------------------------------------
@@ -471,6 +768,51 @@ LivingWorldPlayerArmy
         End
 End    
 
+LivingWorldPlayerArmy
+    Name = Angmar_FortressDefenseArmy
+    DisplayNameTag = LWA:Garrison
+    ArmyEntry
+        ThingTemplate = AngmarHillTrollHorde
+        Quantity = 1
+    End
+    ArmyEntry
+        ThingTemplate = AngmarDarkRangerHorde
+        Quantity = 1
+    End
+    ArmyEntry
+        ThingTemplate = AngmarDarkRangerHorde
+        Quantity = 1
+    End
+    ArmyEntry
+        ThingTemplate = AngmarThrallMaster
+        Quantity = 1
+    End
+    ArmyEntry
+        ThingTemplate = AngmarThrallMaster
+        Quantity = 1
+    End
+End
+
+LivingWorldPlayerArmy
+    Name = Angmar_FortressAttackArmy
+    DisplayNameTag = LWA:Garrison
+    ArmyEntry
+        ThingTemplate = AngmarDarkRangerHorde
+        Quantity = 1
+    End
+    ArmyEntry
+        ThingTemplate = AngmarThrallMaster
+        Quantity = 1
+    End
+    ArmyEntry
+        ThingTemplate = AngmarHillTrollHorde
+        Quantity = 1
+    End
+    ArmyEntry
+        ThingTemplate = AngmarTrollSling
+        Quantity = 1
+    End
+End
 
 //-------------------------------------------------------------------------------------------------
 // Custom armies for the tutorial
@@ -588,7 +930,7 @@ LivingWorldPlayerArmy
     ArmyEntry
         ThingTemplate = MordorFellBeast
         Quantity = 1
-    End    
+    End
     ArmyEntry
         ThingTemplate = MordorAttackTroll
         Quantity = 2

@@ -47,8 +47,17 @@ class Scenario : WotrElement {
         _teamDefeatConditions.add(TeamDefeatCondition().apply(block))
     }
 
-    override fun validate(): List<Violation> {
-        TODO("Not yet implemented")
+    override fun validate(): List<Violation> = buildList {
+        if (name.isEmpty()) add(violation("'name' must not be empty"))
+        if (description.isEmpty()) add(violation("'description' must not be empty"))
+        if (gameType.isEmpty()) add(violation("'gameType' must not be empty"))
+        if (objectives.isEmpty()) add(violation("'objectives' must not be empty"))
+        if (fiction.isEmpty()) add(violation("'fiction' must not be empty"))
+        if (victoriousText.isEmpty()) add(violation("'victoriousText' must not be empty"))
+        if (defeatedText.isEmpty()) add(violation("'defeatedText' must not be empty"))
+        if (minPlayers !in 2..6) add(violation("'minPlayers' must be between 2 and 6"))
+        if (maxPlayers !in 2..6) add(violation("'maxPlayers' must be between 2 and 6"))
+        if (maxPlayers < minPlayers) add(violation("'maxPlayers' must be greater than or equal to minPlayers"))
     }
 
     override fun render(): String = buildString {
@@ -56,8 +65,6 @@ class Scenario : WotrElement {
         appendLine(playerDefeatConditions.joinToString("\n") { pdc -> pdc.render() })
         appendLine(teamDefeatConditions.joinToString("\n") { tdc -> tdc.render() })
     }
-
-
 }
 
 

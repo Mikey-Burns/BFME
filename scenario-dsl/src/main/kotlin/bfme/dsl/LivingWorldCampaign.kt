@@ -14,6 +14,7 @@ class LivingWorldCampaign : WotrElement {
         if (description.isEmpty()) add(violation("'description' must not be empty"))
         if (number < 0) add(violation("'number' must be greater than 0"))
         if (scenario == null) add(violation("'scenario' must not be null"))
+        addAll(scenario?.validate() ?: emptyList())
     }
 
     override fun render(): String {

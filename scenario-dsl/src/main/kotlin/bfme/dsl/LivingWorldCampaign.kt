@@ -1,6 +1,5 @@
 package bfme.dsl
 
-
 @WotrDsl
 class LivingWorldCampaign : WotrElement {
     override val clazz: Class<out WotrElement> = LivingWorldCampaign::class.java
@@ -39,10 +38,10 @@ class LivingWorldCampaign : WotrElement {
             appendLine("End")
         }
     }
+
+    fun LivingWorldCampaign.scenario(block: Scenario.() -> Unit) {
+        scenario = Scenario().apply(block)
+    }
 }
 
 fun livingWorldCampaign(block: LivingWorldCampaign.() -> Unit): LivingWorldCampaign = LivingWorldCampaign().apply(block)
-
-fun LivingWorldCampaign.scenario(block: Scenario.() -> Unit) {
-    scenario = Scenario().apply(block)
-}

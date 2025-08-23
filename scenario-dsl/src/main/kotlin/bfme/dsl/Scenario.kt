@@ -6,7 +6,7 @@ import bfme.domain.Territory
 class Scenario : WotrElement {
     override val clazz: Class<out WotrElement> = Scenario::class.java
 
-    // Fields
+    // region Fields
     var name: String = ""
     var description: String = ""
     var gameType: String = ""
@@ -20,16 +20,22 @@ class Scenario : WotrElement {
     private val _disallowStartInRegions = mutableSetOf<Territory>()
     val disallowStartInRegions: List<Territory> get() = _disallowStartInRegions.toList()
 
+    private val _defaultStartSpots = mutableListOf<Territory>()
+    val defaultStartSpots: List<Territory> get() = _defaultStartSpots.toList()
+
     private val _playerDefeatConditions = mutableListOf<PlayerDefeatCondition>()
     val playerDefeatConditions: List<PlayerDefeatCondition> get() = _playerDefeatConditions.toList()
 
     private val _teamDefeatConditions = mutableListOf<TeamDefeatCondition>()
     val teamDefeatConditions: List<TeamDefeatCondition> get() = _teamDefeatConditions.toList()
 
-    // TODO: Starting Restrictions
+    private val _startingRestrictions = mutableListOf<StartingRestriction>()
+    val startingRestrictions: List<StartingRestriction> get() = _startingRestrictions.toList()
     // TODO: Ownership Sets
 
-    // Functions
+    // endregion
+
+    // region Functions
 
     fun disallowStart(territory: Territory) {
         _disallowStartInRegions.add(territory)
@@ -39,13 +45,15 @@ class Scenario : WotrElement {
         _disallowStartInRegions.addAll(territories)
     }
 
-    fun Scenario.playerDefeatCondition(block: PlayerDefeatCondition.() -> Unit) {
-        _playerDefeatConditions.add(PlayerDefeatCondition().apply(block))
+    fun defaultStart(territory: Territory) {
+        _defaultStartSpots.add(territory)
     }
 
-    fun Scenario.teamDefeatCondition(block: TeamDefeatCondition.() -> Unit) {
-        _teamDefeatConditions.add(TeamDefeatCondition().apply(block))
+    fun defaultStart(territories: Collection<Territory>) {
+        _defaultStartSpots.addAll(territories)
     }
+
+    // endregion
 
     override fun validate(): List<Violation> = buildList {
         if (name.isEmpty()) add(violation("'name' must not be empty"))
@@ -65,8 +73,20 @@ class Scenario : WotrElement {
         appendLine(playerDefeatConditions.joinToString("\n") { pdc -> pdc.render() })
         appendLine(teamDefeatConditions.joinToString("\n") { tdc -> tdc.render() })
     }
+
+    // region Child DSLs
+
+    fun Scenario.playerDefeatCondition(block: PlayerDefeatCondition.() -> Unit) {
+        _playerDefeatConditions.add(PlayerDefeatCondition().apply(block))
+    }
+
+    fun Scenario.teamDefeatCondition(block: TeamDefeatCondition.() -> Unit) {
+        _teamDefeatConditions.add(TeamDefeatCondition().apply(block))
+    }
+
+    fun Scenario.startingRestriction(block: StartingRestriction.() -> Unit) {
+        _startingRestrictions.add(StartingRestriction().apply(block))
+    }
+
+    // endregion
 }
-
-
-fun Scenario.teamDefeatCondition(block: TeamDefeatCondition.() -> Unit): TeamDefeatCondition =
-    TeamDefeatCondition().apply(block)

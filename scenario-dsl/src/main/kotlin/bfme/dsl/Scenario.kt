@@ -31,8 +31,9 @@ class Scenario : WotrElement {
 
     private val _startingRestrictions = mutableListOf<StartingRestriction>()
     val startingRestrictions: List<StartingRestriction> get() = _startingRestrictions.toList()
-    // TODO: Ownership Sets
 
+    private val _ownershipSets = mutableListOf<OwnershipSet>()
+    val ownershipSets: List<OwnershipSet> get() = _ownershipSets.toList()
     // endregion
 
     // region Functions
@@ -52,7 +53,6 @@ class Scenario : WotrElement {
     fun defaultStart(territories: Collection<Territory>) {
         _defaultStartSpots.addAll(territories)
     }
-
     // endregion
 
     override fun validate(): List<Violation> = buildList {
@@ -75,7 +75,6 @@ class Scenario : WotrElement {
     }
 
     // region Child DSLs
-
     fun Scenario.playerDefeatCondition(block: PlayerDefeatCondition.() -> Unit) {
         _playerDefeatConditions.add(PlayerDefeatCondition().apply(block))
     }
@@ -88,5 +87,8 @@ class Scenario : WotrElement {
         _startingRestrictions.add(StartingRestriction().apply(block))
     }
 
+    fun Scenario.ownershipSet(block: OwnershipSet.() -> Unit) {
+        _ownershipSets.add(OwnershipSet().apply(block))
+    }
     // endregion
 }

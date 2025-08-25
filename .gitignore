@@ -3,3 +3,4 @@
 Mod.json
 /out/
 build/
+.gradle/

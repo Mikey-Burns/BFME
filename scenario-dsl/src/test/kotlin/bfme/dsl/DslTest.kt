@@ -57,6 +57,40 @@ class DslTest {
         errorMessages.expectMessage("'teams' must not be empty")
     }
 
+    @Test
+    fun `TeamDefeatCondition must populate fields with real values`() {
+        val validationErrors = livingWorldCampaign {
+            scenario {
+                teamDefeatCondition {  }
+            }
+        }.validate()
+        val errorsByClass = validationErrors.groupBy { it.source }
+        assertTrue { errorsByClass.contains(LivingWorldCampaign::class.java) }
+        assertTrue { errorsByClass.contains(Scenario::class.java) }
+        assertTrue { errorsByClass.contains(TeamDefeatCondition::class.java) }
+        val errorMessages = errorsByClass.getValue(TeamDefeatCondition::class.java).map(Violation::error)
+        errorMessages.expectMessage("'teams' must not be empty")
+    }
+
+    @Test
+    fun `OwnershipSet must populate fields with real values`() {
+        val validationErrors = livingWorldCampaign {
+            scenario {
+                ownershipSet {  }
+            }
+        }.validate()
+        val errorsByClass = validationErrors.groupBy { it.source }
+        assertTrue { errorsByClass.contains(LivingWorldCampaign::class.java) }
+        assertTrue { errorsByClass.contains(Scenario::class.java) }
+        assertTrue { errorsByClass.contains(OwnershipSet::class.java) }
+        val errorMessages = errorsByClass.getValue(OwnershipSet::class.java).map(Violation::error)
+        errorMessages.expectMessage("'startRegion' must not be empty")
+        errorMessages.expectMessage("'regions' must not be empty")
+    }
+
+    // TODO: SpawnArmies
+    // TODO: SpawnBuildings
+
     fun List<String>.expectMessage(message: String) {
         assertTrue(message in this, "Expected to find <$message> in $this")
     }

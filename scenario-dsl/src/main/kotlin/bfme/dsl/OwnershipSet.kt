@@ -25,8 +25,9 @@ class OwnershipSet : WotrElement {
     }
     // endregion
 
-    override fun validate(): List<Violation> {
-        TODO("Not yet implemented")
+    override fun validate(): List<Violation> = buildList{
+        if (startRegion == null) add(violation("'startRegion' must not be empty"))
+        if (regions.isEmpty()) add(violation("'regions' must not be empty"))
     }
 
     override fun render(): String {

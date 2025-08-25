@@ -16,8 +16,9 @@ class SpawnArmies : WotrElement {
         _armies.addAll(armies)
     }
 
-    override fun validate(): List<Violation> {
-        TODO("Not yet implemented")
+    override fun validate(): List<Violation> = buildList {
+        if (region == null) add(violation("'region' must not be empty"))
+        if (armies.isEmpty()) add(violation("'armies' must not be empty"))
     }
 
     override fun render(): String {

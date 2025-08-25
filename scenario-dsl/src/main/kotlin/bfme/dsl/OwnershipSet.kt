@@ -25,9 +25,12 @@ class OwnershipSet : WotrElement {
     }
     // endregion
 
-    override fun validate(): List<Violation> = buildList{
+    override fun validate(): List<Violation> = buildList {
         if (startRegion == null) add(violation("'startRegion' must not be empty"))
         if (regions.isEmpty()) add(violation("'regions' must not be empty"))
+
+        addAll(spawnArmies.flatMap(SpawnArmies::validate))
+        addAll(spawnBuildings.flatMap(SpawnBuildings::validate))
     }
 
     override fun render(): String {

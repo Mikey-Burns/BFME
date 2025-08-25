@@ -14,8 +14,9 @@ class StartingRestriction : WotrElement {
     val regions: List<Territory> get() = _regions.toList()
 
     val teams: Int = -1
-    override fun validate(): List<Violation> {
-        TODO("Not yet implemented")
+    override fun validate(): List<Violation> = buildList {
+        if (teams !in 1..2) add(violation("'team' must be 1 or 2"))
+        if (factions.isEmpty() && regions.isEmpty()) add(violation("'factions' and 'regions' must not both be empty"))
     }
 
     override fun render(): String {

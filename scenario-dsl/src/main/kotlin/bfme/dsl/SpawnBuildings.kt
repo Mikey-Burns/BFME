@@ -16,8 +16,9 @@ class SpawnBuildings : WotrElement {
         _buildings.addAll(buildings)
     }
 
-    override fun validate(): List<Violation> {
-        TODO("Not yet implemented")
+    override fun validate(): List<Violation> = buildList {
+        if (region == null) add(violation("'region' must not be empty"))
+        if (buildings.isEmpty()) add(violation("'buildings' must not be empty"))
     }
 
     override fun render(): String {

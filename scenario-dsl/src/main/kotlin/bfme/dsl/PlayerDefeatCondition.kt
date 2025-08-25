@@ -12,8 +12,8 @@ class PlayerDefeatCondition : WotrElement {
         _teams.addAll(teams)
     }
 
-    override fun validate(): List<Violation> {
-        TODO("Not yet implemented")
+    override fun validate(): List<Violation> = buildList {
+        if (teams.isEmpty()) add(violation("'teams' must not be empty"))
     }
 
     override fun render(): String = "TODO: PDC"

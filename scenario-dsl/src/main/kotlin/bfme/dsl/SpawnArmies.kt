@@ -7,10 +7,14 @@ import bfme.domain.Territory
 class SpawnArmies : WotrElement {
     override val clazz: Class<out WotrElement> = SpawnArmies::class.java
 
+    var region: Territory? = null
+
     private val _armies = mutableListOf<Army>()
     val armies: List<Army> get() = _armies.toList()
 
-    var region: Territory? = null
+    fun armies(armies: List<Army>) {
+        _armies.addAll(armies)
+    }
 
     override fun validate(): List<Violation> {
         TODO("Not yet implemented")

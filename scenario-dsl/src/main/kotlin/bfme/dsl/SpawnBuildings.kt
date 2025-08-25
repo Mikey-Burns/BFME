@@ -7,10 +7,14 @@ import bfme.domain.Territory
 class SpawnBuildings : WotrElement {
     override val clazz: Class<out WotrElement> = SpawnBuildings::class.java
 
+    var region: Territory? = null
+    
     private val _buildings = mutableListOf<Building>()
     val buildings: List<Building> get() = _buildings.toList()
 
-    var region: Territory? = null
+    fun buildings(buildings: List<Building>) {
+        _buildings.addAll(buildings)
+    }
 
     override fun validate(): List<Violation> {
         TODO("Not yet implemented")

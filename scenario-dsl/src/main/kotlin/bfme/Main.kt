@@ -1,3 +1,8 @@
+package bfme
+
+import bfme.domain.Army.*
+import bfme.domain.Building.*
+import bfme.domain.Territory.*
 import bfme.dsl.livingWorldCampaign
 
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
@@ -22,6 +27,21 @@ fun main() {
             teamDefeatCondition {
                 teams(listOf(1, 2))
                 numControlledRegionsLessOrEqualTo = -1
+            }
+
+            ownershipSet {
+                startRegion = THE_SHIRE
+                regions(listOf(AMON_SUL, DOL_GULDUR))
+
+                spawnArmies {
+                    armies(listOf(HERO_ARMY_1))
+                    region = THE_SHIRE
+                }
+
+                spawnBuildings {
+                    buildings(listOf(FORTRESS))
+                    region = AMON_SUL
+                }
             }
         }
     }

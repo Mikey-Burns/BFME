@@ -2,7 +2,6 @@ package bfme.dsl
 
 import org.junit.jupiter.api.Assertions.assertTrue
 import org.junit.jupiter.api.Test
-import kotlin.math.max
 
 class DslTest {
 
@@ -41,6 +40,21 @@ class DslTest {
         errorMessages.expectMessage("'minPlayers' must be between 2 and 6")
         errorMessages.expectMessage("'maxPlayers' must be between 2 and 6")
         errorMessages.expectMessage("'maxPlayers' must be greater than or equal to minPlayers")
+    }
+
+    @Test
+    fun `PlayerDefeatCondition must populate fields with real values`() {
+        val validationErrors = livingWorldCampaign {
+            scenario {
+                playerDefeatCondition {  }
+            }
+        }.validate()
+        val errorsByClass = validationErrors.groupBy { it.source }
+        assertTrue { errorsByClass.contains(LivingWorldCampaign::class.java) }
+        assertTrue { errorsByClass.contains(Scenario::class.java) }
+        assertTrue { errorsByClass.contains(PlayerDefeatCondition::class.java) }
+        val errorMessages = errorsByClass.getValue(PlayerDefeatCondition::class.java).map(Violation::error)
+        errorMessages.expectMessage("'teams' must not be empty")
     }
 
     fun List<String>.expectMessage(message: String) {

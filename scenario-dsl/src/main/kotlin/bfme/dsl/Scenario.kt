@@ -66,6 +66,14 @@ class Scenario : WotrElement {
         if (minPlayers !in 2..6) add(violation("'minPlayers' must be between 2 and 6"))
         if (maxPlayers !in 2..6) add(violation("'maxPlayers' must be between 2 and 6"))
         if (maxPlayers < minPlayers) add(violation("'maxPlayers' must be greater than or equal to minPlayers"))
+
+        // TODO: Disallow Start
+        // TODO: Default Start
+
+        addAll(playerDefeatConditions.flatMap(PlayerDefeatCondition::validate))
+        addAll(teamDefeatConditions.flatMap(TeamDefeatCondition::validate))
+        addAll(startingRestrictions.flatMap(StartingRestriction::validate))
+        addAll(ownershipSets.flatMap(OwnershipSet::validate))
     }
 
     override fun render(): String = buildString {

@@ -22,3 +22,6 @@ interface WotrElement {
 data class Violation(val source: Class<out WotrElement>, val error: String) {
     override fun toString(): String = "${source.name}: $error"
 }
+
+fun StringBuilder.appendLine(indentDepth: Int, line: String): StringBuilder =
+    appendLine("    ".repeat(indentDepth) + line)

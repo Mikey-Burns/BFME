@@ -1,10 +1,13 @@
 package bfme.dsl
 
+import org.junit.jupiter.api.Assertions.assertEquals
+import org.junit.jupiter.api.Assertions.assertThrows
 import org.junit.jupiter.api.Assertions.assertTrue
 import org.junit.jupiter.api.Test
 
 class DslTest {
 
+    // region Validation tests
     @Test
     fun `LivingWorldCampaign must populate fields with real values`() {
         val validationErrors = livingWorldCampaign { }.validate()
@@ -46,7 +49,7 @@ class DslTest {
     fun `PlayerDefeatCondition must populate fields with real values`() {
         val validationErrors = livingWorldCampaign {
             scenario {
-                playerDefeatCondition {  }
+                playerDefeatCondition { }
             }
         }.validate()
         val errorsByClass = validationErrors.groupBy { it.source }
@@ -61,7 +64,7 @@ class DslTest {
     fun `TeamDefeatCondition must populate fields with real values`() {
         val validationErrors = livingWorldCampaign {
             scenario {
-                teamDefeatCondition {  }
+                teamDefeatCondition { }
             }
         }.validate()
         val errorsByClass = validationErrors.groupBy { it.source }
@@ -76,7 +79,7 @@ class DslTest {
     fun `OwnershipSet must populate fields with real values`() {
         val validationErrors = livingWorldCampaign {
             scenario {
-                ownershipSet {  }
+                ownershipSet { }
             }
         }.validate()
         val errorsByClass = validationErrors.groupBy { it.source }
@@ -130,7 +133,7 @@ class DslTest {
     fun `StartingRestriction must populate fields with real values`() {
         val validationErrors = livingWorldCampaign {
             scenario {
-                startingRestriction {  }
+                startingRestriction { }
             }
         }.validate()
         val errorsByClass = validationErrors.groupBy { it.source }
@@ -141,6 +144,113 @@ class DslTest {
         errorMessages.expectMessage("'team' must be 1 or 2")
         errorMessages.expectMessage("'factions' and 'regions' must not both be empty")
     }
+    // endregion
+
+    // region Render tests
+    @Test
+    fun `An invalid campaign cannot be rendered`() {
+        val campaign = livingWorldCampaign { }
+        assertThrows(WotrException::class.java) { campaign.render() }
+    }
+
+    @Test
+    fun `Basic campaign can be rendered`() {
+        val expectedRendering = """
+            //-------------------------------------------------------------------------------------------------
+            // Scenario Name: Basic Name
+            // Scenario Description: Basic Description
+            //-------------------------------------------------------------------------------------------------
+
+            LivingWorldCampaign WOTRScenario001
+
+                IsEvilCampaign = No
+
+                ;////////////// RTS Settings /////////////
+                #include "..\Common\LivingWorldDefaultRTSSettings.inc"
+
+                Scenario
+                    DisplayName = LWScenario:WOTRScenario001
+                    DisplayDescription = LWScenario:WOTRScenario001Description
+                    DisplayGameType = LWScenario:WOTRGameType001
+                    DisplayObjectives = LWScenario:WOTRObjectives001
+                    DisplayFiction = LWScenario:WOTRScenarioFiction001
+                    DisplayVictoriousText = LWScenario:WOTRScenarioWin001
+                    DisplayDefeatedText = LWScenario:WOTRScenarioLose001
+
+                    RegionCampaign = DefaultCampaign
+
+                    MinPlayers = 6
+                    MaxPlayers = 6
+
+                    PlayerDefeatCondition
+                        Teams = 1 2
+                        LoseIfCapitalLost = No
+                        NumControlledRegionsLessOrEqualTo = -1
+                    End
+
+                    TeamDefeatCondition
+                        Teams = 1 2
+                        NumControlledRegionsLessOrEqualTo = -1
+                    End
+                End
+
+                ;//////////////////////////////////////////////////
+                Act One
+                ;//////////////////////////////////////////////////
+
+                    ;///////////////// Armies ////////////////
+                    #include "..\Common\LivingWorldDefaultArmies.inc"
+
+                    ;//////////////// VISUAL FLUFF ////////////////
+                    EyeTowerPoints
+                        LookPoint = X:436 Y:687 ; Rohan
+                        LookPoint = X:481 Y:287
+                        LookPoint = X:1179 Y:461
+                        LookPoint = X:947 Y:917
+                        LookPoint = X:172 Y:573 ; Isengard
+                        LookPoint = X:160 Y:560 ; Isengard
+                        LookPoint = X:175 Y:557 ; Isengard
+                        LookPoint = X:171 Y:348 ; Helm's Deep
+                        LookPoint = X:257 Y:535 ; Helm's Deep
+                        LookPoint = X:120 Y:350 ; Helm's Deep
+                        LookPoint = X:157 Y:420 ; Helm's Deep
+                    End
+                End
+            End
+            
+        """.trimIndent()
+        val campaign = livingWorldCampaign {
+            name = "Basic Name"
+            description = "Basic Description"
+            number = 1
+
+            scenario {
+                name = "LWScenario:WOTRScenario001"
+                description = "LWScenario:WOTRScenario001Description"
+                gameType = "LWScenario:WOTRGameType001"
+                objectives = "LWScenario:WOTRObjectives001"
+                fiction = "LWScenario:WOTRScenarioFiction001"
+                victoriousText = "LWScenario:WOTRScenarioWin001"
+                defeatedText = "LWScenario:WOTRScenarioLose001"
+
+                minPlayers = 6
+                maxPlayers = 6
+
+                playerDefeatCondition {
+                    teams(listOf(1, 2))
+                    loseIfCapitalLost = false
+                    numControlledRegionsLessOrEqualTo = -1
+                }
+
+                teamDefeatCondition {
+                    teams(listOf(1, 2))
+                    numControlledRegionsLessOrEqualTo = -1
+                }
+            }
+        }
+        assertEquals(expectedRendering, campaign.render())
+    }
+    // endregion
 
     fun List<String>.expectMessage(message: String) {
         assertTrue(message in this, "Expected to find <$message> in $this")

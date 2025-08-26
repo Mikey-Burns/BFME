@@ -77,9 +77,27 @@ class Scenario : WotrElement {
     }
 
     override fun render(): String = buildString {
-        appendLine("TODO: Scenario")
-        appendLine(playerDefeatConditions.joinToString("\n") { pdc -> pdc.render() })
-        appendLine(teamDefeatConditions.joinToString("\n") { tdc -> tdc.render() })
+        appendLine(1, "Scenario")
+        appendLine(2, "DisplayName = $name")
+        appendLine(2, "DisplayDescription = $description")
+        appendLine(2, "DisplayGameType = $gameType")
+        appendLine(2, "DisplayObjectives = $objectives")
+        appendLine(2, "DisplayFiction = $fiction")
+        appendLine(2, "DisplayVictoriousText = $victoriousText")
+        appendLine(2, "DisplayDefeatedText = $defeatedText")
+        appendLine()
+        appendLine(2, "RegionCampaign = DefaultCampaign")
+        appendLine()
+        appendLine(2, "MinPlayers = $minPlayers")
+        appendLine(2, "MaxPlayers = $maxPlayers")
+        appendLine()
+
+        val pdcs = playerDefeatConditions.joinToString("\n", transform = PlayerDefeatCondition::render)
+        if (pdcs.isNotEmpty()) appendLine(pdcs)
+        val tdcs = teamDefeatConditions.joinToString("\n", transform = TeamDefeatCondition::render)
+        if (tdcs.isNotEmpty()) append(tdcs)
+
+        appendLine(1, "End")
     }
 
     // region Child DSLs

@@ -15,5 +15,10 @@ class TeamDefeatCondition : WotrElement {
         if (teams.isEmpty()) add(violation("'teams' must not be empty"))
     }
 
-    override fun render(): String = "TODO: TDC"
+    override fun render(): String = buildString {
+        appendLine(2, "TeamDefeatCondition")
+        appendLine(3, "Teams = ${teams.joinToString(" ")}")
+        appendLine(3, "NumControlledRegionsLessOrEqualTo = $numControlledRegionsLessOrEqualTo")
+        appendLine(2, "End")
+    }
 }

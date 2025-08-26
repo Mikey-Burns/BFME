@@ -1,6 +1,6 @@
 package bfme.domain
 
-enum class Army(codeName: String) {
+enum class Army(val codeName: String) {
     HERO_ARMY_1("HeroArmy1"),
     HERO_ARMY_2("HeroArmy2"),
     HERO_ARMY_3("HeroArmy3"),

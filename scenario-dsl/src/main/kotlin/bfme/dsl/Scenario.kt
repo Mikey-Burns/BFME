@@ -42,16 +42,8 @@ class Scenario : WotrElement {
         _disallowStartInRegions.add(territory)
     }
 
-    fun disallowStart(territories: Collection<Territory>) {
-        _disallowStartInRegions.addAll(territories)
-    }
-
     fun defaultStart(territory: Territory) {
         _defaultStartSpots.add(territory)
-    }
-
-    fun defaultStart(territories: Collection<Territory>) {
-        _defaultStartSpots.addAll(territories)
     }
     // endregion
 
@@ -91,11 +83,33 @@ class Scenario : WotrElement {
         appendLine(2, "MinPlayers = $minPlayers")
         appendLine(2, "MaxPlayers = $maxPlayers")
         appendLine()
+        if (disallowStartInRegions.isNotEmpty()) {
+            val disallowStart = disallowStartInRegions.map(Territory::codeName).sorted().joinToString(" ")
+            appendLine(2, "DisallowStartInRegions = $disallowStart")
+        }
+        if (defaultStartSpots.isNotEmpty()) {
+            val defaultStart = defaultStartSpots.joinToString(" ", transform = Territory::codeName)
+            appendLine(2, "DefaultStartSpots = $defaultStart")
+        }
+        if (disallowStartInRegions.isNotEmpty() || defaultStartSpots.isNotEmpty()) appendLine()
 
         val pdcs = playerDefeatConditions.joinToString("\n", transform = PlayerDefeatCondition::render)
-        if (pdcs.isNotEmpty()) appendLine(pdcs)
+        if (pdcs.isNotEmpty()) append(pdcs)
+
+        if (playerDefeatConditions.isNotEmpty() && teamDefeatConditions.isNotEmpty()) appendLine()
+
         val tdcs = teamDefeatConditions.joinToString("\n", transform = TeamDefeatCondition::render)
         if (tdcs.isNotEmpty()) append(tdcs)
+
+        if (teamDefeatConditions.isNotEmpty() && startingRestrictions.isNotEmpty()) appendLine()
+
+        val srs = startingRestrictions.joinToString("\n", transform = StartingRestriction::render)
+        if (srs.isNotEmpty()) append(srs)
+
+        if (startingRestrictions.isNotEmpty() && ownershipSets.isNotEmpty()) appendLine()
+
+        val oss = ownershipSets.joinToString("\n", transform = OwnershipSet::render)
+        if (oss.isNotEmpty()) append(oss)
 
         appendLine(1, "End")
     }

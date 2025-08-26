@@ -1,11 +1,11 @@
 package bfme.domain
 
-enum class Faction {
-    MEN,
-    ELVES,
-    DWARVES,
-    MORDOR,
-    ISENGARD,
-    GOBLINS,
-    ANGMAR
+enum class Faction(val codeName: String) {
+    MEN("FactionMen"),
+    ELVES("FactionElves"),
+    DWARVES("FactionDwarves"),
+    MORDOR("FactionMordor"),
+    ISENGARD("FactionIsengard"),
+    GOBLINS("FactionWild"),
+    ANGMAR("FactionAngmar")
 }

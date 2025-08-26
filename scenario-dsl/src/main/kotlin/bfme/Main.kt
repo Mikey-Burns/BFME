@@ -31,15 +31,16 @@ fun main() {
 
             ownershipSet {
                 startRegion = THE_SHIRE
-                regions(listOf(AMON_SUL, DOL_GULDUR))
+                region(AMON_SUL)
+                region(DOL_GULDUR)
 
                 spawnArmies {
-                    armies(listOf(HERO_ARMY_1))
+                    army(HERO_ARMY_1)
                     region = THE_SHIRE
                 }
 
                 spawnBuildings {
-                    buildings(listOf(FORTRESS))
+                    building(FORTRESS)
                     region = AMON_SUL
                 }
             }

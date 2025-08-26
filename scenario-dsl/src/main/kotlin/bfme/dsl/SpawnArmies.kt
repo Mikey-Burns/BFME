@@ -12,8 +12,8 @@ class SpawnArmies : WotrElement {
     private val _armies = mutableListOf<Army>()
     val armies: List<Army> get() = _armies.toList()
 
-    fun armies(armies: List<Army>) {
-        _armies.addAll(armies)
+    fun army(army: Army) {
+        _armies.add(army)
     }
 
     override fun validate(): List<Violation> = buildList {
@@ -21,7 +21,10 @@ class SpawnArmies : WotrElement {
         if (armies.isEmpty()) add(violation("'armies' must not be empty"))
     }
 
-    override fun render(): String {
-        TODO("Not yet implemented")
+    override fun render(): String = buildString {
+        appendLine(3, "SpawnArmies")
+        appendLine(4, "Armies = ${armies.joinToString(" ", transform = Army::codeName)}")
+        appendLine(4, "Region = ${region!!.codeName}")
+        appendLine(3, "End")
     }
 }

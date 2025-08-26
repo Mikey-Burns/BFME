@@ -1,5 +1,6 @@
 package bfme.dsl
 
+import bfme.domain.Faction
 import bfme.domain.Territory
 
 @WotrDsl
@@ -20,8 +21,8 @@ class OwnershipSet : WotrElement {
     // endregion
 
     // region Functions
-    fun regions(regions: List<Territory>) {
-        _regions.addAll(regions)
+    fun region(region: Territory) {
+        _regions.add(region)
     }
     // endregion
 
@@ -33,8 +34,22 @@ class OwnershipSet : WotrElement {
         addAll(spawnBuildings.flatMap(SpawnBuildings::validate))
     }
 
-    override fun render(): String {
-        TODO("Not yet implemented")
+    override fun render(): String = buildString {
+        appendLine(2, "OwnershipSet")
+        if (regions.isNotEmpty())
+            appendLine(3, "Regions = ${regions.joinToString(" ", transform = Territory::codeName)}")
+        if (startRegion != null) appendLine(3, "StartRegion = ${startRegion!!.codeName}")
+        appendLine()
+
+        val armies = spawnArmies.joinToString("\n", transform = SpawnArmies::render)
+        if (armies.isNotEmpty()) append(armies)
+
+        if (spawnArmies.isNotEmpty() && spawnBuildings.isNotEmpty()) appendLine()
+
+        val buildings = spawnBuildings.joinToString("\n", transform = SpawnBuildings::render)
+        if (buildings.isNotEmpty()) append(buildings)
+
+        appendLine(2, "End")
     }
 
     // region Child DSLs

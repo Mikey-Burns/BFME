@@ -2,6 +2,9 @@ package bfme.dsl
 
 import bfme.domain.Territory
 
+/**
+ * DSL representation of the territories and armies that a player begins a scenario with.
+ */
 @WotrDsl
 class OwnershipSet : WotrElement {
     override val clazz: Class<out WotrElement> = OwnershipSet::class.java
@@ -20,11 +23,13 @@ class OwnershipSet : WotrElement {
     val spawnBuildings: List<SpawnBuildings> get() = _spawnBuildings.toList()
     // endregion
 
-    // region Functions
+    /**
+     * Add a territory to the player's starting setup.
+     * A player can have multiple territories.
+     */
     fun region(region: Territory) {
         _regions.add(region)
     }
-    // endregion
 
     override fun validate(): List<Violation> = buildList {
         if (startRegion == null) add(violation("'startRegion' must not be empty"))
@@ -54,10 +59,18 @@ class OwnershipSet : WotrElement {
     }
 
     // region Child DSLs
+    /**
+     * Add an army spawn to the player's starting setup.
+     * A player can spawn multiple armies.
+     */
     fun OwnershipSet.spawnArmies(block: SpawnArmies.() -> Unit) {
         _spawnArmies.add(SpawnArmies().apply(block))
     }
 
+    /**
+     * Add a building spawn to the player's starting setup.
+     * A player can spawn multiple buildings.
+     */
     fun OwnershipSet.spawnBuildings(block: SpawnBuildings.() -> Unit) {
         _spawnBuildings.add(SpawnBuildings().apply(block))
     }

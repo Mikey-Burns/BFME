@@ -2,6 +2,9 @@ package bfme.dsl
 
 import bfme.domain.Territory
 
+/**
+ * DSL element for the actual scenario details.
+ */
 @WotrDsl
 class Scenario : WotrElement {
     override val clazz: Class<out WotrElement> = Scenario::class.java
@@ -37,11 +40,18 @@ class Scenario : WotrElement {
     // endregion
 
     // region Functions
-
+    /**
+     * Disallow starting in a region.
+     * Multiple regions can be disallowed.
+     */
     fun disallowStart(territory: Territory) {
         _disallowStartInRegions.add(territory)
     }
 
+    /**
+     * Set a default starting region.
+     * Multiple regions can be set as default starting points.
+     */
     fun defaultStart(territory: Territory) {
         _defaultStartSpots.add(territory)
     }
@@ -58,9 +68,6 @@ class Scenario : WotrElement {
         if (minPlayers !in 2..6) add(violation("'minPlayers' must be between 2 and 6"))
         if (maxPlayers !in 2..6) add(violation("'maxPlayers' must be between 2 and 6"))
         if (maxPlayers < minPlayers) add(violation("'maxPlayers' must be greater than or equal to minPlayers"))
-
-        // TODO: Disallow Start
-        // TODO: Default Start
 
         addAll(playerDefeatConditions.flatMap(PlayerDefeatCondition::validate))
         addAll(teamDefeatConditions.flatMap(TeamDefeatCondition::validate))
@@ -115,18 +122,34 @@ class Scenario : WotrElement {
     }
 
     // region Child DSLs
+    /**
+     * Specify a player defeat condition.
+     * Multiple player defeat conditions can be specified.
+     */
     fun Scenario.playerDefeatCondition(block: PlayerDefeatCondition.() -> Unit) {
         _playerDefeatConditions.add(PlayerDefeatCondition().apply(block))
     }
 
+    /**
+     * Specify a team defeat condition.
+     * Multiple team defeat conditions can be specified.
+     */
     fun Scenario.teamDefeatCondition(block: TeamDefeatCondition.() -> Unit) {
         _teamDefeatConditions.add(TeamDefeatCondition().apply(block))
     }
 
+    /**
+     * Specify a starting restriction.
+     * Multiple starting restrictions can be specified.
+     */
     fun Scenario.startingRestriction(block: StartingRestriction.() -> Unit) {
         _startingRestrictions.add(StartingRestriction().apply(block))
     }
 
+    /**
+     * Specify a player's ownership set.
+     * Multiple ownership sets can be specified.
+     */
     fun Scenario.ownershipSet(block: OwnershipSet.() -> Unit) {
         _ownershipSets.add(OwnershipSet().apply(block))
     }

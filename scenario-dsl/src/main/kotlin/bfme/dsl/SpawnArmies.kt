@@ -3,6 +3,9 @@ package bfme.dsl
 import bfme.domain.Army
 import bfme.domain.Territory
 
+/**
+ * DSL element for spawning armies to a territory.
+ */
 @WotrDsl
 class SpawnArmies : WotrElement {
     override val clazz: Class<out WotrElement> = SpawnArmies::class.java
@@ -12,6 +15,10 @@ class SpawnArmies : WotrElement {
     private val _armies = mutableListOf<Army>()
     val armies: List<Army> get() = _armies.toList()
 
+    /**
+     * Specify an army to spawn into the territory.
+     * Multiple armies can be specified.
+     */
     fun army(army: Army) {
         _armies.add(army)
     }

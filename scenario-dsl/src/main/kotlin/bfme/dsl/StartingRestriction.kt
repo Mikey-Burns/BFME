@@ -3,6 +3,9 @@ package bfme.dsl
 import bfme.domain.Faction
 import bfme.domain.Territory
 
+/**
+ * DSL element for a starting restriction.
+ */
 @WotrDsl
 class StartingRestriction : WotrElement {
     override val clazz: Class<out WotrElement> = StartingRestriction::class.java
@@ -15,10 +18,16 @@ class StartingRestriction : WotrElement {
 
     var teams: Int = -1
 
+    /**
+     * Specify a faction to restrict to.
+     */
     fun faction(faction: Faction) {
         _factions.add(faction)
     }
 
+    /**
+     * Specify a territory to restrict to.
+     */
     fun region(region: Territory) {
         _regions.add(region)
     }

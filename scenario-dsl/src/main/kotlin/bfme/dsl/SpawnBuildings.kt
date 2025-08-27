@@ -3,6 +3,9 @@ package bfme.dsl
 import bfme.domain.Building
 import bfme.domain.Territory
 
+/**
+ * DSL element for spawning buildings in a territory.
+ */
 @WotrDsl
 class SpawnBuildings : WotrElement {
     override val clazz: Class<out WotrElement> = SpawnBuildings::class.java
@@ -12,6 +15,10 @@ class SpawnBuildings : WotrElement {
     private val _buildings = mutableListOf<Building>()
     val buildings: List<Building> get() = _buildings.toList()
 
+    /**
+     * Specify a building to spawn into the territory.
+     * Multiple buildings can be specified.
+     */
     fun building(building: Building) {
         _buildings.add(building)
     }

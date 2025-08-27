@@ -1,5 +1,8 @@
 package bfme.dsl
 
+/**
+ * Top level DSL class that gets written to a file.
+ */
 @WotrDsl
 class LivingWorldCampaign : WotrElement {
     override val clazz: Class<out WotrElement> = LivingWorldCampaign::class.java
@@ -60,9 +63,16 @@ class LivingWorldCampaign : WotrElement {
         }
     }
 
+    /**
+     * Add a scenario to the campaign.
+     * There should only be a single scenario added.
+     */
     fun LivingWorldCampaign.scenario(block: Scenario.() -> Unit) {
         scenario = Scenario().apply(block)
     }
 }
 
+/**
+ * DSL function to configure the campaign.
+ */
 fun livingWorldCampaign(block: LivingWorldCampaign.() -> Unit): LivingWorldCampaign = LivingWorldCampaign().apply(block)

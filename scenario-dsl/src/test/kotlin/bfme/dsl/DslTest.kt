@@ -300,6 +300,7 @@ class DslTest {
                         Teams = 1
                     End
 
+                    ; Player One
                     OwnershipSet
                         Regions = The_Shire Buckland Arnor
                         StartRegion = The_Shire
@@ -442,6 +443,7 @@ class DslTest {
                 }
 
                 ownershipSet {
+                    label = "Player One"
                     startRegion = THE_SHIRE
                     region(THE_SHIRE)
                     region(NORTH_DOWNS)

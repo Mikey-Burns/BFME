@@ -25,7 +25,7 @@ class LivingWorldCampaign : WotrElement {
             appendLine("// Scenario Description: $description")
             appendLine("//-------------------------------------------------------------------------------------------------")
             appendLine()
-            appendLine("LivingWorldCampaign WOTRScenario${number.digitToChar().toString().padStart(3, '0')}")
+            appendLine("LivingWorldCampaign WOTRScenario${number.toString().padStart(3, '0')}")
             appendLine()
             appendLine(1, "IsEvilCampaign = No")
             appendLine()

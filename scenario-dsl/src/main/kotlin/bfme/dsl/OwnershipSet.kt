@@ -8,6 +8,7 @@ class OwnershipSet : WotrElement {
     override val clazz: Class<out WotrElement> = OwnershipSet::class.java
 
     // region Fields
+    var label: String? = null
     var startRegion: Territory? = null
 
     private val _regions = mutableListOf<Territory>()
@@ -35,6 +36,7 @@ class OwnershipSet : WotrElement {
     }
 
     override fun render(): String = buildString {
+        if (label != null) appendLine(2, "; ${label!!}")
         appendLine(2, "OwnershipSet")
         if (regions.isNotEmpty())
             appendLine(3, "Regions = ${regions.joinToString(" ", transform = Territory::codeName)}")

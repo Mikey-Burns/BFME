@@ -1,8 +1,8 @@
 package bfme.scenarios
 
-import bfme.domain.Army
-import bfme.domain.Building
-import bfme.domain.Territory
+import bfme.domain.Army.*
+import bfme.domain.Building.*
+import bfme.domain.Territory.*
 import bfme.dsl.livingWorldCampaign
 
 fun twoCornerChaosCreateAHero(): String = livingWorldCampaign {
@@ -22,59 +22,59 @@ fun twoCornerChaosCreateAHero(): String = livingWorldCampaign {
         minPlayers = 6
         maxPlayers = 6
 
-        disallowStart(Territory.AMON_SUL)
-        disallowStart(Territory.ANFALAS)
-        disallowStart(Territory.ANGMAR)
-        disallowStart(Territory.ARTHEDAIN)
-        disallowStart(Territory.BARROW_DOWNS)
-        disallowStart(Territory.CAIR_ANDROS)
-        disallowStart(Territory.CARDOLAN)
-        disallowStart(Territory.CARN_DUM)
-        disallowStart(Territory.CARROCK)
-        disallowStart(Territory.CELDUIN)
-        disallowStart(Territory.DAGORLAD)
-        disallowStart(Territory.DOL_GULDUR)
-        disallowStart(Territory.ENEDWAITH)
-        disallowStart(Territory.EREBOR)
-        disallowStart(Territory.ETTENMOORS)
-        disallowStart(Territory.FORLINDON)
-        disallowStart(Territory.FORNOST)
-        disallowStart(Territory.FORODWAITH)
-        disallowStart(Territory.GREY_HAVENS)
-        disallowStart(Territory.HARAD)
-        disallowStart(Territory.HARLINDON)
-        disallowStart(Territory.HELMS_DEEP)
-        disallowStart(Territory.ISENGARD)
-        disallowStart(Territory.ITHILIEN)
-        disallowStart(Territory.LOSTRIAND)
-        disallowStart(Territory.LORIEN)
-        disallowStart(Territory.MINAS_MORGUL)
-        disallowStart(Territory.MINAS_TIRITH)
-        disallowStart(Territory.MINHIRIATH)
-        disallowStart(Territory.MIRKWOOD)
-        disallowStart(Territory.MORDOR)
-        disallowStart(Territory.MOUNT_DOOM)
-        disallowStart(Territory.MOUNT_GUNDABAD)
-        disallowStart(Territory.NORTH_DOWNS)
-        disallowStart(Territory.OSGILIATH)
-        disallowStart(Territory.REDHORN_PASS)
-        disallowStart(Territory.RHUDAUR)
-        disallowStart(Territory.RHUN)
-        disallowStart(Territory.RIVENDELL)
-        disallowStart(Territory.ROHAN)
-        disallowStart(Territory.THE_BLACK_GATE)
-        disallowStart(Territory.THE_BROWN_LANDS)
-        disallowStart(Territory.THE_DEAD_MARSHES)
-        disallowStart(Territory.THE_SHIRE)
-        disallowStart(Territory.TOWER_HILLS)
-        disallowStart(Territory.UMBAR)
+        disallowStart(AMON_SUL)
+        disallowStart(ANFALAS)
+        disallowStart(ANGMAR)
+        disallowStart(ARTHEDAIN)
+        disallowStart(BARROW_DOWNS)
+        disallowStart(CAIR_ANDROS)
+        disallowStart(CARDOLAN)
+        disallowStart(CARN_DUM)
+        disallowStart(CARROCK)
+        disallowStart(CELDUIN)
+        disallowStart(DAGORLAD)
+        disallowStart(DOL_GULDUR)
+        disallowStart(ENEDWAITH)
+        disallowStart(EREBOR)
+        disallowStart(ETTENMOORS)
+        disallowStart(FORLINDON)
+        disallowStart(FORNOST)
+        disallowStart(FORODWAITH)
+        disallowStart(GREY_HAVENS)
+        disallowStart(HARAD)
+        disallowStart(HARLINDON)
+        disallowStart(HELMS_DEEP)
+        disallowStart(ISENGARD)
+        disallowStart(ITHILIEN)
+        disallowStart(LOSTRIAND)
+        disallowStart(LORIEN)
+        disallowStart(MINAS_MORGUL)
+        disallowStart(MINAS_TIRITH)
+        disallowStart(MINHIRIATH)
+        disallowStart(MIRKWOOD)
+        disallowStart(MORDOR)
+        disallowStart(MOUNT_DOOM)
+        disallowStart(MOUNT_GUNDABAD)
+        disallowStart(NORTH_DOWNS)
+        disallowStart(OSGILIATH)
+        disallowStart(REDHORN_PASS)
+        disallowStart(RHUDAUR)
+        disallowStart(RHUN)
+        disallowStart(RIVENDELL)
+        disallowStart(ROHAN)
+        disallowStart(THE_BLACK_GATE)
+        disallowStart(THE_BROWN_LANDS)
+        disallowStart(THE_DEAD_MARSHES)
+        disallowStart(THE_SHIRE)
+        disallowStart(TOWER_HILLS)
+        disallowStart(UMBAR)
 
-        defaultStart(Territory.IRON_HILLS)
-        defaultStart(Territory.BELFALAS)
-        defaultStart(Territory.FANGORN)
-        defaultStart(Territory.GAP_OF_ROHAN)
-        defaultStart(Territory.HIGH_PASS)
-        defaultStart(Territory.DUNLAND)
+        defaultStart(IRON_HILLS)
+        defaultStart(BELFALAS)
+        defaultStart(FANGORN)
+        defaultStart(GAP_OF_ROHAN)
+        defaultStart(HIGH_PASS)
+        defaultStart(DUNLAND)
 
         playerDefeatCondition {
             teams(listOf(1, 2))
@@ -88,280 +88,279 @@ fun twoCornerChaosCreateAHero(): String = livingWorldCampaign {
         }
 
         startingRestriction {
-            region(Territory.IRON_HILLS)
+            region(IRON_HILLS)
             teams = 1
         }
 
         startingRestriction {
-            region(Territory.BELFALAS)
+            region(BELFALAS)
             teams = 1
         }
 
         startingRestriction {
-            region(Territory.FANGORN)
+            region(FANGORN)
             teams = 2
         }
 
         startingRestriction {
-            region(Territory.GAP_OF_ROHAN)
+            region(GAP_OF_ROHAN)
             teams = 2
         }
 
         startingRestriction {
-            region(Territory.HIGH_PASS)
+            region(HIGH_PASS)
             teams = 2
         }
 
         startingRestriction {
-            region(Territory.DUNLAND)
+            region(DUNLAND)
             teams = 2
         }
 
         ownershipSet {
             label = "Player One"
-            startRegion = Territory.IRON_HILLS
-            region(Territory.IRON_HILLS)
-            region(Territory.ANFALAS)
+            startRegion = IRON_HILLS
+            region(IRON_HILLS)
+            region(ANFALAS)
 
             spawnArmies {
-                army(Army.HERO_ARMY_1)
-                army(Army.GARRISON_ARMY_1)
-                region = Territory.IRON_HILLS
+                army(HERO_ARMY_1)
+                army(GARRISON_ARMY_1)
+                region = IRON_HILLS
             }
 
             spawnArmies {
-                army(Army.HERO_ARMY_2)
-                region = Territory.IRON_HILLS
+                army(HERO_ARMY_2)
+                region = IRON_HILLS
             }
 
             spawnArmies {
-                army(Army.HERO_ARMY_3)
-                army(Army.GARRISON_ARMY_1)
-                region = Territory.BELFALAS
+                army(HERO_ARMY_3)
+                army(GARRISON_ARMY_1)
+                region = BELFALAS
             }
 
             spawnArmies {
-                army(Army.HERO_ARMY_5)
-                region = Territory.BELFALAS
+                army(HERO_ARMY_5)
+                region = BELFALAS
             }
 
             spawnBuildings {
-                building(Building.FORTRESS)
-                building(Building.ARMORY)
-                building(Building.BARRACKS)
-                region = Territory.IRON_HILLS
+                building(FORTRESS)
+                building(ARMORY)
+                building(BARRACKS)
+                region = IRON_HILLS
             }
 
             spawnBuildings {
-                building(Building.FORTRESS)
-                building(Building.BARRACKS)
-                region = Territory.ANFALAS
+                building(FORTRESS)
+                building(BARRACKS)
+                region = ANFALAS
             }
         }
 
         ownershipSet {
             label = "Player Two"
-            startRegion = Territory.BELFALAS
-            region(Territory.BELFALAS)
-            region(Territory.RHUN)
+            startRegion = BELFALAS
+            region(BELFALAS)
+            region(RHUN)
 
             spawnArmies {
-                army(Army.HERO_ARMY_1)
-                army(Army.GARRISON_ARMY_1)
-                region = Territory.BELFALAS
+                army(HERO_ARMY_1)
+                army(GARRISON_ARMY_1)
+                region = BELFALAS
             }
 
             spawnArmies {
-                army(Army.HERO_ARMY_2)
-                region = Territory.BELFALAS
+                army(HERO_ARMY_2)
+                region = BELFALAS
             }
 
             spawnArmies {
-                army(Army.HERO_ARMY_3)
-                army(Army.GARRISON_ARMY_1)
-                region = Territory.IRON_HILLS
+                army(HERO_ARMY_3)
+                army(GARRISON_ARMY_1)
+                region = IRON_HILLS
             }
 
             spawnArmies {
-                army(Army.HERO_ARMY_5)
-                region = Territory.IRON_HILLS
+                army(HERO_ARMY_5)
+                region = IRON_HILLS
             }
 
             spawnBuildings {
-                building(Building.FORTRESS)
-                building(Building.ARMORY)
-                building(Building.BARRACKS)
-                region = Territory.BELFALAS
+                building(FORTRESS)
+                building(ARMORY)
+                building(BARRACKS)
+                region = BELFALAS
             }
 
             spawnBuildings {
-                building(Building.FORTRESS)
-                building(Building.ARMORY)
-                building(Building.BARRACKS)
-                region = Territory.RHUN
+                building(FORTRESS)
+                building(ARMORY)
+                building(BARRACKS)
+                region = RHUN
             }
         }
 
         ownershipSet {
             label = "Computer 1"
-            startRegion = Territory.FANGORN
-            region(Territory.FANGORN)
-            region(Territory.FORLINDON)
+            startRegion = FANGORN
+            region(FANGORN)
+            region(FORLINDON)
 
             spawnArmies {
-                army(Army.HERO_ARMY_1)
-                army(Army.GARRISON_ARMY_1)
-                region = Territory.FANGORN
+                army(HERO_ARMY_1)
+                army(GARRISON_ARMY_1)
+                region = FANGORN
             }
 
             spawnArmies {
-                army(Army.HERO_ARMY_2)
-                region = Territory.FORLINDON
+                army(HERO_ARMY_2)
+                region = FORLINDON
             }
 
             spawnArmies {
-                army(Army.HERO_ARMY_3)
-                region = Territory.HIGH_PASS
+                army(HERO_ARMY_3)
+                region = HIGH_PASS
             }
 
             spawnArmies {
-                army(Army.HERO_ARMY_5)
-                region = Territory.DUNLAND
+                army(HERO_ARMY_5)
+                region = DUNLAND
             }
 
             spawnBuildings {
-                building(Building.FARM)
-                building(Building.FARM)
-                region = Territory.FANGORN
+                building(FARM)
+                building(FARM)
+                region = FANGORN
             }
 
             spawnBuildings {
-                building(Building.FORTRESS)
-                building(Building.BARRACKS)
-                region = Territory.FORLINDON
+                building(FORTRESS)
+                building(BARRACKS)
+                region = FORLINDON
             }
         }
 
         ownershipSet {
             label = "Computer 2"
-            startRegion = Territory.GAP_OF_ROHAN
-            region(Territory.GAP_OF_ROHAN)
-            region(Territory.HARLINDON)
+            startRegion = GAP_OF_ROHAN
+            region(GAP_OF_ROHAN)
+            region(HARLINDON)
 
             spawnArmies {
-                army(Army.HERO_ARMY_1)
-                region = Territory.HARLINDON
+                army(HERO_ARMY_1)
+                region = HARLINDON
             }
 
             spawnArmies {
-                army(Army.HERO_ARMY_2)
-                army(Army.GARRISON_ARMY_1)
-                region = Territory.GAP_OF_ROHAN
+                army(HERO_ARMY_2)
+                army(GARRISON_ARMY_1)
+                region = GAP_OF_ROHAN
             }
 
             spawnArmies {
-                army(Army.HERO_ARMY_3)
-                region = Territory.HIGH_PASS
+                army(HERO_ARMY_3)
+                region = HIGH_PASS
             }
 
             spawnArmies {
-                army(Army.HERO_ARMY_5)
-                region = Territory.DUNLAND
+                army(HERO_ARMY_5)
+                region = DUNLAND
             }
 
             spawnBuildings {
-                building(Building.FARM)
-                building(Building.FARM)
-                region = Territory.GAP_OF_ROHAN
+                building(FARM)
+                building(FARM)
+                region = GAP_OF_ROHAN
             }
 
             spawnBuildings {
-                building(Building.FORTRESS)
-                building(Building.BARRACKS)
-                region = Territory.HARLINDON
+                building(FORTRESS)
+                building(BARRACKS)
+                region = HARLINDON
             }
         }
 
         ownershipSet {
             label = "Computer 3"
-            startRegion = Territory.HIGH_PASS
-            region(Territory.HIGH_PASS)
-            region(Territory.FORODWAITH)
+            startRegion = HIGH_PASS
+            region(HIGH_PASS)
+            region(FORODWAITH)
 
             spawnArmies {
-                army(Army.HERO_ARMY_1)
-                region = Territory.FANGORN
+                army(HERO_ARMY_1)
+                region = FANGORN
             }
 
             spawnArmies {
-                army(Army.HERO_ARMY_2)
-                region = Territory.GAP_OF_ROHAN
+                army(HERO_ARMY_2)
+                region = GAP_OF_ROHAN
             }
 
             spawnArmies {
-                army(Army.HERO_ARMY_3)
-                army(Army.GARRISON_ARMY_1)
-                region = Territory.HIGH_PASS
+                army(HERO_ARMY_3)
+                army(GARRISON_ARMY_1)
+                region = HIGH_PASS
             }
 
             spawnArmies {
-                army(Army.HERO_ARMY_5)
-                region = Territory.FORODWAITH
+                army(HERO_ARMY_5)
+                region = FORODWAITH
             }
 
             spawnBuildings {
-                building(Building.FARM)
-                building(Building.FARM)
-                region = Territory.HIGH_PASS
+                building(FARM)
+                building(FARM)
+                region = HIGH_PASS
             }
 
             spawnBuildings {
-                building(Building.FORTRESS)
-                building(Building.BARRACKS)
-                region = Territory.FORODWAITH
+                building(FORTRESS)
+                building(BARRACKS)
+                region = FORODWAITH
             }
         }
 
         ownershipSet {
             label = "Computer 4"
-            startRegion = Territory.DUNLAND
-            region(Territory.DUNLAND)
-            region(Territory.ARTHEDAIN)
+            startRegion = DUNLAND
+            region(DUNLAND)
+            region(ARTHEDAIN)
 
             spawnArmies {
-                army(Army.HERO_ARMY_1)
-                region = Territory.FANGORN
+                army(HERO_ARMY_1)
+                region = FANGORN
             }
 
             spawnArmies {
-                army(Army.HERO_ARMY_2)
-                region = Territory.GAP_OF_ROHAN
+                army(HERO_ARMY_2)
+                region = GAP_OF_ROHAN
             }
 
             spawnArmies {
-                army(Army.HERO_ARMY_3)
-                region = Territory.ARTHEDAIN
+                army(HERO_ARMY_3)
+                region = ARTHEDAIN
             }
 
             spawnArmies {
-                army(Army.HERO_ARMY_5)
-                army(Army.GARRISON_ARMY_1)
-                region = Territory.DUNLAND
+                army(HERO_ARMY_5)
+                army(GARRISON_ARMY_1)
+                region = DUNLAND
             }
 
             spawnBuildings {
-                building(Building.FARM)
-                building(Building.FARM)
-                region = Territory.DUNLAND
+                building(FARM)
+                building(FARM)
+                region = DUNLAND
             }
 
             spawnBuildings {
-                building(Building.FORTRESS)
-                building(Building.BARRACKS)
-                region = Territory.ARTHEDAIN
+                building(FORTRESS)
+                building(BARRACKS)
+                region = ARTHEDAIN
             }
         }
     }
 }
     .render()
-    .also(::println)

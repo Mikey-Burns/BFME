@@ -10,7 +10,8 @@ import java.io.File
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 fun main() {
     val text = twoCornerChaos()
-    File("S:\\Coding\\IdeaProjects\\BFME\\data\\ini\\campaigns\\scenarios\\wotrscenario101-gen.inc").writeText(text)
+    File("scenario-dsl/src/main/resources/data/ini/campaigns/scenarios/wotrscenario101-gen.inc")
+        .writeText(text)
 }
 
 private fun twoCornerChaos(): String = livingWorldCampaign {

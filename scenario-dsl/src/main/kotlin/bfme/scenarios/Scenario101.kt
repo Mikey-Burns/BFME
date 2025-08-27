@@ -80,13 +80,15 @@ fun twoCornerChaos(): String = livingWorldCampaign {
         defaultStart(DUNLAND)
 
         playerDefeatCondition {
-            teams(listOf(1, 2))
+            team(1)
+            team(2)
             loseIfCapitalLost = false
             numControlledRegionsLessOrEqualTo = -1
         }
 
         teamDefeatCondition {
-            teams(listOf(1, 2))
+            team(1)
+            team(2)
             numControlledRegionsLessOrEqualTo = -1
         }
 

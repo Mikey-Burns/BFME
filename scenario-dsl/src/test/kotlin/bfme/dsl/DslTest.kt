@@ -238,13 +238,15 @@ class DslTest {
                 maxPlayers = 6
 
                 playerDefeatCondition {
-                    teams(listOf(1, 2))
+                    team(1)
+                    team(2)
                     loseIfCapitalLost = false
                     numControlledRegionsLessOrEqualTo = -1
                 }
 
                 teamDefeatCondition {
-                    teams(listOf(1, 2))
+                    team(1)
+                    team(2)
                     numControlledRegionsLessOrEqualTo = -1
                 }
             }
@@ -426,13 +428,15 @@ class DslTest {
                 defaultStart(GAP_OF_ROHAN)
 
                 playerDefeatCondition {
-                    teams(listOf(1, 2))
+                    team(1)
+                    team(2)
                     loseIfCapitalLost = false
                     numControlledRegionsLessOrEqualTo = -1
                 }
 
                 teamDefeatCondition {
-                    teams(listOf(1, 2))
+                    team(1)
+                    team(2)
                     numControlledRegionsLessOrEqualTo = -1
                 }
 

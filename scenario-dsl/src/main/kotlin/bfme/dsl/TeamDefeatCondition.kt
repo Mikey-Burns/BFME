@@ -7,8 +7,12 @@ class TeamDefeatCondition : WotrElement {
     val teams: List<Int> get() = _teams.toList()
     var numControlledRegionsLessOrEqualTo = -1
 
-    fun teams(teams: List<Int>) {
-        _teams.addAll(teams)
+    /**
+     * Add a team to the defeat condition.
+     * Defeat conditions can apply to one or more teams.
+     */
+    fun team(team: Int) {
+        _teams.add(team)
     }
 
     override fun validate(): List<Violation> = buildList {

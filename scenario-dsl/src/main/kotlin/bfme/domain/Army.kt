@@ -1,5 +1,9 @@
 package bfme.domain
 
+/**
+ * Enumeration of the different armies we can spawn at the start of a scenario.
+ * When adding a new army here, it must also be added to data/ini/common/livingworlddefaultarmies.inc
+ */
 enum class Army(val codeName: String) {
     HERO_ARMY_1("HeroArmy1"),
     HERO_ARMY_2("HeroArmy2"),

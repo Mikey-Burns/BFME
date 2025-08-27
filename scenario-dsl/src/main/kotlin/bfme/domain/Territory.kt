@@ -1,5 +1,9 @@
 package bfme.domain
 
+/**
+ * Enumeration of the territories available in the world map.
+ * Note that some have special code names that should be used when written to a scenario file.
+ */
 enum class Territory(val codeName: String) {
     AMON_SUL("Amon_Sul"),
     ANFALAS("Anfalas"),

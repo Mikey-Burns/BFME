@@ -140,7 +140,7 @@ LivingWorldCampaign WOTRScenario101
             End
         End
 
-        ; Compuer 1
+        ; Computer 1
         OwnershipSet
             Regions = Fangorn Forlindon
             StartRegion = Fangorn

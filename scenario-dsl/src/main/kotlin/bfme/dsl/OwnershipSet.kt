@@ -1,6 +1,5 @@
 package bfme.dsl
 
-import bfme.domain.Faction
 import bfme.domain.Territory
 
 @WotrDsl

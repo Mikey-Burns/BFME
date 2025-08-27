@@ -5,6 +5,9 @@ import bfme.domain.Building.*
 import bfme.domain.Territory.*
 import bfme.dsl.livingWorldCampaign
 
+/**
+ * Generate the Fortress Defense scenario.
+ */
 fun fortressDefense(): String = livingWorldCampaign {
     name = "Fortress Defense"
     description =

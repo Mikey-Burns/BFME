@@ -5,6 +5,9 @@ import bfme.domain.Building.*
 import bfme.domain.Territory.*
 import bfme.dsl.livingWorldCampaign
 
+/**
+ * Generate the 2 Corner Chaos scenario.
+ */
 fun twoCornerChaos(): String = livingWorldCampaign {
     name = "2 Corner Chaos"
     description =

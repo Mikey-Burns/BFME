@@ -1,8 +1,6 @@
 //-------------------------------------------------------------------------------------------------
-// Scenario Name:        2 Corner Chaos
-// Scenario Description:    This is a 6 player game with preset starting locations where two humans are split between the north-east and south-west
-// Unavailable Territories:    None
-// # of Players:        6
+// Scenario Name: 2 Corner Chaos
+// Scenario Description: This is a 6 player game with preset starting locations where two humans are split between the north-east and south-west
 //-------------------------------------------------------------------------------------------------
 
 LivingWorldCampaign WOTRScenario101
@@ -13,20 +11,20 @@ LivingWorldCampaign WOTRScenario101
     #include "..\Common\LivingWorldDefaultRTSSettings.inc"
 
     Scenario
-        DisplayName         = LWScenario:WOTRScenario101
-        DisplayDescription     = LWScenario:WOTRScenario101Description
-        DisplayGameType     = LWScenario:WOTRGameType003
-        DisplayObjectives     = LWScenario:WOTRObjectives005
-        DisplayFiction         = LWScenario:WOTRScenarioFiction003
-        DisplayVictoriousText    = LWScenario:WOTRScenarioWin101
-        DisplayDefeatedText    = LWScenario:WOTRScenarioLose101
+        DisplayName = LWScenario:WOTRScenario101
+        DisplayDescription = LWScenario:WOTRScenario101Description
+        DisplayGameType = LWScenario:WOTRGameType003
+        DisplayObjectives = LWScenario:WOTRObjectives005
+        DisplayFiction = LWScenario:WOTRScenarioFiction003
+        DisplayVictoriousText = LWScenario:WOTRScenarioWin101
+        DisplayDefeatedText = LWScenario:WOTRScenarioLose101
 
         RegionCampaign = DefaultCampaign
 
         MinPlayers = 6
         MaxPlayers = 6
 
-        DisallowStartInRegions = Buckland Cair_Andros Celduin Dagorlad Dol_Guldur Enedwaith Erebor Ettenmoors Forlindon Anfalas Harad Harlindon Isengard Ithilien Minas_Morgul Minas_Tirith Minhiriath Mirkwood Mount_Doom Osgiliath Redhorn_Pass Rhun Rivendell The_Black_Gate The_Dead_Marshes The_Shire Tower_Hills Umbar Angmar Cardolan Carrock The_Brown_Lands Fornost Amon_Sul Lostriand Rhudaur Barrow_Downs CarnDum Forodwaith MountGundabad Grey_Havens Helms_Deep Arnor Mordor Rohan Lothlorien
+        DisallowStartInRegions = Amon_Sul Anfalas Angmar Arnor Barrow_Downs Buckland Cair_Andros Cardolan CarnDum Carrock Celduin Dagorlad Dol_Guldur Enedwaith Erebor Ettenmoors Forlindon Fornost Forodwaith Grey_Havens Harad Harlindon Helms_Deep Isengard Ithilien Lostriand Lothlorien Minas_Morgul Minas_Tirith Minhiriath Mirkwood Mordor MountGundabad Mount_Doom Osgiliath Redhorn_Pass Rhudaur Rhun Rivendell Rohan The_Black_Gate The_Brown_Lands The_Dead_Marshes The_Shire Tower_Hills Umbar
         DefaultStartSpots = Iron_Hills Belfalas Fangorn Gap_Of_Rohan High_Pass Dunland
 
         PlayerDefeatCondition
@@ -70,9 +68,6 @@ LivingWorldCampaign WOTRScenario101
             Teams = 2
         End
 
-        ;///////////////////
-        ; OwnershipSets
-        ;///////////////////
         ; Player One
         OwnershipSet
             Regions = Iron_Hills Anfalas
@@ -82,22 +77,27 @@ LivingWorldCampaign WOTRScenario101
                 Armies = HeroArmy1 GarrisonArmy1
                 Region = Iron_Hills
             End
+
             SpawnArmies
                 Armies = HeroArmy2
                 Region = Iron_Hills
             End
+
             SpawnArmies
                 Armies = HeroArmy3 GarrisonArmy1
                 Region = Belfalas
             End
+
             SpawnArmies
                 Armies = HeroArmy4
                 Region = Belfalas
             End
+
             SpawnBuildings
                 Buildings = LW_FORT LW_ARMORY LW_BARRACKS
                 Region = Iron_Hills
             End
+
             SpawnBuildings
                 Buildings = LW_FORT LW_BARRACKS
                 Region = Anfalas
@@ -113,22 +113,27 @@ LivingWorldCampaign WOTRScenario101
                 Armies = HeroArmy1 GarrisonArmy1
                 Region = Belfalas
             End
+
             SpawnArmies
                 Armies = HeroArmy2
                 Region = Belfalas
             End
+
             SpawnArmies
                 Armies = HeroArmy3 GarrisonArmy1
                 Region = Iron_Hills
             End
+
             SpawnArmies
                 Armies = HeroArmy4
                 Region = Iron_Hills
             End
+
             SpawnBuildings
                 Buildings = LW_FORT LW_ARMORY LW_BARRACKS
                 Region = Belfalas
             End
+
             SpawnBuildings
                 Buildings = LW_FORT LW_ARMORY LW_BARRACKS
                 Region = Rhun
@@ -144,27 +149,33 @@ LivingWorldCampaign WOTRScenario101
                 Armies = HeroArmy1 GarrisonArmy1
                 Region = Fangorn
             End
+
             SpawnArmies
                 Armies = HeroArmy2
                 Region = Forlindon
             End
+
             SpawnArmies
                 Armies = HeroArmy3
                 Region = High_Pass
             End
+
             SpawnArmies
                 Armies = HeroArmy4
                 Region = Dunland
             End
+
             SpawnBuildings
                 Buildings = LW_FARM LW_FARM
                 Region = Fangorn
             End
+
             SpawnBuildings
                 Buildings = LW_FORT LW_BARRACKS
                 Region = Forlindon
             End
         End
+
         ; Computer 2
         OwnershipSet
             Regions = Gap_Of_Rohan Harlindon
@@ -174,27 +185,33 @@ LivingWorldCampaign WOTRScenario101
                 Armies = HeroArmy1
                 Region = Harlindon
             End
+
             SpawnArmies
                 Armies = HeroArmy2 GarrisonArmy1
                 Region = Gap_Of_Rohan
             End
+
             SpawnArmies
                 Armies = HeroArmy3
                 Region = High_Pass
             End
+
             SpawnArmies
                 Armies = HeroArmy4
                 Region = Dunland
             End
+
             SpawnBuildings
                 Buildings = LW_FARM LW_FARM
                 Region = Gap_Of_Rohan
             End
+
             SpawnBuildings
                 Buildings = LW_FORT LW_BARRACKS
                 Region = Harlindon
             End
         End
+
         ; Computer 3
         OwnershipSet
             Regions = High_Pass Forodwaith
@@ -204,27 +221,33 @@ LivingWorldCampaign WOTRScenario101
                 Armies = HeroArmy1
                 Region = Fangorn
             End
+
             SpawnArmies
                 Armies = HeroArmy2
                 Region = Gap_Of_Rohan
             End
+
             SpawnArmies
                 Armies = HeroArmy3 GarrisonArmy1
                 Region = High_Pass
             End
+
             SpawnArmies
                 Armies = HeroArmy4
                 Region = Forodwaith
             End
+
             SpawnBuildings
                 Buildings = LW_FARM LW_FARM
                 Region = High_Pass
             End
+
             SpawnBuildings
                 Buildings = LW_FORT LW_BARRACKS
                 Region = Forodwaith
             End
         End
+
         ; Computer 4
         OwnershipSet
             Regions = Dunland Arnor
@@ -234,22 +257,27 @@ LivingWorldCampaign WOTRScenario101
                 Armies = HeroArmy1
                 Region = Fangorn
             End
+
             SpawnArmies
                 Armies = HeroArmy2
                 Region = Gap_Of_Rohan
             End
+
             SpawnArmies
                 Armies = HeroArmy3
                 Region = Arnor
             End
+
             SpawnArmies
                 Armies = HeroArmy4 GarrisonArmy1
                 Region = Dunland
             End
+
             SpawnBuildings
                 Buildings = LW_FARM LW_FARM
                 Region = Dunland
             End
+
             SpawnBuildings
                 Buildings = LW_FORT LW_BARRACKS
                 Region = Arnor
@@ -263,11 +291,6 @@ LivingWorldCampaign WOTRScenario101
 
         ;///////////////// Armies ////////////////
         #include "..\Common\LivingWorldDefaultArmies.inc"
-
-
-        ;//////////////// Cities (Yes, this is a hack for mouse over movies.) ////////////////
-        //#include "..\Common\LivingWorldCities.inc"
-
 
         ;//////////////// VISUAL FLUFF ////////////////
         EyeTowerPoints

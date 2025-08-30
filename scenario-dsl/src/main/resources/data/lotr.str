@@ -61643,5 +61643,13 @@ LWScenario:WOTRScenario103
 END
 
 LWScenario:WOTRScenario103Description
-"# Of Players: 6\nObjective: Begin with control of the fortesses of Middle Earth, but no heroes nearby.\nSend your armies forth to defend your lands."
+"# Of Players: 6\nObjective: Begin with control of the fortresses of Middle Earth, but no heroes nearby.\nSend your armies forth to defend your lands."
+END
+
+LWScenario:WOTRScenario104
+"Testing scenario"
+END
+
+LWScenario:WOTRScenario104Description
+"Scenario to test stuff out"
 END

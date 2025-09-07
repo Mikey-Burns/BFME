@@ -109,8 +109,8 @@ fun fortressDefense(): String = livingWorldCampaign {
         ownershipSet {
             label = "Player One"
             startRegion = THE_SHIRE
-            region(AMON_SUL)
             region(DOL_GULDUR)
+            region(FORNOST)
             region(HELMS_DEEP)
             region(MINAS_MORGUL)
             region(RIVENDELL)
@@ -213,9 +213,9 @@ fun fortressDefense(): String = livingWorldCampaign {
         ownershipSet {
             label = "Player Two"
             startRegion = MINAS_TIRITH
+            region(AMON_SUL)
             region(CARN_DUM)
             region(EREBOR)
-            region(FORNOST)
             region(ISENGARD)
             region(MINAS_TIRITH)
 

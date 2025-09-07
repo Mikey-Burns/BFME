@@ -61646,10 +61646,10 @@ LWScenario:WOTRScenario103Description
 "# Of Players: 6\nObjective: Begin with control of the fortresses of Middle Earth, but no heroes nearby.\nSend your armies forth to defend your lands."
 END
 
-LWScenario:WOTRScenario104
+LWScenario:WOTRScenario200
 "Testing scenario"
 END
 
-LWScenario:WOTRScenario104Description
+LWScenario:WOTRScenario200Description
 "Scenario to test stuff out"
 END

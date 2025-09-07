@@ -3,7 +3,7 @@
 // Scenario Description: Act Testing
 //-------------------------------------------------------------------------------------------------
 
-LivingWorldCampaign WOTRScenario104
+LivingWorldCampaign WOTRScenario200
 
     IsEvilCampaign = No
 
@@ -11,8 +11,8 @@ LivingWorldCampaign WOTRScenario104
     #include "..\Common\LivingWorldDefaultRTSSettings.inc"
 
     Scenario
-        DisplayName = LWScenario:WOTRScenario104
-        DisplayDescription = LWScenario:WOTRScenario104Description
+        DisplayName = LWScenario:WOTRScenario200
+        DisplayDescription = LWScenario:WOTRScenario200Description
         DisplayGameType = LWScenario:WOTRGameType003
         DisplayObjectives = LWScenario:WOTRObjectives005
         DisplayFiction = LWScenario:WOTRScenarioFiction003
@@ -94,12 +94,12 @@ LivingWorldCampaign WOTRScenario104
             End
 
             SpawnBuildings
-                Buildings = LW_FORT LW_ARMORY LW_BARRACKS
+                Buildings = LW_BARRACKS LW_SUPER_FARM
                 Region = Iron_Hills
             End
 
             SpawnBuildings
-                Buildings = LW_FORT LW_BARRACKS
+                Buildings = LW_FORT LW_SUPER_FARM
                 Region = Anfalas
             End
         End
@@ -130,12 +130,12 @@ LivingWorldCampaign WOTRScenario104
             End
 
             SpawnBuildings
-                Buildings = LW_FORT LW_ARMORY LW_BARRACKS
+                Buildings = LW_BARRACKS LW_SUPER_FARM
                 Region = Belfalas
             End
 
             SpawnBuildings
-                Buildings = LW_FORT LW_ARMORY LW_BARRACKS
+                Buildings = LW_BARRACKS LW_SUPER_FARM
                 Region = Rhun
             End
         End
@@ -166,7 +166,7 @@ LivingWorldCampaign WOTRScenario104
             End
 
             SpawnBuildings
-                Buildings = LW_FARM LW_FARM
+                Buildings = LW_FARM LW_SUPER_FARM
                 Region = Fangorn
             End
 
@@ -202,7 +202,7 @@ LivingWorldCampaign WOTRScenario104
             End
 
             SpawnBuildings
-                Buildings = LW_FARM LW_FARM
+                Buildings = LW_FARM LW_SUPER_FARM
                 Region = Gap_Of_Rohan
             End
 
@@ -238,7 +238,7 @@ LivingWorldCampaign WOTRScenario104
             End
 
             SpawnBuildings
-                Buildings = LW_FARM LW_FARM
+                Buildings = LW_FARM LW_SUPER_FARM
                 Region = High_Pass
             End
 
@@ -274,7 +274,7 @@ LivingWorldCampaign WOTRScenario104
             End
 
             SpawnBuildings
-                Buildings = LW_FARM LW_FARM
+                Buildings = LW_FARM LW_SUPER_FARM
                 Region = Dunland
             End
 
@@ -309,6 +309,29 @@ LivingWorldCampaign WOTRScenario104
     End
 
     Act Two
+        SpawnArmy
+            ScriptingName = ExtraArmy
+            SpawnForTemplates = PlayerMen
+            PlayerArmy = MenOfTheWest_FortressAttackArmy
+            Icon = MoWArmyIcon
+            SpawnAtActStart = Yes
+        End
+        SpawnArmy
+            ScriptingName = ExtraArmy
+            SpawnForTemplates = PlayerElves
+            PlayerArmy = Elven_FortressAttackArmy
+            Icon = ElfArmyIcon
+            SpawnAtActStart = Yes
+        End
+        SpawnArmy
+            ScriptingName = ExtraArmy
+            SpawnForTemplates = PlayerDwarves
+            PlayerArmy = Dwarven_FortressAttackArmy
+            Icon = DwarfArmyIcon
+            SpawnAtActStart = Yes
+        End
+    End
+    Act Three
         SpawnArmy
             ScriptingName = ExtraArmy
             SpawnForTemplates = PlayerElves

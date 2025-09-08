@@ -50,7 +50,7 @@ LivingWorldCampaign WOTRScenario103
 
         ; Player One
         OwnershipSet
-            Regions = Amon_Sul Dol_Guldur Helms_Deep Minas_Morgul Rivendell The_Shire
+            Regions = Dol_Guldur Fornost Helms_Deep Minas_Morgul Rivendell The_Shire
             StartRegion = The_Shire
 
             SpawnArmies
@@ -141,7 +141,7 @@ LivingWorldCampaign WOTRScenario103
 
         ; Player Two
         OwnershipSet
-            Regions = CarnDum Erebor Fornost Isengard Minas_Tirith
+            Regions = Amon_Sul CarnDum Erebor Isengard Minas_Tirith
             StartRegion = Minas_Tirith
 
             SpawnArmies

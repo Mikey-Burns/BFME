@@ -61729,6 +61729,14 @@ LWScenario:WOTRScenario103Description
 "# Of Players: 6\nObjective: Begin with control of the fortresses of Middle Earth, but no heroes nearby.\nSend your armies forth to defend your lands."
 END
 
+LWScenario:WOTRScenario104
+"Fortress Defense - Escalation"
+END
+
+LWScenario:WOTRScenario104Description
+"# Of Players: 6\nObjective: Begin with control of the fortresses of Middle Earth, but no heroes nearby.\nSend your armies forth to defend your lands.\nThe AI will spawn increasingly large armies in their home bases for 10 turns, even if the territory has been captured."
+END
+
 LWScenario:WOTRScenario200
 "Testing scenario"
 END

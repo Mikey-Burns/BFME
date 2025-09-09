@@ -23801,6 +23801,17 @@ CONTROLBAR:LW_ToolTip_GondorFarm
 "Structure Type: Farm\nIncreases treasury\n"
 END
 
+CONTROLBAR:LW_Structure_GondorSuperFarm
+"Enhanced Farm"
+END
+
+CONTROLBAR:LW_ToolTipBuild_GondorSuperFarm
+"Structure Type: Enhanced Farm\nGrealy increases treasury\n"
+END
+
+CONTROLBAR:LW_ToolTip_GondorSuperFarm
+"Structure Type: Enhanced Farm\nGreatly increases treasury\n"
+END
 
 /////////// MOW Units ////////////
 
@@ -24088,6 +24099,18 @@ CONTROLBAR:LW_ToolTip_ElvenMallornTree
 "Structure Type: Farm\nIncreases treasury\n"
 END
 
+CONTROLBAR:LW_Structure_ElvenSuperMallornTree
+"Enhanced Mallorn Tree"
+END
+
+CONTROLBAR:LW_ToolTipBuild_ElvenSuperMallornTree
+"Structure Type: Enhanced Farm\nGreatly increases treasury\n"
+END
+
+CONTROLBAR:LW_ToolTip_ElvenSuperMallornTree
+"Structure Type: Enhanced Farm\nGreatly increases treasury\n"
+END
+
 
 ////////// Elven Units ///////////
 
@@ -24298,6 +24321,18 @@ CONTROLBAR:LW_ToolTip_DwarvenMineShaft
 "Structure Type: Farm\nIncreases treasury\n"
 END
 
+CONTROLBAR:LW_Structure_DwarvenSuperMineShaft
+"Enhanced Mine Shaft"
+END
+
+CONTROLBAR:LW_ToolTipBuild_DwarvenSuperMineShaft
+"Structure Type: Enhanced Farm\nGreatly increases treasury\n"
+END
+
+CONTROLBAR:LW_ToolTip_DwarvenSuperMineShaft
+"Structure Type: Enhanced Farm\nGreatly increases treasury\n"
+END
+
 
 ///////// Dwarven Units //////////
 
@@ -24426,6 +24461,18 @@ END
 
 CONTROLBAR:LW_ToolTip_MordorSlaughterhouse
 "Structure Type: Farm\nIncreases treasury\n"
+END
+
+CONTROLBAR:LW_Structure_MordorSuperSlaughterhouse
+"Enhanced Slaughterhouse"
+END
+
+CONTROLBAR:LW_ToolTipBuild_MordorSuperSlaughterhouse
+"Structure Type: Enhanced Farm\nGreatly increases treasury\n"
+END
+
+CONTROLBAR:LW_ToolTip_MordorSuperSlaughterhouse
+"Structure Type: Enhanced Farm\nGreatly increases treasury\n"
 END
 
 
@@ -24673,6 +24720,18 @@ CONTROLBAR:LW_ToolTip_IsengardFurnace
 "Structure Type: Farm\nIncreases treasury\n"
 END
 
+CONTROLBAR:LW_Structure_IsengardSuperFurnace
+"Enhanced Furnace"
+END
+
+CONTROLBAR:LW_ToolTipBuild_IsengardSuperFurnace
+"Structure Type: Enhanced Farm\nGreatly increases treasury\n"
+END
+
+CONTROLBAR:LW_ToolTip_IsengardSuperFurnace
+"Structure Type: Enhanced Farm\nGreatly increases treasury\n"
+END
+
 
 ///////// Isengard Units /////////
 
@@ -24839,6 +24898,18 @@ END
 
 CONTROLBAR:LW_ToolTip_WildDefiledMineShaft
 "Structure Type: Farm\nIncreases treasury\n"
+END
+
+CONTROLBAR:LW_Structure_WildSuperDefiledMineShaft
+"Enhanced Tunnel"
+END
+
+CONTROLBAR:LW_ToolTipBuild_WildSuperDefiledMineShaft
+"Structure Type: Enhanced Farm\nGreatly increases treasury\n"
+END
+
+CONTROLBAR:LW_ToolTip_WildSuperDefiledMineShaft
+"Structure Type: Enhanced Farm\nGreatly increases treasury\n"
 END
 
 
@@ -42421,6 +42492,18 @@ END
 
 CONTROLBAR:LW_ToolTip_AngmarFarm
 "Structure Type: Farm\nIncreases treasury\n"
+END
+
+CONTROLBAR:LW_Structure_AngmarSuperFarm
+"Enhanced Mill"
+END
+
+CONTROLBAR:LW_ToolTipBuild_AngmarSuperFarm
+"Structure Type: Enhanced Farm\nGreatly increases treasury\n"
+END
+
+CONTROLBAR:LW_ToolTip_AngmarSuperFarm
+"Structure Type: Enhanced Farm\nGreatly increases treasury\n"
 END
 
 
@@ -61643,5 +61726,21 @@ LWScenario:WOTRScenario103
 END
 
 LWScenario:WOTRScenario103Description
-"# Of Players: 6\nObjective: Begin with control of the fortesses of Middle Earth, but no heroes nearby.\nSend your armies forth to defend your lands."
+"# Of Players: 6\nObjective: Begin with control of the fortresses of Middle Earth, but no heroes nearby.\nSend your armies forth to defend your lands."
+END
+
+LWScenario:WOTRScenario104
+"Fortress Defense - Escalation"
+END
+
+LWScenario:WOTRScenario104Description
+"# Of Players: 6\nObjective: Begin with control of the fortresses of Middle Earth, but no heroes nearby.\nSend your armies forth to defend your lands.\nThe AI will spawn increasingly large armies in their home bases for 10 turns, even if the territory has been captured."
+END
+
+LWScenario:WOTRScenario200
+"Testing scenario"
+END
+
+LWScenario:WOTRScenario200Description
+"Scenario to test stuff out"
 END

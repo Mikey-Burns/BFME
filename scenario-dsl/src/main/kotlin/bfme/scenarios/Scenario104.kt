@@ -2,21 +2,24 @@ package bfme.scenarios
 
 import bfme.domain.Army.*
 import bfme.domain.Building.*
+import bfme.domain.Faction
+import bfme.domain.Faction.DWARVES
 import bfme.domain.Territory.*
 import bfme.dsl.livingWorldCampaign
 
 /**
  * Generate the Fortress Defense scenario.
  */
-fun fortressDefense(): String = livingWorldCampaign {
-    name = "Fortress Defense"
+fun fortressDefenseEscalation(): String = livingWorldCampaign {
+    name = "Fortress Defense - Escalation"
     description =
-        "This is a 6 player game with preset starting locations where the humans control the fortresses, and the AI control the rest."
-    number = 103
+        "This is a 6 player game with preset starting locations where the humans control the fortresses, and the AI control the rest." +
+                "\n// The AI spawns increasingly large armies every turn in their home bases for 10 turns, even if the territory has been captured."
+    number = 104
 
     scenario {
-        name = "LWScenario:WOTRScenario103"
-        description = "LWScenario:WOTRScenario103Description"
+        name = "LWScenario:WOTRScenario104"
+        description = "LWScenario:WOTRScenario104Description"
         gameType = "LWScenario:WOTRGameType003"
         objectives = "LWScenario:WOTRObjectives005"
         fiction = "LWScenario:WOTRScenarioFiction003"
@@ -29,6 +32,7 @@ fun fortressDefense(): String = livingWorldCampaign {
         disallowStart(ANGMAR)
         disallowStart(ARTHEDAIN)
         disallowStart(BARROW_DOWNS)
+        disallowStart(BELFALAS)
         disallowStart(CAIR_ANDROS)
         disallowStart(CARDOLAN)
         disallowStart(CARN_DUM)
@@ -43,12 +47,12 @@ fun fortressDefense(): String = livingWorldCampaign {
         disallowStart(FORLINDON)
         disallowStart(FORNOST)
         disallowStart(FORODWAITH)
+        disallowStart(GAP_OF_ROHAN)
         disallowStart(GREY_HAVENS)
         disallowStart(HARAD)
         disallowStart(HARLINDON)
         disallowStart(HELMS_DEEP)
         disallowStart(HIGH_PASS)
-        disallowStart(IRON_HILLS)
         disallowStart(ISENGARD)
         disallowStart(ITHILIEN)
         disallowStart(LORIEN)
@@ -57,7 +61,6 @@ fun fortressDefense(): String = livingWorldCampaign {
         disallowStart(MINHIRIATH)
         disallowStart(MIRKWOOD)
         disallowStart(MORDOR)
-        disallowStart(MOUNT_DOOM)
         disallowStart(MOUNT_GUNDABAD)
         disallowStart(NORTH_DOWNS)
         disallowStart(OSGILIATH)
@@ -74,10 +77,10 @@ fun fortressDefense(): String = livingWorldCampaign {
 
         defaultStart(THE_SHIRE)
         defaultStart(MINAS_TIRITH)
-        defaultStart(ANFALAS)
-        defaultStart(BELFALAS)
+        defaultStart(MOUNT_DOOM)
+        defaultStart(IRON_HILLS)
         defaultStart(FANGORN)
-        defaultStart(GAP_OF_ROHAN)
+        defaultStart(ANFALAS)
 
         playerDefeatCondition {
             team(1)
@@ -94,16 +97,56 @@ fun fortressDefense(): String = livingWorldCampaign {
 
         startingRestriction {
             region(THE_SHIRE)
+            teams = 1
+            faction(Faction.MEN)
+            faction(Faction.ELVES)
+        }
+
+        startingRestriction {
             region(MINAS_TIRITH)
             teams = 1
+            faction(Faction.MEN)
+            faction(Faction.ELVES)
+        }
+
+        startingRestriction {
+            region(MOUNT_DOOM)
+            teams = 2
+            faction(Faction.MORDOR)
+            faction(DWARVES)
+            faction(Faction.ISENGARD)
+            faction(Faction.ANGMAR)
+            faction(Faction.GOBLINS)
+        }
+
+        startingRestriction {
+            region(IRON_HILLS)
+            teams = 2
+            faction(Faction.MORDOR)
+            faction(DWARVES)
+            faction(Faction.ISENGARD)
+            faction(Faction.ANGMAR)
+            faction(Faction.GOBLINS)
+        }
+
+        startingRestriction {
+            region(FANGORN)
+            teams = 2
+            faction(Faction.MORDOR)
+            faction(DWARVES)
+            faction(Faction.ISENGARD)
+            faction(Faction.ANGMAR)
+            faction(Faction.GOBLINS)
         }
 
         startingRestriction {
             region(ANFALAS)
-            region(BELFALAS)
-            region(FANGORN)
-            region(GAP_OF_ROHAN)
             teams = 2
+            faction(Faction.MORDOR)
+            faction(DWARVES)
+            faction(Faction.ISENGARD)
+            faction(Faction.ANGMAR)
+            faction(Faction.GOBLINS)
         }
 
         ownershipSet {
@@ -179,27 +222,27 @@ fun fortressDefense(): String = livingWorldCampaign {
 
             spawnBuildings {
                 building(FORTRESS)
-                building(FARM)
+                building(SUPER_FARM)
                 region = AMON_SUL
             }
 
             spawnBuildings {
-                building(FARM)
+                building(SUPER_FARM)
                 region = DOL_GULDUR
             }
 
             spawnBuildings {
-                building(FARM)
+                building(SUPER_FARM)
                 region = HELMS_DEEP
             }
 
             spawnBuildings {
-                building(FARM)
+                building(SUPER_FARM)
                 region = MINAS_MORGUL
             }
 
             spawnBuildings {
-                building(FARM)
+                building(SUPER_FARM)
                 region = RIVENDELL
             }
 
@@ -281,36 +324,34 @@ fun fortressDefense(): String = livingWorldCampaign {
             }
 
             spawnBuildings {
-                building(FARM)
+                building(SUPER_FARM)
                 region = CARN_DUM
             }
 
             spawnBuildings {
-                building(FARM)
+                building(SUPER_FARM)
                 region = EREBOR
             }
 
             spawnBuildings {
-                building(FARM)
+                building(SUPER_FARM)
                 region = FORNOST
             }
 
             spawnBuildings {
-                building(FARM)
+                building(SUPER_FARM)
                 region = ISENGARD
             }
 
             spawnBuildings {
-                building(FARM)
+                building(SUPER_FARM)
                 region = MINAS_TIRITH
             }
         }
 
         ownershipSet {
             label = "Computer 1"
-            startRegion = ANFALAS
-            region(ANFALAS)
-            region(IRON_HILLS)
+            startRegion = MOUNT_DOOM
             region(ANGMAR)
             region(CAIR_ANDROS)
             region(BARROW_DOWNS)
@@ -318,12 +359,14 @@ fun fortressDefense(): String = livingWorldCampaign {
             region(ETTENMOORS)
             region(HIGH_PASS)
             region(MIRKWOOD)
+            region(MOUNT_DOOM)
             region(REDHORN_PASS)
+            region(RHUN)
 
             spawnArmies {
                 army(HERO_ARMY_1)
                 army(FORTRESS_ATTACK_ARMY)
-                region = NORTH_DOWNS
+                region = MOUNT_DOOM
             }
 
             spawnArmies {
@@ -347,20 +390,7 @@ fun fortressDefense(): String = livingWorldCampaign {
             spawnArmies {
                 army(HERO_ARMY_5)
                 army(FORTRESS_ATTACK_ARMY)
-                region = THE_DEAD_MARSHES
-            }
-
-            spawnBuildings {
-                building(FORTRESS)
-                building(FARM)
-                region = ANFALAS
-            }
-
-            spawnBuildings {
-                building(FORTRESS)
-                building(FARM)
-                building(BARRACKS)
-                region = IRON_HILLS
+                region = ROHAN
             }
 
             spawnBuildings {
@@ -407,23 +437,36 @@ fun fortressDefense(): String = livingWorldCampaign {
 
             spawnBuildings {
                 building(FORTRESS)
+                building(FARM)
+                region = MOUNT_DOOM
+            }
+
+            spawnBuildings {
+                building(FORTRESS)
                 region = REDHORN_PASS
+            }
+
+            spawnBuildings {
+                building(FORTRESS)
+                building(FARM)
+                building(BARRACKS)
+                region = RHUN
             }
         }
 
         ownershipSet {
             label = "Computer 2"
-            startRegion = BELFALAS
+            startRegion = IRON_HILLS
             region(BELFALAS)
             region(THE_BLACK_GATE)
-            region(MOUNT_DOOM)
             region(ARTHEDAIN)
             region(NORTH_DOWNS)
             region(DAGORLAD)
             region(HARAD)
             region(LOSTRIAND)
             region(MORDOR)
-            region(RHUDAUR)
+            region(IRON_HILLS)
+            region(UMBAR)
 
             spawnArmies {
                 army(HERO_ARMY_1)
@@ -434,7 +477,7 @@ fun fortressDefense(): String = livingWorldCampaign {
             spawnArmies {
                 army(HERO_ARMY_2)
                 army(FORTRESS_ATTACK_ARMY)
-                region = MIRKWOOD
+                region = IRON_HILLS
             }
 
             spawnArmies {
@@ -465,12 +508,6 @@ fun fortressDefense(): String = livingWorldCampaign {
             spawnBuildings {
                 building(FORTRESS)
                 region = THE_BLACK_GATE
-            }
-
-            spawnBuildings {
-                building(FORTRESS)
-                building(FARM)
-                region = MOUNT_DOOM
             }
 
             spawnBuildings {
@@ -514,7 +551,14 @@ fun fortressDefense(): String = livingWorldCampaign {
             spawnBuildings {
                 building(FORTRESS)
                 building(FARM)
-                region = RHUDAUR
+                building(BARRACKS)
+                region = IRON_HILLS
+            }
+
+            spawnBuildings {
+                building(FORTRESS)
+                building(FARM)
+                region = UMBAR
             }
         }
 
@@ -523,7 +567,6 @@ fun fortressDefense(): String = livingWorldCampaign {
             startRegion = FANGORN
             region(FANGORN)
             region(THE_BROWN_LANDS)
-            region(RHUN)
             region(FORLINDON)
             region(CARDOLAN)
             region(DUNLAND)
@@ -531,6 +574,7 @@ fun fortressDefense(): String = livingWorldCampaign {
             region(LORIEN)
             region(MOUNT_GUNDABAD)
             region(ROHAN)
+            region(RHUDAUR)
 
             spawnArmies {
                 army(HERO_ARMY_1)
@@ -559,7 +603,7 @@ fun fortressDefense(): String = livingWorldCampaign {
             spawnArmies {
                 army(HERO_ARMY_5)
                 army(FORTRESS_ATTACK_ARMY)
-                region = THE_DEAD_MARSHES
+                region = DAGORLAD
             }
 
             spawnBuildings {
@@ -622,11 +666,17 @@ fun fortressDefense(): String = livingWorldCampaign {
                 building(FARM)
                 region = ROHAN
             }
+
+            spawnBuildings {
+                building(FORTRESS)
+                building(FARM)
+                region = RHUDAUR
+            }
         }
 
         ownershipSet {
             label = "Computer 4"
-            startRegion = GAP_OF_ROHAN
+            startRegion = ANFALAS
             region(GAP_OF_ROHAN)
             region(THE_DEAD_MARSHES)
             region(GREY_HAVENS)
@@ -637,7 +687,7 @@ fun fortressDefense(): String = livingWorldCampaign {
             region(MINHIRIATH)
             region(OSGILIATH)
             region(TOWER_HILLS)
-            region(UMBAR)
+            region(ANFALAS)
 
             spawnArmies {
                 army(HERO_ARMY_1)
@@ -666,7 +716,7 @@ fun fortressDefense(): String = livingWorldCampaign {
             spawnArmies {
                 army(HERO_ARMY_5)
                 army(FORTRESS_ATTACK_ARMY)
-                region = GAP_OF_ROHAN
+                region = FORODWAITH
             }
 
             spawnBuildings {
@@ -731,9 +781,33 @@ fun fortressDefense(): String = livingWorldCampaign {
             spawnBuildings {
                 building(FORTRESS)
                 building(FARM)
-                region = UMBAR
+                region = ANFALAS
             }
         }
     }
+
+    val teamTwoFactions = (Faction.entries - Faction.ELVES - Faction.MEN)
+
+    listOf(
+        listOf("Two", "Three", "Four"),
+        listOf("Five", "Six", "Seven"),
+        listOf("Eight", "Nine", "Ten")
+    )
+        .forEachIndexed { index, turns ->
+            turns.forEach { turnNumber ->
+                act {
+                    number = turnNumber
+                    teamTwoFactions.forEach { myFaction ->
+                        repeat(index + 1) {
+                            armyEntry {
+                                name = "ExtraArmy"
+                                faction = myFaction
+                                army = FORTRESS_ATTACK_ARMY
+                            }
+                        }
+                    }
+                }
+            }
+        }
 }
     .render()

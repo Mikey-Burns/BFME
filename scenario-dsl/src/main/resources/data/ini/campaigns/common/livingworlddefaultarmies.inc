@@ -9,7 +9,7 @@
 
 SpawnArmy
     ScriptingName = HeroArmy1
-    //SpawnAtActStart = No                // Default is "Yes". If set to "No", then this army will only be spawned if directed to do so elsewhere (such as when an Ownership spawns an army).
+    SpawnAtActStart = No                // Default is "Yes". If set to "No", then this army will only be spawned if directed to do so elsewhere (such as when an Ownership spawns an army).
     SpawnForTemplates = PlayerMen            // Required for armies, not allowed for cities.
     HeroTemplateName = GondorAragornMP
     PlayerArmy = AragornPlayerArmy
@@ -20,6 +20,7 @@ End
 
 SpawnArmy
     ScriptingName = HeroArmy2
+    SpawnAtActStart = No
     SpawnForTemplates = PlayerMen
     HeroTemplateName = RohanTheoden
     PlayerArmy = TheodenPlayerArmy
@@ -29,6 +30,7 @@ End
 
 SpawnArmy
     ScriptingName = HeroArmy3
+    SpawnAtActStart = No
     SpawnForTemplates = PlayerMen
     HeroTemplateName = GondorBoromir
     PlayerArmy = BoromirPlayerArmy
@@ -48,6 +50,7 @@ End
 
 SpawnArmy
     ScriptingName = HeroArmy5
+    SpawnAtActStart = No
     SpawnForTemplates = PlayerMen
     HeroTemplateName = CreateAHero
     PlayerArmy = MoW_CreateAHeroArmy
@@ -57,6 +60,7 @@ End
 
 SpawnArmy
     ScriptingName = GarrisonArmy1
+    SpawnAtActStart = No
     SpawnForTemplates = PlayerMen
     PlayerArmy = MenOfTheWest_StartingArmy
     Icon = MoWArmyIcon
@@ -64,6 +68,7 @@ End
 
 SpawnArmy
     ScriptingName = FortressDefenseArmy
+    SpawnAtActStart = No
     SpawnForTemplates = PlayerMen
     PlayerArmy = MenOfTheWest_FortressDefenseArmy
     Icon = MoWArmyIcon
@@ -71,6 +76,7 @@ End
 
 SpawnArmy
     ScriptingName = FortressAttackArmy
+    SpawnAtActStart = No
     SpawnForTemplates = PlayerMen
     PlayerArmy = MenOfTheWest_FortressAttackArmy
     Icon = MoWArmyIcon
@@ -83,6 +89,7 @@ End
 
 SpawnArmy
     ScriptingName = HeroArmy1
+    SpawnAtActStart = No
     SpawnForTemplates = PlayerElves
     HeroTemplateName = ElvenThranduil
     PlayerArmy = ThranduilPlayerArmy
@@ -92,6 +99,7 @@ End
 
 SpawnArmy
     ScriptingName = HeroArmy2
+    SpawnAtActStart = No
     SpawnForTemplates = PlayerElves
     HeroTemplateName = ElvenElrond
     PlayerArmy = ElrondPlayerArmy
@@ -101,6 +109,7 @@ End
 
 SpawnArmy
     ScriptingName = HeroArmy3
+    SpawnAtActStart = No
     SpawnForTemplates = PlayerElves
     HeroTemplateName = ElvenHaldir
     PlayerArmy = HaldirPlayerArmy
@@ -120,6 +129,7 @@ End
 
 SpawnArmy
     ScriptingName = HeroArmy5
+    SpawnAtActStart = No
     SpawnForTemplates = PlayerElves
     HeroTemplateName = CreateAHero
     PlayerArmy = Elven_CreateAHeroArmy
@@ -129,6 +139,7 @@ End
 
 SpawnArmy
     ScriptingName = GarrisonArmy1
+    SpawnAtActStart = No
     SpawnForTemplates = PlayerElves
     PlayerArmy = Elven_StartingArmy
     Icon = ElfArmyIcon
@@ -136,6 +147,7 @@ End
 
 SpawnArmy
     ScriptingName = FortressDefenseArmy
+    SpawnAtActStart = No
     SpawnForTemplates = PlayerElves
     PlayerArmy = Elven_FortressDefenseArmy
     Icon = ElfArmyIcon
@@ -143,6 +155,7 @@ End
 
 SpawnArmy
     ScriptingName = FortressAttackArmy
+    SpawnAtActStart = No
     SpawnForTemplates = PlayerElves
     PlayerArmy = Elven_FortressAttackArmy
     Icon = ElfArmyIcon
@@ -155,6 +168,7 @@ End
 
 SpawnArmy
     ScriptingName = HeroArmy1
+    SpawnAtActStart = No
     SpawnForTemplates = PlayerDwarves
     HeroTemplateName = DwarvenGimli
     PlayerArmy = GimliPlayerArmy
@@ -164,6 +178,7 @@ End
 
 SpawnArmy
     ScriptingName = HeroArmy2
+    SpawnAtActStart = No
     SpawnForTemplates = PlayerDwarves
     HeroTemplateName = DwarvenDain
     PlayerArmy = DainPlayerArmy
@@ -173,6 +188,7 @@ End
 
 SpawnArmy
     ScriptingName = HeroArmy3
+    SpawnAtActStart = No
     SpawnForTemplates = PlayerDwarves
     HeroTemplateName = DwarvenGloin
     PlayerArmy = GloinPlayerArmy
@@ -192,6 +208,7 @@ End
 
 SpawnArmy
     ScriptingName = HeroArmy5
+    SpawnAtActStart = No
     SpawnForTemplates = PlayerDwarves
     HeroTemplateName = CreateAHero
     PlayerArmy = Dwarven_CreateAHeroArmy
@@ -201,6 +218,7 @@ End
 
 SpawnArmy
     ScriptingName = GarrisonArmy1
+    SpawnAtActStart = No
     SpawnForTemplates = PlayerDwarves
     PlayerArmy = Dwarven_StartingArmy
     Icon = DwarfArmyIcon
@@ -208,6 +226,7 @@ End
 
 SpawnArmy
     ScriptingName = FortressDefenseArmy
+    SpawnAtActStart = No
     SpawnForTemplates = PlayerDwarves
     PlayerArmy = Dwarven_FortressDefenseArmy
     Icon = DwarfArmyIcon
@@ -215,6 +234,7 @@ End
 
 SpawnArmy
     ScriptingName = FortressAttackArmy
+    SpawnAtActStart = No
     SpawnForTemplates = PlayerDwarves
     PlayerArmy = Dwarven_FortressAttackArmy
     Icon = DwarfArmyIcon
@@ -227,6 +247,7 @@ End
 
 SpawnArmy
     ScriptingName = HeroArmy1
+    SpawnAtActStart = No
     SpawnForTemplates = PlayerMordor
     HeroTemplateName = MordorWitchKingOnFellBeast
     PlayerArmy = WitchKingPlayerArmy
@@ -236,6 +257,7 @@ End
 
 SpawnArmy
     ScriptingName = HeroArmy2
+    SpawnAtActStart = No
     SpawnForTemplates = PlayerMordor
     HeroTemplateName = KhamulFellBeast
     PlayerArmy = FellBeast1PlayerArmy
@@ -245,6 +267,7 @@ End
 
 SpawnArmy
     ScriptingName = HeroArmy3
+    SpawnAtActStart = No
     SpawnForTemplates = PlayerMordor
     HeroTemplateName = MordorMouthOfSauron
     PlayerArmy = MouthOfSauronArmy
@@ -264,6 +287,7 @@ End
 
 SpawnArmy
     ScriptingName = HeroArmy5
+    SpawnAtActStart = No
     SpawnForTemplates = PlayerMordor
     HeroTemplateName = CreateAHero
     PlayerArmy = Mordor_CreateAHeroArmy
@@ -273,6 +297,7 @@ End
 
 SpawnArmy
     ScriptingName = GarrisonArmy1
+    SpawnAtActStart = No
     SpawnForTemplates = PlayerMordor
     PlayerArmy = Mordor_StartingArmy
     Icon = MordorArmyIcon
@@ -280,6 +305,7 @@ End
 
 SpawnArmy
     ScriptingName = FortressDefenseArmy
+    SpawnAtActStart = No
     SpawnForTemplates = PlayerMordor
     PlayerArmy = Mordor_FortressDefenseArmy
     Icon = MordorArmyIcon
@@ -287,6 +313,7 @@ End
 
 SpawnArmy
     ScriptingName = FortressAttackArmy
+    SpawnAtActStart = No
     SpawnForTemplates = PlayerMordor
     PlayerArmy = Mordor_FortressAttackArmy
     Icon = MordorArmyIcon
@@ -299,6 +326,7 @@ End
 
 SpawnArmy
     ScriptingName = HeroArmy1
+    SpawnAtActStart = No
     SpawnForTemplates = PlayerIsengard
     HeroTemplateName = IsengardSaruman
     PlayerArmy = SarumanPlayerArmy
@@ -308,6 +336,7 @@ End
 
 SpawnArmy
     ScriptingName = HeroArmy2
+    SpawnAtActStart = No
     SpawnForTemplates = PlayerIsengard
     HeroTemplateName = IsengardLurtz
     PlayerArmy = LurtzPlayerArmy
@@ -317,6 +346,7 @@ End
 
 SpawnArmy
     ScriptingName = HeroArmy3
+    SpawnAtActStart = No
     SpawnForTemplates = PlayerIsengard
     HeroTemplateName = IsengardSharku
     PlayerArmy = SharkuPlayerArmy
@@ -336,6 +366,7 @@ End
 
 SpawnArmy
     ScriptingName = HeroArmy5
+    SpawnAtActStart = No
     SpawnForTemplates = PlayerIsengard
     HeroTemplateName = CreateAHero
     PlayerArmy = Isengard_CreateAHeroArmy
@@ -345,6 +376,7 @@ End
 
 SpawnArmy
     ScriptingName = GarrisonArmy1
+    SpawnAtActStart = No
     SpawnForTemplates = PlayerIsengard
     PlayerArmy = Isengard_StartingArmy
     Icon = IsengardArmyIcon
@@ -352,6 +384,7 @@ End
 
 SpawnArmy
     ScriptingName = FortressDefenseArmy
+    SpawnAtActStart = No
     SpawnForTemplates = PlayerIsengard
     PlayerArmy = Isengard_FortressDefenseArmy
     Icon = IsengardArmyIcon
@@ -359,6 +392,7 @@ End
 
 SpawnArmy
     ScriptingName = FortressAttackArmy
+    SpawnAtActStart = No
     SpawnForTemplates = PlayerIsengard
     PlayerArmy = Isengard_FortressAttackArmy
     Icon = IsengardArmyIcon
@@ -371,6 +405,7 @@ End
 
 SpawnArmy
     ScriptingName = HeroArmy1
+    SpawnAtActStart = No
     SpawnForTemplates = PlayerWild
     HeroTemplateName = Drogoth
     PlayerArmy = DrogothPlayerArmy
@@ -380,6 +415,7 @@ End
 
 SpawnArmy
     ScriptingName = HeroArmy2
+    SpawnAtActStart = No
     SpawnForTemplates = PlayerWild
     HeroTemplateName = WildShelob
     PlayerArmy = ShelobPlayerArmy
@@ -389,6 +425,7 @@ End
 
 SpawnArmy
     ScriptingName = HeroArmy3
+    SpawnAtActStart = No
     SpawnForTemplates = PlayerWild
     HeroTemplateName = WildGoblinKing
     PlayerArmy = GorkilPlayerArmy
@@ -408,6 +445,7 @@ End
 
 SpawnArmy
     ScriptingName = HeroArmy5
+    SpawnAtActStart = No
     SpawnForTemplates = PlayerWild
     HeroTemplateName = CreateAHero
     PlayerArmy = Wild_CreateAHeroArmy
@@ -417,6 +455,7 @@ End
 
 SpawnArmy
     ScriptingName = GarrisonArmy1
+    SpawnAtActStart = No
     SpawnForTemplates = PlayerWild
     PlayerArmy = CorruptedWild_StartingArmy
     Icon = WildArmyIcon
@@ -424,6 +463,7 @@ End
 
 SpawnArmy
     ScriptingName = FortressDefenseArmy
+    SpawnAtActStart = No
     SpawnForTemplates = PlayerWild
     PlayerArmy = CorruptedWild_FortressDefenseArmy
     Icon = WildArmyIcon
@@ -431,6 +471,7 @@ End
 
 SpawnArmy
     ScriptingName = FortressAttackArmy
+    SpawnAtActStart = No
     SpawnForTemplates = PlayerWild
     PlayerArmy = CorruptedWild_FortressAttackArmy
     Icon = WildArmyIcon
@@ -442,6 +483,7 @@ End
 
 SpawnArmy
     ScriptingName = HeroArmy1
+    SpawnAtActStart = No
     SpawnForTemplates = PlayerAngmar
     HeroTemplateName = AngmarRogash
     PlayerArmy = RogashPlayerArmy
@@ -451,6 +493,7 @@ End
 
 SpawnArmy
     ScriptingName = HeroArmy2
+    SpawnAtActStart = No
     SpawnForTemplates = PlayerAngmar
     HeroTemplateName = AngmarMorgramir
     PlayerArmy = MorgramirPlayerArmy
@@ -460,6 +503,7 @@ End
 
 SpawnArmy
     ScriptingName = HeroArmy3
+    SpawnAtActStart = No
     SpawnForTemplates = PlayerAngmar
     HeroTemplateName = AngmarWitchking
     PlayerArmy = WitchKingArmy
@@ -479,6 +523,7 @@ End
 
 SpawnArmy
     ScriptingName = HeroArmy5
+    SpawnAtActStart = No
     SpawnForTemplates = PlayerAngmar
     HeroTemplateName = CreateAHero
     PlayerArmy = Angmar_CreateAHeroArmy
@@ -488,6 +533,7 @@ End
 
 SpawnArmy
     ScriptingName = GarrisonArmy1
+    SpawnAtActStart = No
     SpawnForTemplates = PlayerAngmar
     PlayerArmy = Angmar_StartingArmy
     Icon = AngmarArmyIcon
@@ -495,6 +541,7 @@ End
 
 SpawnArmy
     ScriptingName = FortressDefenseArmy
+    SpawnAtActStart = No
     SpawnForTemplates = PlayerAngmar
     PlayerArmy = Angmar_FortressDefenseArmy
     Icon = AngmarArmyIcon
@@ -502,6 +549,7 @@ End
 
 SpawnArmy
     ScriptingName = FortressAttackArmy
+    SpawnAtActStart = No
     SpawnForTemplates = PlayerAngmar
     PlayerArmy = Angmar_FortressAttackArmy
     Icon = AngmarArmyIcon

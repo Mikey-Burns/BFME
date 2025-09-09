@@ -10,6 +10,8 @@ class LivingWorldCampaign : WotrElement {
     var description: String = ""
     var number: Int = -1
     var scenario: Scenario? = null
+    private val _acts = mutableListOf<Act>()
+    val acts: List<Act> get() = _acts.toList()
 
     override fun validate(): List<Violation> = buildList {
         if (name.isEmpty()) add(violation("'name' must not be empty"))
@@ -17,6 +19,7 @@ class LivingWorldCampaign : WotrElement {
         if (number < 0) add(violation("'number' must be greater than 0"))
         if (scenario == null) add(violation("'scenario' must not be null"))
         addAll(scenario?.validate() ?: emptyList())
+        addAll(acts.flatMap(Act::validate))
     }
 
     override fun render(): String {
@@ -59,6 +62,10 @@ class LivingWorldCampaign : WotrElement {
             appendLine(2, "    LookPoint = X:157 Y:420 ; Helm's Deep")
             appendLine(2, "End")
             appendLine(1, "End")
+
+            if (acts.isNotEmpty()) appendLine()
+
+            append(acts.joinToString("\n", transform = Act::render))
             appendLine("End")
         }
     }
@@ -69,6 +76,14 @@ class LivingWorldCampaign : WotrElement {
      */
     fun LivingWorldCampaign.scenario(block: Scenario.() -> Unit) {
         scenario = Scenario().apply(block)
+    }
+
+    /**
+     * Add an act to the campaign.
+     * This will allow us to spawn extra units starting on Turn 2.
+     */
+    fun LivingWorldCampaign.act(block: Act.() -> Unit) {
+        _acts.add(Act().apply(block))
     }
 }
 

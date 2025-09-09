@@ -9,4 +9,6 @@ enum class Building(val codeName: String) {
     BARRACKS("LW_BARRACKS"),
     ARMORY("LW_ARMORY"),
     FARM("LW_FARM"),
+    // Non-standard
+    SUPER_FARM("LW_SUPER_FARM")
 }

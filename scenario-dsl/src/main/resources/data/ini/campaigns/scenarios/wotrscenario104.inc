@@ -136,11 +136,6 @@ LivingWorldCampaign WOTRScenario104
             End
 
             SpawnBuildings
-                Buildings = LW_FORT LW_SUPER_FARM
-                Region = Amon_Sul
-            End
-
-            SpawnBuildings
                 Buildings = LW_SUPER_FARM
                 Region = Dol_Guldur
             End
@@ -163,6 +158,11 @@ LivingWorldCampaign WOTRScenario104
             SpawnBuildings
                 Buildings = LW_FARM LW_FARM
                 Region = The_Shire
+            End
+
+            SpawnBuildings
+                Buildings = LW_SUPER_FARM
+                Region = Fornost
             End
         End
 
@@ -227,6 +227,11 @@ LivingWorldCampaign WOTRScenario104
             End
 
             SpawnBuildings
+                Buildings = LW_FORT LW_SUPER_FARM
+                Region = Amon_Sul
+            End
+
+            SpawnBuildings
                 Buildings = LW_SUPER_FARM
                 Region = CarnDum
             End
@@ -234,11 +239,6 @@ LivingWorldCampaign WOTRScenario104
             SpawnBuildings
                 Buildings = LW_SUPER_FARM
                 Region = Erebor
-            End
-
-            SpawnBuildings
-                Buildings = LW_SUPER_FARM
-                Region = Fornost
             End
 
             SpawnBuildings
@@ -465,7 +465,7 @@ LivingWorldCampaign WOTRScenario104
             End
 
             SpawnBuildings
-                Buildings = LW_FORT LW_FARM
+                Buildings = LW_FORT LW_FARM LW_BARRACKS
                 Region = Cardolan
             End
 
@@ -490,12 +490,12 @@ LivingWorldCampaign WOTRScenario104
             End
 
             SpawnBuildings
-                Buildings = LW_FORT LW_FARM
+                Buildings = LW_FORT LW_FARM LW_BARRACKS
                 Region = Rohan
             End
 
             SpawnBuildings
-                Buildings = LW_FORT LW_FARM
+                Buildings = LW_FORT LW_FARM LW_BARRACKS
                 Region = Rhudaur
             End
         End

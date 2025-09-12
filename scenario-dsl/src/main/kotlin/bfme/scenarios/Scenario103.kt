@@ -178,14 +178,13 @@ fun fortressDefense(): String = livingWorldCampaign {
             }
 
             spawnBuildings {
-                building(FORTRESS)
                 building(FARM)
-                region = AMON_SUL
+                region = DOL_GULDUR
             }
 
             spawnBuildings {
                 building(FARM)
-                region = DOL_GULDUR
+                region = FORNOST
             }
 
             spawnBuildings {
@@ -281,6 +280,12 @@ fun fortressDefense(): String = livingWorldCampaign {
             }
 
             spawnBuildings {
+                building(FORTRESS)
+                building(FARM)
+                region = AMON_SUL
+            }
+
+            spawnBuildings {
                 building(FARM)
                 region = CARN_DUM
             }
@@ -288,11 +293,6 @@ fun fortressDefense(): String = livingWorldCampaign {
             spawnBuildings {
                 building(FARM)
                 region = EREBOR
-            }
-
-            spawnBuildings {
-                building(FARM)
-                region = FORNOST
             }
 
             spawnBuildings {

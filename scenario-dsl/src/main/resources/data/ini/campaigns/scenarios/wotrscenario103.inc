@@ -109,13 +109,13 @@ LivingWorldCampaign WOTRScenario103
             End
 
             SpawnBuildings
-                Buildings = LW_FORT LW_FARM
-                Region = Amon_Sul
+                Buildings = LW_FARM
+                Region = Dol_Guldur
             End
 
             SpawnBuildings
                 Buildings = LW_FARM
-                Region = Dol_Guldur
+                Region = Fornost
             End
 
             SpawnBuildings
@@ -200,6 +200,11 @@ LivingWorldCampaign WOTRScenario103
             End
 
             SpawnBuildings
+                Buildings = LW_FORT LW_FARM
+                Region = Amon_Sul
+            End
+
+            SpawnBuildings
                 Buildings = LW_FARM
                 Region = CarnDum
             End
@@ -207,11 +212,6 @@ LivingWorldCampaign WOTRScenario103
             SpawnBuildings
                 Buildings = LW_FARM
                 Region = Erebor
-            End
-
-            SpawnBuildings
-                Buildings = LW_FARM
-                Region = Fornost
             End
 
             SpawnBuildings

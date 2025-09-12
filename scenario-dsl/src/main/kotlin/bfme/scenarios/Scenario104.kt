@@ -221,12 +221,6 @@ fun fortressDefenseEscalation(): String = livingWorldCampaign {
             }
 
             spawnBuildings {
-                building(FORTRESS)
-                building(SUPER_FARM)
-                region = AMON_SUL
-            }
-
-            spawnBuildings {
                 building(SUPER_FARM)
                 region = DOL_GULDUR
             }
@@ -250,6 +244,11 @@ fun fortressDefenseEscalation(): String = livingWorldCampaign {
                 building(FARM)
                 building(FARM)
                 region = THE_SHIRE
+            }
+
+            spawnBuildings {
+                building(SUPER_FARM)
+                region = FORNOST
             }
         }
 
@@ -324,6 +323,12 @@ fun fortressDefenseEscalation(): String = livingWorldCampaign {
             }
 
             spawnBuildings {
+                building(FORTRESS)
+                building(SUPER_FARM)
+                region = AMON_SUL
+            }
+
+            spawnBuildings {
                 building(SUPER_FARM)
                 region = CARN_DUM
             }
@@ -331,11 +336,6 @@ fun fortressDefenseEscalation(): String = livingWorldCampaign {
             spawnBuildings {
                 building(SUPER_FARM)
                 region = EREBOR
-            }
-
-            spawnBuildings {
-                building(SUPER_FARM)
-                region = FORNOST
             }
 
             spawnBuildings {
@@ -634,6 +634,7 @@ fun fortressDefenseEscalation(): String = livingWorldCampaign {
             spawnBuildings {
                 building(FORTRESS)
                 building(FARM)
+                building(BARRACKS)
                 region = CARDOLAN
             }
 
@@ -664,12 +665,14 @@ fun fortressDefenseEscalation(): String = livingWorldCampaign {
             spawnBuildings {
                 building(FORTRESS)
                 building(FARM)
+                building(BARRACKS)
                 region = ROHAN
             }
 
             spawnBuildings {
                 building(FORTRESS)
                 building(FARM)
+                building(BARRACKS)
                 region = RHUDAUR
             }
         }

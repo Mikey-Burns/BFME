@@ -17,6 +17,7 @@ class Scenario : WotrElement {
     var fiction: String = ""
     var victoriousText: String = ""
     var defeatedText: String = ""
+    var customVictoryCondition: Boolean = false
     var minPlayers: Int = 6
     var maxPlayers: Int = 6
 
@@ -87,6 +88,7 @@ class Scenario : WotrElement {
         appendLine()
         appendLine(2, "RegionCampaign = DefaultCampaign")
         appendLine()
+        appendLine(2, "UseMpRulesVictoryCondition = ${if (customVictoryCondition) "No" else "Yes"}")
         appendLine(2, "MinPlayers = $minPlayers")
         appendLine(2, "MaxPlayers = $maxPlayers")
         appendLine()

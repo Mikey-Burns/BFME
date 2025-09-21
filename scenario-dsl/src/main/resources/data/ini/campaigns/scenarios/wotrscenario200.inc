@@ -21,6 +21,7 @@ LivingWorldCampaign WOTRScenario200
 
         RegionCampaign = DefaultCampaign
 
+        UseMpRulesVictoryCondition = No
         MinPlayers = 6
         MaxPlayers = 6
 
@@ -36,6 +37,12 @@ LivingWorldCampaign WOTRScenario200
         TeamDefeatCondition
             Teams = 1 2
             NumControlledRegionsLessOrEqualTo = -1
+        End
+
+        TeamVictoryCondition
+            Teams = 1 2
+            ControlledRegions = Erebor
+            ControlledRegionsHeldForTurns = 2
         End
 
         StartingRestriction

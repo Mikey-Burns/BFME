@@ -213,6 +213,7 @@ class DslTest {
 
                     RegionCampaign = DefaultCampaign
 
+                    UseMpRulesVictoryCondition = Yes
                     MinPlayers = 6
                     MaxPlayers = 6
 
@@ -313,6 +314,7 @@ class DslTest {
 
                     RegionCampaign = DefaultCampaign
 
+                    UseMpRulesVictoryCondition = Yes
                     MinPlayers = 6
                     MaxPlayers = 6
 
@@ -542,6 +544,7 @@ class DslTest {
 
                     RegionCampaign = DefaultCampaign
 
+                    UseMpRulesVictoryCondition = No
                     MinPlayers = 6
                     MaxPlayers = 6
 
@@ -624,6 +627,7 @@ class DslTest {
                 victoriousText = "LWScenario:WOTRScenarioWin003"
                 defeatedText = "LWScenario:WOTRScenarioLose003"
 
+                customVictoryCondition = true
                 minPlayers = 6
                 maxPlayers = 6
 

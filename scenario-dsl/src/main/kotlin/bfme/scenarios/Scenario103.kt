@@ -2,6 +2,7 @@ package bfme.scenarios
 
 import bfme.domain.Army.*
 import bfme.domain.Building.*
+import bfme.domain.Territory
 import bfme.domain.Territory.*
 import bfme.dsl.livingWorldCampaign
 
@@ -25,59 +26,9 @@ fun fortressDefense(): String = livingWorldCampaign {
         minPlayers = 6
         maxPlayers = 6
 
-        disallowStart(AMON_SUL)
-        disallowStart(ANGMAR)
-        disallowStart(ARTHEDAIN)
-        disallowStart(BARROW_DOWNS)
-        disallowStart(CAIR_ANDROS)
-        disallowStart(CARDOLAN)
-        disallowStart(CARN_DUM)
-        disallowStart(CARROCK)
-        disallowStart(CELDUIN)
-        disallowStart(DAGORLAD)
-        disallowStart(DOL_GULDUR)
-        disallowStart(DUNLAND)
-        disallowStart(ENEDWAITH)
-        disallowStart(EREBOR)
-        disallowStart(ETTENMOORS)
-        disallowStart(FORLINDON)
-        disallowStart(FORNOST)
-        disallowStart(FORODWAITH)
-        disallowStart(GREY_HAVENS)
-        disallowStart(HARAD)
-        disallowStart(HARLINDON)
-        disallowStart(HELMS_DEEP)
-        disallowStart(HIGH_PASS)
-        disallowStart(IRON_HILLS)
-        disallowStart(ISENGARD)
-        disallowStart(ITHILIEN)
-        disallowStart(LORIEN)
-        disallowStart(LOSTRIAND)
-        disallowStart(MINAS_MORGUL)
-        disallowStart(MINHIRIATH)
-        disallowStart(MIRKWOOD)
-        disallowStart(MORDOR)
-        disallowStart(MOUNT_DOOM)
-        disallowStart(MOUNT_GUNDABAD)
-        disallowStart(NORTH_DOWNS)
-        disallowStart(OSGILIATH)
-        disallowStart(REDHORN_PASS)
-        disallowStart(RHUDAUR)
-        disallowStart(RHUN)
-        disallowStart(RIVENDELL)
-        disallowStart(ROHAN)
-        disallowStart(THE_BLACK_GATE)
-        disallowStart(THE_BROWN_LANDS)
-        disallowStart(THE_DEAD_MARSHES)
-        disallowStart(TOWER_HILLS)
-        disallowStart(UMBAR)
-
-        defaultStart(THE_SHIRE)
-        defaultStart(MINAS_TIRITH)
-        defaultStart(ANFALAS)
-        defaultStart(BELFALAS)
-        defaultStart(FANGORN)
-        defaultStart(GAP_OF_ROHAN)
+        val defaultStarts = listOf(THE_SHIRE, MINAS_TIRITH, ANFALAS, BELFALAS, FANGORN, GAP_OF_ROHAN)
+        (Territory.entries - defaultStarts.toSet()).forEach { disallowStart(it) }
+        defaultStarts.forEach { defaultStart(it) }
 
         playerDefeatCondition {
             team(1)

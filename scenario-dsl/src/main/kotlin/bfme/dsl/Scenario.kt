@@ -21,6 +21,9 @@ class Scenario : WotrElement {
     var minPlayers: Int = 6
     var maxPlayers: Int = 6
 
+    private val _disableRegions = mutableListOf<Territory>()
+    val disableRegions: List<Territory> get() = _disableRegions.toList()
+
     private val _disallowStartInRegions = mutableSetOf<Territory>()
     val disallowStartInRegions: List<Territory> get() = _disallowStartInRegions.toList()
 
@@ -41,6 +44,14 @@ class Scenario : WotrElement {
     // endregion
 
     // region Functions
+    /**
+     * Disable a region.
+     * Multiple regions can be disabled.
+     */
+    fun disable(territory: Territory) {
+        _disableRegions.add(territory)
+    }
+
     /**
      * Disallow starting in a region.
      * Multiple regions can be disallowed.
@@ -92,6 +103,10 @@ class Scenario : WotrElement {
         appendLine(2, "MinPlayers = $minPlayers")
         appendLine(2, "MaxPlayers = $maxPlayers")
         appendLine()
+        if (disableRegions.isNotEmpty()) {
+            val disableRegion = disableRegions.map(Territory::codeName).sorted().joinToString(" ")
+            appendLine(2, "DisableRegions = $disableRegion")
+        }
         if (disallowStartInRegions.isNotEmpty()) {
             val disallowStart = disallowStartInRegions.map(Territory::codeName).sorted().joinToString(" ")
             appendLine(2, "DisallowStartInRegions = $disallowStart")

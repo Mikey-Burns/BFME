@@ -544,7 +544,7 @@ class DslTest {
 
                     RegionCampaign = DefaultCampaign
 
-                    UseMpRulesVictoryCondition = No
+                    UseMpRulesVictoryCondition = Yes
                     MinPlayers = 6
                     MaxPlayers = 6
 
@@ -627,7 +627,6 @@ class DslTest {
                 victoriousText = "LWScenario:WOTRScenarioWin003"
                 defeatedText = "LWScenario:WOTRScenarioLose003"
 
-                customVictoryCondition = true
                 minPlayers = 6
                 maxPlayers = 6
 
@@ -665,6 +664,118 @@ class DslTest {
                     name = "ExtraArmy"
                     faction = GOBLINS
                     army = FORTRESS_ATTACK_ARMY
+                }
+            }
+        }
+        assertEquals(expectedRendering, campaign.render())
+    }
+
+    @Test
+    fun `Campaign with disabled territories can be rendered`() {
+        val expectedRendering = """
+            //-------------------------------------------------------------------------------------------------
+            // Scenario Name: Acts Name
+            // Scenario Description: Acts Description
+            //-------------------------------------------------------------------------------------------------
+
+            LivingWorldCampaign WOTRScenario003
+
+                IsEvilCampaign = No
+
+                ;////////////// RTS Settings /////////////
+                #include "..\Common\LivingWorldDefaultRTSSettings.inc"
+
+                Scenario
+                    DisplayName = LWScenario:WOTRScenario003
+                    DisplayDescription = LWScenario:WOTRScenario003Description
+                    DisplayGameType = LWScenario:WOTRGameType003
+                    DisplayObjectives = LWScenario:WOTRObjectives003
+                    DisplayFiction = LWScenario:WOTRScenarioFiction003
+                    DisplayVictoriousText = LWScenario:WOTRScenarioWin003
+                    DisplayDefeatedText = LWScenario:WOTRScenarioLose003
+
+                    RegionCampaign = DefaultCampaign
+
+                    UseMpRulesVictoryCondition = Yes
+                    MinPlayers = 6
+                    MaxPlayers = 6
+
+                    DisableRegions = Celduin Fangorn
+                    DisallowStartInRegions = Amon_Sul Angmar
+                    DefaultStartSpots = The_Shire Minas_Tirith
+
+                    PlayerDefeatCondition
+                        Teams = 1 2
+                        LoseIfCapitalLost = No
+                        NumControlledRegionsLessOrEqualTo = -1
+                    End
+
+                    TeamDefeatCondition
+                        Teams = 1 2
+                        NumControlledRegionsLessOrEqualTo = -1
+                    End
+                End
+
+                ;//////////////////////////////////////////////////
+                Act One
+                ;//////////////////////////////////////////////////
+
+                    ;///////////////// Armies ////////////////
+                    #include "..\Common\LivingWorldDefaultArmies.inc"
+
+                    ;//////////////// VISUAL FLUFF ////////////////
+                    EyeTowerPoints
+                        LookPoint = X:436 Y:687 ; Rohan
+                        LookPoint = X:481 Y:287
+                        LookPoint = X:1179 Y:461
+                        LookPoint = X:947 Y:917
+                        LookPoint = X:172 Y:573 ; Isengard
+                        LookPoint = X:160 Y:560 ; Isengard
+                        LookPoint = X:175 Y:557 ; Isengard
+                        LookPoint = X:171 Y:348 ; Helm's Deep
+                        LookPoint = X:257 Y:535 ; Helm's Deep
+                        LookPoint = X:120 Y:350 ; Helm's Deep
+                        LookPoint = X:157 Y:420 ; Helm's Deep
+                    End
+                End
+            End
+            
+        """.trimIndent()
+        val campaign = livingWorldCampaign {
+            name = "Acts Name"
+            description = "Acts Description"
+            number = 3
+
+            scenario {
+                name = "LWScenario:WOTRScenario003"
+                description = "LWScenario:WOTRScenario003Description"
+                gameType = "LWScenario:WOTRGameType003"
+                objectives = "LWScenario:WOTRObjectives003"
+                fiction = "LWScenario:WOTRScenarioFiction003"
+                victoriousText = "LWScenario:WOTRScenarioWin003"
+                defeatedText = "LWScenario:WOTRScenarioLose003"
+
+                minPlayers = 6
+                maxPlayers = 6
+
+                disable(CELDUIN)
+                disable(FANGORN)
+                disallowStart(AMON_SUL)
+                disallowStart(ANGMAR)
+                defaultStart(THE_SHIRE)
+                defaultStart(MINAS_TIRITH)
+
+                playerDefeatCondition {
+                    team(1)
+                    team(2)
+                    loseIfCapitalLost = false
+                    numControlledRegionsLessOrEqualTo = -1
+                }
+
+                teamDefeatCondition {
+                    team(1)
+                    team(2)
+                    numControlledRegionsLessOrEqualTo = -1
                 }
             }
         }

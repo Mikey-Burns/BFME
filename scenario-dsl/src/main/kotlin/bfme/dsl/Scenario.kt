@@ -36,6 +36,9 @@ class Scenario : WotrElement {
     private val _teamDefeatConditions = mutableListOf<TeamDefeatCondition>()
     val teamDefeatConditions: List<TeamDefeatCondition> get() = _teamDefeatConditions.toList()
 
+    private val _teamVictoryConditions = mutableListOf<TeamVictoryCondition>()
+    val teamVictoryConditions: List<TeamVictoryCondition> get() = _teamVictoryConditions.toList()
+
     private val _startingRestrictions = mutableListOf<StartingRestriction>()
     val startingRestrictions: List<StartingRestriction> get() = _startingRestrictions.toList()
 
@@ -88,6 +91,7 @@ class Scenario : WotrElement {
 
         addAll(playerDefeatConditions.flatMap(PlayerDefeatCondition::validate))
         addAll(teamDefeatConditions.flatMap(TeamDefeatCondition::validate))
+        addAll(teamVictoryConditions.flatMap(TeamVictoryCondition::validate))
         addAll(startingRestrictions.flatMap(StartingRestriction::validate))
         addAll(ownershipSets.flatMap(OwnershipSet::validate))
     }
@@ -107,7 +111,9 @@ class Scenario : WotrElement {
         appendLine(2, "UseMpRulesVictoryCondition = ${if (customVictoryCondition) "No" else "Yes"}")
         appendLine(2, "MinPlayers = $minPlayers")
         appendLine(2, "MaxPlayers = $maxPlayers")
-        appendLine()
+
+        if (disableRegions.isNotEmpty() || disallowStartInRegions.isNotEmpty() || defaultStartSpots.isNotEmpty()) appendLine()
+
         if (disableRegions.isNotEmpty()) {
             val disableRegion = disableRegions.map(Territory::codeName).sorted().joinToString(" ")
             appendLine(2, "DisableRegions = $disableRegion")
@@ -120,25 +126,31 @@ class Scenario : WotrElement {
             val defaultStart = defaultStartSpots.joinToString(" ", transform = Territory::codeName)
             appendLine(2, "DefaultStartSpots = $defaultStart")
         }
-        if (disallowStartInRegions.isNotEmpty() || defaultStartSpots.isNotEmpty()) appendLine()
 
-        val pdcs = playerDefeatConditions.joinToString("\n", transform = PlayerDefeatCondition::render)
-        if (pdcs.isNotEmpty()) append(pdcs)
+        if (playerDefeatConditions.isNotEmpty()) {
+            appendLine()
+            append(playerDefeatConditions.joinToString("\n", transform = PlayerDefeatCondition::render))
+        }
 
-        if (playerDefeatConditions.isNotEmpty() && teamDefeatConditions.isNotEmpty()) appendLine()
+        if (teamDefeatConditions.isNotEmpty()) {
+            appendLine()
+            append(teamDefeatConditions.joinToString("\n", transform = TeamDefeatCondition::render))
+        }
 
-        val tdcs = teamDefeatConditions.joinToString("\n", transform = TeamDefeatCondition::render)
-        if (tdcs.isNotEmpty()) append(tdcs)
+        if (teamVictoryConditions.isNotEmpty()) {
+            appendLine()
+            append(teamVictoryConditions.joinToString("\n", transform = TeamVictoryCondition::render))
+        }
 
-        if (teamDefeatConditions.isNotEmpty() && startingRestrictions.isNotEmpty()) appendLine()
+        if (startingRestrictions.isNotEmpty()) {
+            appendLine()
+            append(startingRestrictions.joinToString("\n", transform = StartingRestriction::render))
+        }
 
-        val srs = startingRestrictions.joinToString("\n", transform = StartingRestriction::render)
-        if (srs.isNotEmpty()) append(srs)
-
-        if (startingRestrictions.isNotEmpty() && ownershipSets.isNotEmpty()) appendLine()
-
-        val oss = ownershipSets.joinToString("\n", transform = OwnershipSet::render)
-        if (oss.isNotEmpty()) append(oss)
+        if (ownershipSets.isNotEmpty()) {
+            appendLine()
+            append(ownershipSets.joinToString("\n", transform = OwnershipSet::render))
+        }
 
         appendLine(1, "End")
     }
@@ -158,6 +170,14 @@ class Scenario : WotrElement {
      */
     fun Scenario.teamDefeatCondition(block: TeamDefeatCondition.() -> Unit) {
         _teamDefeatConditions.add(TeamDefeatCondition().apply(block))
+    }
+
+    /**
+     * Specify a team victory condition.
+     * Multiple team victory conditions can be specified.
+     */
+    fun Scenario.teamVictoryCondition(block: TeamVictoryCondition.() -> Unit) {
+        _teamVictoryConditions.add(TeamVictoryCondition().apply(block))
     }
 
     /**

@@ -80,6 +80,25 @@ class DslTest {
     }
 
     @Test
+    fun `TeamVictoryCondition must populate fields with real values`() {
+        val validationErrors = livingWorldCampaign {
+            scenario {
+                teamVictoryCondition {
+                    numTurns = 0
+                }
+            }
+        }.validate()
+        val errorsByClass = validationErrors.groupBy { it.source }
+        assertTrue { errorsByClass.contains(LivingWorldCampaign::class.java) }
+        assertTrue { errorsByClass.contains(Scenario::class.java) }
+        assertTrue { errorsByClass.contains(TeamVictoryCondition::class.java) }
+        val errorMessages = errorsByClass.getValue(TeamVictoryCondition::class.java).map(Violation::error)
+        errorMessages.expectMessage("'teams' must not be empty")
+        errorMessages.expectMessage("'regions' must not be empty")
+        errorMessages.expectMessage("'numTurns' must be greater than 0")
+    }
+
+    @Test
     fun `OwnershipSet must populate fields with real values`() {
         val validationErrors = livingWorldCampaign {
             scenario {
@@ -799,6 +818,121 @@ class DslTest {
                     team(1)
                     team(2)
                     numControlledRegionsLessOrEqualTo = -1
+                }
+            }
+        }
+        assertEquals(expectedRendering, campaign.render())
+    }
+
+    @Test
+    fun `Campaign can set victory conditions`() {
+        val expectedRendering = """
+            //-------------------------------------------------------------------------------------------------
+            // Scenario Name: Victory Name
+            // Scenario Description: Victory Description
+            //-------------------------------------------------------------------------------------------------
+
+            LivingWorldCampaign WOTRScenario005
+
+                IsEvilCampaign = No
+
+                ;////////////// RTS Settings /////////////
+                #include "..\Common\LivingWorldDefaultRTSSettings.inc"
+
+                Scenario
+                    DisplayName = LWScenario:WOTRScenario005
+                    DisplayDescription = LWScenario:WOTRScenario005Description
+                    DisplayGameType = LWScenario:WOTRGameType005
+                    DisplayObjectives = LWScenario:WOTRObjectives005
+                    DisplayFiction = LWScenario:WOTRScenarioFiction005
+                    DisplayVictoriousText = LWScenario:WOTRScenarioWin005
+                    DisplayDefeatedText = LWScenario:WOTRScenarioLose005
+
+                    RegionCampaign = DefaultCampaign
+
+                    UseMpRulesVictoryCondition = Yes
+                    MinPlayers = 6
+                    MaxPlayers = 6
+
+                    PlayerDefeatCondition
+                        Teams = 1 2
+                        LoseIfCapitalLost = No
+                        NumControlledRegionsLessOrEqualTo = -1
+                    End
+
+                    TeamDefeatCondition
+                        Teams = 1 2
+                        NumControlledRegionsLessOrEqualTo = -1
+                    End
+
+                    TeamVictoryCondition
+                        Teams = 1 2
+                        ControlledRegions = Erebor Helms_Deep
+                        ControlledRegionsHeldForTurns = 3
+                    End
+                End
+
+                ;//////////////////////////////////////////////////
+                Act One
+                ;//////////////////////////////////////////////////
+
+                    ;///////////////// Armies ////////////////
+                    #include "..\Common\LivingWorldDefaultArmies.inc"
+
+                    ;//////////////// VISUAL FLUFF ////////////////
+                    EyeTowerPoints
+                        LookPoint = X:436 Y:687 ; Rohan
+                        LookPoint = X:481 Y:287
+                        LookPoint = X:1179 Y:461
+                        LookPoint = X:947 Y:917
+                        LookPoint = X:172 Y:573 ; Isengard
+                        LookPoint = X:160 Y:560 ; Isengard
+                        LookPoint = X:175 Y:557 ; Isengard
+                        LookPoint = X:171 Y:348 ; Helm's Deep
+                        LookPoint = X:257 Y:535 ; Helm's Deep
+                        LookPoint = X:120 Y:350 ; Helm's Deep
+                        LookPoint = X:157 Y:420 ; Helm's Deep
+                    End
+                End
+            End
+            
+        """.trimIndent()
+        val campaign = livingWorldCampaign {
+            name = "Victory Name"
+            description = "Victory Description"
+            number = 5
+
+            scenario {
+                name = "LWScenario:WOTRScenario005"
+                description = "LWScenario:WOTRScenario005Description"
+                gameType = "LWScenario:WOTRGameType005"
+                objectives = "LWScenario:WOTRObjectives005"
+                fiction = "LWScenario:WOTRScenarioFiction005"
+                victoriousText = "LWScenario:WOTRScenarioWin005"
+                defeatedText = "LWScenario:WOTRScenarioLose005"
+
+                minPlayers = 6
+                maxPlayers = 6
+
+                playerDefeatCondition {
+                    team(1)
+                    team(2)
+                    loseIfCapitalLost = false
+                    numControlledRegionsLessOrEqualTo = -1
+                }
+
+                teamDefeatCondition {
+                    team(1)
+                    team(2)
+                    numControlledRegionsLessOrEqualTo = -1
+                }
+
+                teamVictoryCondition {
+                    team(1)
+                    team(2)
+                    region(EREBOR)
+                    region(HELMS_DEEP)
+                    numTurns = 3
                 }
             }
         }

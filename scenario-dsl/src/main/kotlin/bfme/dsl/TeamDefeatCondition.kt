@@ -1,5 +1,8 @@
 package bfme.dsl
 
+/**
+ * DSL representation of how a team can be defeated.
+ */
 @WotrDsl
 class TeamDefeatCondition : WotrElement {
     override val clazz: Class<out WotrElement> = TeamDefeatCondition::class.java

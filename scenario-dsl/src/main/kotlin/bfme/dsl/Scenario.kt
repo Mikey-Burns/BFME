@@ -17,8 +17,12 @@ class Scenario : WotrElement {
     var fiction: String = ""
     var victoriousText: String = ""
     var defeatedText: String = ""
+    var customVictoryCondition: Boolean = false
     var minPlayers: Int = 6
     var maxPlayers: Int = 6
+
+    private val _disableRegions = mutableListOf<Territory>()
+    val disableRegions: List<Territory> get() = _disableRegions.toList()
 
     private val _disallowStartInRegions = mutableSetOf<Territory>()
     val disallowStartInRegions: List<Territory> get() = _disallowStartInRegions.toList()
@@ -32,6 +36,9 @@ class Scenario : WotrElement {
     private val _teamDefeatConditions = mutableListOf<TeamDefeatCondition>()
     val teamDefeatConditions: List<TeamDefeatCondition> get() = _teamDefeatConditions.toList()
 
+    private val _teamVictoryConditions = mutableListOf<TeamVictoryCondition>()
+    val teamVictoryConditions: List<TeamVictoryCondition> get() = _teamVictoryConditions.toList()
+
     private val _startingRestrictions = mutableListOf<StartingRestriction>()
     val startingRestrictions: List<StartingRestriction> get() = _startingRestrictions.toList()
 
@@ -40,6 +47,14 @@ class Scenario : WotrElement {
     // endregion
 
     // region Functions
+    /**
+     * Disable a region.
+     * Multiple regions can be disabled.
+     */
+    fun disable(territory: Territory) {
+        _disableRegions.add(territory)
+    }
+
     /**
      * Disallow starting in a region.
      * Multiple regions can be disallowed.
@@ -69,8 +84,14 @@ class Scenario : WotrElement {
         if (maxPlayers !in 2..6) add(violation("'maxPlayers' must be between 2 and 6"))
         if (maxPlayers < minPlayers) add(violation("'maxPlayers' must be greater than or equal to minPlayers"))
 
+        defaultStartSpots.forEach { startSpot ->
+            if (startSpot in disallowStartInRegions) add(violation("'${startSpot.codeName}' cannot be a default start spot if it is disallowed"))
+            if (startSpot in disableRegions) add(violation("'${startSpot.codeName}' cannot be a default start spot if it is disabled"))
+        }
+
         addAll(playerDefeatConditions.flatMap(PlayerDefeatCondition::validate))
         addAll(teamDefeatConditions.flatMap(TeamDefeatCondition::validate))
+        addAll(teamVictoryConditions.flatMap(TeamVictoryCondition::validate))
         addAll(startingRestrictions.flatMap(StartingRestriction::validate))
         addAll(ownershipSets.flatMap(OwnershipSet::validate))
     }
@@ -87,9 +108,16 @@ class Scenario : WotrElement {
         appendLine()
         appendLine(2, "RegionCampaign = DefaultCampaign")
         appendLine()
+        appendLine(2, "UseMpRulesVictoryCondition = ${if (customVictoryCondition) "No" else "Yes"}")
         appendLine(2, "MinPlayers = $minPlayers")
         appendLine(2, "MaxPlayers = $maxPlayers")
-        appendLine()
+
+        if (disableRegions.isNotEmpty() || disallowStartInRegions.isNotEmpty() || defaultStartSpots.isNotEmpty()) appendLine()
+
+        if (disableRegions.isNotEmpty()) {
+            val disableRegion = disableRegions.map(Territory::codeName).sorted().joinToString(" ")
+            appendLine(2, "DisableRegions = $disableRegion")
+        }
         if (disallowStartInRegions.isNotEmpty()) {
             val disallowStart = disallowStartInRegions.map(Territory::codeName).sorted().joinToString(" ")
             appendLine(2, "DisallowStartInRegions = $disallowStart")
@@ -98,25 +126,31 @@ class Scenario : WotrElement {
             val defaultStart = defaultStartSpots.joinToString(" ", transform = Territory::codeName)
             appendLine(2, "DefaultStartSpots = $defaultStart")
         }
-        if (disallowStartInRegions.isNotEmpty() || defaultStartSpots.isNotEmpty()) appendLine()
 
-        val pdcs = playerDefeatConditions.joinToString("\n", transform = PlayerDefeatCondition::render)
-        if (pdcs.isNotEmpty()) append(pdcs)
+        if (playerDefeatConditions.isNotEmpty()) {
+            appendLine()
+            append(playerDefeatConditions.joinToString("\n", transform = PlayerDefeatCondition::render))
+        }
 
-        if (playerDefeatConditions.isNotEmpty() && teamDefeatConditions.isNotEmpty()) appendLine()
+        if (teamDefeatConditions.isNotEmpty()) {
+            appendLine()
+            append(teamDefeatConditions.joinToString("\n", transform = TeamDefeatCondition::render))
+        }
 
-        val tdcs = teamDefeatConditions.joinToString("\n", transform = TeamDefeatCondition::render)
-        if (tdcs.isNotEmpty()) append(tdcs)
+        if (teamVictoryConditions.isNotEmpty()) {
+            appendLine()
+            append(teamVictoryConditions.joinToString("\n", transform = TeamVictoryCondition::render))
+        }
 
-        if (teamDefeatConditions.isNotEmpty() && startingRestrictions.isNotEmpty()) appendLine()
+        if (startingRestrictions.isNotEmpty()) {
+            appendLine()
+            append(startingRestrictions.joinToString("\n", transform = StartingRestriction::render))
+        }
 
-        val srs = startingRestrictions.joinToString("\n", transform = StartingRestriction::render)
-        if (srs.isNotEmpty()) append(srs)
-
-        if (startingRestrictions.isNotEmpty() && ownershipSets.isNotEmpty()) appendLine()
-
-        val oss = ownershipSets.joinToString("\n", transform = OwnershipSet::render)
-        if (oss.isNotEmpty()) append(oss)
+        if (ownershipSets.isNotEmpty()) {
+            appendLine()
+            append(ownershipSets.joinToString("\n", transform = OwnershipSet::render))
+        }
 
         appendLine(1, "End")
     }
@@ -136,6 +170,14 @@ class Scenario : WotrElement {
      */
     fun Scenario.teamDefeatCondition(block: TeamDefeatCondition.() -> Unit) {
         _teamDefeatConditions.add(TeamDefeatCondition().apply(block))
+    }
+
+    /**
+     * Specify a team victory condition.
+     * Multiple team victory conditions can be specified.
+     */
+    fun Scenario.teamVictoryCondition(block: TeamVictoryCondition.() -> Unit) {
+        _teamVictoryConditions.add(TeamVictoryCondition().apply(block))
     }
 
     /**

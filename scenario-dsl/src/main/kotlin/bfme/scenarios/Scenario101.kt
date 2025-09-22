@@ -23,6 +23,7 @@ fun twoCornerChaos(): String = livingWorldCampaign {
         fiction = "LWScenario:WOTRScenarioFiction003"
         victoriousText = "LWScenario:WOTRScenarioWin101"
         defeatedText = "LWScenario:WOTRScenarioLose101"
+        customVictoryCondition = true
         minPlayers = 6
         maxPlayers = 6
 

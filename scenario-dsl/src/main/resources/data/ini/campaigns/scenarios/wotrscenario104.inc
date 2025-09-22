@@ -22,6 +22,7 @@ LivingWorldCampaign WOTRScenario104
 
         RegionCampaign = DefaultCampaign
 
+        UseMpRulesVictoryCondition = No
         MinPlayers = 6
         MaxPlayers = 6
 

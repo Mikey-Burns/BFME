@@ -80,6 +80,25 @@ class DslTest {
     }
 
     @Test
+    fun `TeamVictoryCondition must populate fields with real values`() {
+        val validationErrors = livingWorldCampaign {
+            scenario {
+                teamVictoryCondition {
+                    numTurns = 0
+                }
+            }
+        }.validate()
+        val errorsByClass = validationErrors.groupBy { it.source }
+        assertTrue { errorsByClass.contains(LivingWorldCampaign::class.java) }
+        assertTrue { errorsByClass.contains(Scenario::class.java) }
+        assertTrue { errorsByClass.contains(TeamVictoryCondition::class.java) }
+        val errorMessages = errorsByClass.getValue(TeamVictoryCondition::class.java).map(Violation::error)
+        errorMessages.expectMessage("'teams' must not be empty")
+        errorMessages.expectMessage("'regions' must not be empty")
+        errorMessages.expectMessage("'numTurns' must be greater than 0")
+    }
+
+    @Test
     fun `OwnershipSet must populate fields with real values`() {
         val validationErrors = livingWorldCampaign {
             scenario {
@@ -178,6 +197,29 @@ class DslTest {
         errorMessages.expectMessage("'faction' must not be empty")
         errorMessages.expectMessage("'army' must not be empty")
     }
+
+    @Test
+    fun `Start spots cannot be disabled or disallowed`() {
+        val validationErrors = livingWorldCampaign {
+            scenario {
+                disable(ANGMAR)
+                disable(CELDUIN)
+                disallowStart(CELDUIN)
+                disallowStart(FANGORN)
+                defaultStart(ANGMAR)
+                defaultStart(FANGORN)
+                defaultStart(CELDUIN)
+            }
+        }.validate()
+        val errorsByClass = validationErrors.groupBy { it.source }
+        assertTrue { errorsByClass.contains(LivingWorldCampaign::class.java) }
+        assertTrue { errorsByClass.contains(Scenario::class.java) }
+        val errorMessages = errorsByClass.getValue(Scenario::class.java).map(Violation::error)
+        errorMessages.expectMessage("'Angmar' cannot be a default start spot if it is disabled")
+        errorMessages.expectMessage("'Celduin' cannot be a default start spot if it is disabled")
+        errorMessages.expectMessage("'Celduin' cannot be a default start spot if it is disallowed")
+        errorMessages.expectMessage("'Fangorn' cannot be a default start spot if it is disallowed")
+    }
     // endregion
 
     // region Render tests
@@ -213,6 +255,7 @@ class DslTest {
 
                     RegionCampaign = DefaultCampaign
 
+                    UseMpRulesVictoryCondition = Yes
                     MinPlayers = 6
                     MaxPlayers = 6
 
@@ -313,6 +356,7 @@ class DslTest {
 
                     RegionCampaign = DefaultCampaign
 
+                    UseMpRulesVictoryCondition = Yes
                     MinPlayers = 6
                     MaxPlayers = 6
 
@@ -542,6 +586,7 @@ class DslTest {
 
                     RegionCampaign = DefaultCampaign
 
+                    UseMpRulesVictoryCondition = Yes
                     MinPlayers = 6
                     MaxPlayers = 6
 
@@ -661,6 +706,233 @@ class DslTest {
                     name = "ExtraArmy"
                     faction = GOBLINS
                     army = FORTRESS_ATTACK_ARMY
+                }
+            }
+        }
+        assertEquals(expectedRendering, campaign.render())
+    }
+
+    @Test
+    fun `Campaign with disabled territories can be rendered`() {
+        val expectedRendering = """
+            //-------------------------------------------------------------------------------------------------
+            // Scenario Name: Disable Name
+            // Scenario Description: Disable Description
+            //-------------------------------------------------------------------------------------------------
+
+            LivingWorldCampaign WOTRScenario004
+
+                IsEvilCampaign = No
+
+                ;////////////// RTS Settings /////////////
+                #include "..\Common\LivingWorldDefaultRTSSettings.inc"
+
+                Scenario
+                    DisplayName = LWScenario:WOTRScenario004
+                    DisplayDescription = LWScenario:WOTRScenario004Description
+                    DisplayGameType = LWScenario:WOTRGameType004
+                    DisplayObjectives = LWScenario:WOTRObjectives004
+                    DisplayFiction = LWScenario:WOTRScenarioFiction004
+                    DisplayVictoriousText = LWScenario:WOTRScenarioWin004
+                    DisplayDefeatedText = LWScenario:WOTRScenarioLose004
+
+                    RegionCampaign = DefaultCampaign
+
+                    UseMpRulesVictoryCondition = Yes
+                    MinPlayers = 6
+                    MaxPlayers = 6
+
+                    DisableRegions = Celduin Fangorn
+                    DisallowStartInRegions = Amon_Sul Angmar
+                    DefaultStartSpots = The_Shire Minas_Tirith
+
+                    PlayerDefeatCondition
+                        Teams = 1 2
+                        LoseIfCapitalLost = No
+                        NumControlledRegionsLessOrEqualTo = -1
+                    End
+
+                    TeamDefeatCondition
+                        Teams = 1 2
+                        NumControlledRegionsLessOrEqualTo = -1
+                    End
+                End
+
+                ;//////////////////////////////////////////////////
+                Act One
+                ;//////////////////////////////////////////////////
+
+                    ;///////////////// Armies ////////////////
+                    #include "..\Common\LivingWorldDefaultArmies.inc"
+
+                    ;//////////////// VISUAL FLUFF ////////////////
+                    EyeTowerPoints
+                        LookPoint = X:436 Y:687 ; Rohan
+                        LookPoint = X:481 Y:287
+                        LookPoint = X:1179 Y:461
+                        LookPoint = X:947 Y:917
+                        LookPoint = X:172 Y:573 ; Isengard
+                        LookPoint = X:160 Y:560 ; Isengard
+                        LookPoint = X:175 Y:557 ; Isengard
+                        LookPoint = X:171 Y:348 ; Helm's Deep
+                        LookPoint = X:257 Y:535 ; Helm's Deep
+                        LookPoint = X:120 Y:350 ; Helm's Deep
+                        LookPoint = X:157 Y:420 ; Helm's Deep
+                    End
+                End
+            End
+            
+        """.trimIndent()
+        val campaign = livingWorldCampaign {
+            name = "Disable Name"
+            description = "Disable Description"
+            number = 4
+
+            scenario {
+                name = "LWScenario:WOTRScenario004"
+                description = "LWScenario:WOTRScenario004Description"
+                gameType = "LWScenario:WOTRGameType004"
+                objectives = "LWScenario:WOTRObjectives004"
+                fiction = "LWScenario:WOTRScenarioFiction004"
+                victoriousText = "LWScenario:WOTRScenarioWin004"
+                defeatedText = "LWScenario:WOTRScenarioLose004"
+
+                minPlayers = 6
+                maxPlayers = 6
+
+                disable(CELDUIN)
+                disable(FANGORN)
+                disallowStart(AMON_SUL)
+                disallowStart(ANGMAR)
+                defaultStart(THE_SHIRE)
+                defaultStart(MINAS_TIRITH)
+
+                playerDefeatCondition {
+                    team(1)
+                    team(2)
+                    loseIfCapitalLost = false
+                    numControlledRegionsLessOrEqualTo = -1
+                }
+
+                teamDefeatCondition {
+                    team(1)
+                    team(2)
+                    numControlledRegionsLessOrEqualTo = -1
+                }
+            }
+        }
+        assertEquals(expectedRendering, campaign.render())
+    }
+
+    @Test
+    fun `Campaign can set victory conditions`() {
+        val expectedRendering = """
+            //-------------------------------------------------------------------------------------------------
+            // Scenario Name: Victory Name
+            // Scenario Description: Victory Description
+            //-------------------------------------------------------------------------------------------------
+
+            LivingWorldCampaign WOTRScenario005
+
+                IsEvilCampaign = No
+
+                ;////////////// RTS Settings /////////////
+                #include "..\Common\LivingWorldDefaultRTSSettings.inc"
+
+                Scenario
+                    DisplayName = LWScenario:WOTRScenario005
+                    DisplayDescription = LWScenario:WOTRScenario005Description
+                    DisplayGameType = LWScenario:WOTRGameType005
+                    DisplayObjectives = LWScenario:WOTRObjectives005
+                    DisplayFiction = LWScenario:WOTRScenarioFiction005
+                    DisplayVictoriousText = LWScenario:WOTRScenarioWin005
+                    DisplayDefeatedText = LWScenario:WOTRScenarioLose005
+
+                    RegionCampaign = DefaultCampaign
+
+                    UseMpRulesVictoryCondition = Yes
+                    MinPlayers = 6
+                    MaxPlayers = 6
+
+                    PlayerDefeatCondition
+                        Teams = 1 2
+                        LoseIfCapitalLost = No
+                        NumControlledRegionsLessOrEqualTo = -1
+                    End
+
+                    TeamDefeatCondition
+                        Teams = 1 2
+                        NumControlledRegionsLessOrEqualTo = -1
+                    End
+
+                    TeamVictoryCondition
+                        Teams = 1 2
+                        ControlledRegions = Erebor Helms_Deep
+                        ControlledRegionsHeldForTurns = 3
+                    End
+                End
+
+                ;//////////////////////////////////////////////////
+                Act One
+                ;//////////////////////////////////////////////////
+
+                    ;///////////////// Armies ////////////////
+                    #include "..\Common\LivingWorldDefaultArmies.inc"
+
+                    ;//////////////// VISUAL FLUFF ////////////////
+                    EyeTowerPoints
+                        LookPoint = X:436 Y:687 ; Rohan
+                        LookPoint = X:481 Y:287
+                        LookPoint = X:1179 Y:461
+                        LookPoint = X:947 Y:917
+                        LookPoint = X:172 Y:573 ; Isengard
+                        LookPoint = X:160 Y:560 ; Isengard
+                        LookPoint = X:175 Y:557 ; Isengard
+                        LookPoint = X:171 Y:348 ; Helm's Deep
+                        LookPoint = X:257 Y:535 ; Helm's Deep
+                        LookPoint = X:120 Y:350 ; Helm's Deep
+                        LookPoint = X:157 Y:420 ; Helm's Deep
+                    End
+                End
+            End
+            
+        """.trimIndent()
+        val campaign = livingWorldCampaign {
+            name = "Victory Name"
+            description = "Victory Description"
+            number = 5
+
+            scenario {
+                name = "LWScenario:WOTRScenario005"
+                description = "LWScenario:WOTRScenario005Description"
+                gameType = "LWScenario:WOTRGameType005"
+                objectives = "LWScenario:WOTRObjectives005"
+                fiction = "LWScenario:WOTRScenarioFiction005"
+                victoriousText = "LWScenario:WOTRScenarioWin005"
+                defeatedText = "LWScenario:WOTRScenarioLose005"
+
+                minPlayers = 6
+                maxPlayers = 6
+
+                playerDefeatCondition {
+                    team(1)
+                    team(2)
+                    loseIfCapitalLost = false
+                    numControlledRegionsLessOrEqualTo = -1
+                }
+
+                teamDefeatCondition {
+                    team(1)
+                    team(2)
+                    numControlledRegionsLessOrEqualTo = -1
+                }
+
+                teamVictoryCondition {
+                    team(1)
+                    team(2)
+                    region(EREBOR)
+                    region(HELMS_DEEP)
+                    numTurns = 3
                 }
             }
         }

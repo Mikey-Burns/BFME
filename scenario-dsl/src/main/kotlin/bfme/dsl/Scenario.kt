@@ -81,6 +81,11 @@ class Scenario : WotrElement {
         if (maxPlayers !in 2..6) add(violation("'maxPlayers' must be between 2 and 6"))
         if (maxPlayers < minPlayers) add(violation("'maxPlayers' must be greater than or equal to minPlayers"))
 
+        defaultStartSpots.forEach { startSpot ->
+            if (startSpot in disallowStartInRegions) add(violation("'${startSpot.codeName}' cannot be a default start spot if it is disallowed"))
+            if (startSpot in disableRegions) add(violation("'${startSpot.codeName}' cannot be a default start spot if it is disabled"))
+        }
+
         addAll(playerDefeatConditions.flatMap(PlayerDefeatCondition::validate))
         addAll(teamDefeatConditions.flatMap(TeamDefeatCondition::validate))
         addAll(startingRestrictions.flatMap(StartingRestriction::validate))

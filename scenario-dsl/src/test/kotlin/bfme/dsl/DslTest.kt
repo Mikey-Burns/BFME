@@ -178,6 +178,29 @@ class DslTest {
         errorMessages.expectMessage("'faction' must not be empty")
         errorMessages.expectMessage("'army' must not be empty")
     }
+
+    @Test
+    fun `Start spots cannot be disabled or disallowed`() {
+        val validationErrors = livingWorldCampaign {
+            scenario {
+                disable(ANGMAR)
+                disable(CELDUIN)
+                disallowStart(CELDUIN)
+                disallowStart(FANGORN)
+                defaultStart(ANGMAR)
+                defaultStart(FANGORN)
+                defaultStart(CELDUIN)
+            }
+        }.validate()
+        val errorsByClass = validationErrors.groupBy { it.source }
+        assertTrue { errorsByClass.contains(LivingWorldCampaign::class.java) }
+        assertTrue { errorsByClass.contains(Scenario::class.java) }
+        val errorMessages = errorsByClass.getValue(Scenario::class.java).map(Violation::error)
+        errorMessages.expectMessage("'Angmar' cannot be a default start spot if it is disabled")
+        errorMessages.expectMessage("'Celduin' cannot be a default start spot if it is disabled")
+        errorMessages.expectMessage("'Celduin' cannot be a default start spot if it is disallowed")
+        errorMessages.expectMessage("'Fangorn' cannot be a default start spot if it is disallowed")
+    }
     // endregion
 
     // region Render tests
@@ -674,11 +697,11 @@ class DslTest {
     fun `Campaign with disabled territories can be rendered`() {
         val expectedRendering = """
             //-------------------------------------------------------------------------------------------------
-            // Scenario Name: Acts Name
-            // Scenario Description: Acts Description
+            // Scenario Name: Disable Name
+            // Scenario Description: Disable Description
             //-------------------------------------------------------------------------------------------------
 
-            LivingWorldCampaign WOTRScenario003
+            LivingWorldCampaign WOTRScenario004
 
                 IsEvilCampaign = No
 
@@ -686,13 +709,13 @@ class DslTest {
                 #include "..\Common\LivingWorldDefaultRTSSettings.inc"
 
                 Scenario
-                    DisplayName = LWScenario:WOTRScenario003
-                    DisplayDescription = LWScenario:WOTRScenario003Description
-                    DisplayGameType = LWScenario:WOTRGameType003
-                    DisplayObjectives = LWScenario:WOTRObjectives003
-                    DisplayFiction = LWScenario:WOTRScenarioFiction003
-                    DisplayVictoriousText = LWScenario:WOTRScenarioWin003
-                    DisplayDefeatedText = LWScenario:WOTRScenarioLose003
+                    DisplayName = LWScenario:WOTRScenario004
+                    DisplayDescription = LWScenario:WOTRScenario004Description
+                    DisplayGameType = LWScenario:WOTRGameType004
+                    DisplayObjectives = LWScenario:WOTRObjectives004
+                    DisplayFiction = LWScenario:WOTRScenarioFiction004
+                    DisplayVictoriousText = LWScenario:WOTRScenarioWin004
+                    DisplayDefeatedText = LWScenario:WOTRScenarioLose004
 
                     RegionCampaign = DefaultCampaign
 
@@ -742,18 +765,18 @@ class DslTest {
             
         """.trimIndent()
         val campaign = livingWorldCampaign {
-            name = "Acts Name"
-            description = "Acts Description"
-            number = 3
+            name = "Disable Name"
+            description = "Disable Description"
+            number = 4
 
             scenario {
-                name = "LWScenario:WOTRScenario003"
-                description = "LWScenario:WOTRScenario003Description"
-                gameType = "LWScenario:WOTRGameType003"
-                objectives = "LWScenario:WOTRObjectives003"
-                fiction = "LWScenario:WOTRScenarioFiction003"
-                victoriousText = "LWScenario:WOTRScenarioWin003"
-                defeatedText = "LWScenario:WOTRScenarioLose003"
+                name = "LWScenario:WOTRScenario004"
+                description = "LWScenario:WOTRScenario004Description"
+                gameType = "LWScenario:WOTRGameType004"
+                objectives = "LWScenario:WOTRObjectives004"
+                fiction = "LWScenario:WOTRScenarioFiction004"
+                victoriousText = "LWScenario:WOTRScenarioWin004"
+                defeatedText = "LWScenario:WOTRScenarioLose004"
 
                 minPlayers = 6
                 maxPlayers = 6

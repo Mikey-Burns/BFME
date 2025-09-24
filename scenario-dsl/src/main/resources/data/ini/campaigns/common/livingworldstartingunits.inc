@@ -702,6 +702,15 @@ LivingWorldPlayerArmy
         Quantity = 1
     End
 End
+
+LivingWorldPlayerArmy
+    Name = Isengard_MineArmy
+    DisplayNameTag = LWA:Garrison
+    ArmyEntry
+        ThingTemplate = IsengardExplosiveMine
+        Quantity = 1
+    End
+End
 //-------------------------------------------------------------------------------------------------
 // Angmar starting armies
 //-------------------------------------------------------------------------------------------------

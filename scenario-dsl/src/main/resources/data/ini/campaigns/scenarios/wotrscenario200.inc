@@ -337,6 +337,13 @@ LivingWorldCampaign WOTRScenario200
             Icon = DwarfArmyIcon
             SpawnAtActStart = Yes
         End
+        SpawnArmy
+            ScriptingName = MineArmy
+            SpawnForTemplates = PlayerIsengard
+            PlayerArmy = Isengard_MineArmy
+            Icon = IsengardArmyIcon
+            SpawnAtActStart = Yes
+        End
     End
     Act Three
         SpawnArmy

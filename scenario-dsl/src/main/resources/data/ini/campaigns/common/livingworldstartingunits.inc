@@ -120,6 +120,86 @@ LivingWorldPlayerArmy
     End
 End
 
+LivingWorldPlayerArmy
+    Name = MenOfTheWest_SpecialtyOneArmy
+    DisplayNameTag = LWA:Garrison
+    ArmyEntry
+        ThingTemplate = GondorFighterHorde
+        Quantity = 1
+    End
+    ArmyEntry
+        ThingTemplate = GondorArcherHorde
+        Quantity = 1
+    End
+    ArmyEntry
+        ThingTemplate = GondorRangerHorde
+        Quantity = 1
+    End
+    ArmyEntry
+        ThingTemplate = GondorTowerShieldGuardHorde
+        Quantity = 1
+    End
+End
+
+LivingWorldPlayerArmy
+    Name = MenOfTheWest_SpecialtyTwoArmy
+    DisplayNameTag = LWA:Garrison
+    ArmyEntry
+        ThingTemplate = RohanRohirrimHorde
+        Quantity = 1
+    End
+    ArmyEntry
+        ThingTemplate = RohanRohirrimHorde
+        Quantity = 1
+    End
+    ArmyEntry
+        ThingTemplate = RohanSpearmenHorde
+        Quantity = 1
+    End
+    ArmyEntry
+        ThingTemplate = RohanSpearmenHorde
+        Quantity = 1
+    End
+End
+
+LivingWorldPlayerArmy
+    Name = MenOfTheWest_SpecialtyThreeArmy
+    DisplayNameTag = LWA:Garrison
+    ArmyEntry
+        ThingTemplate = RohanRohirrimHorde
+        Quantity = 1
+    End
+    ArmyEntry
+        ThingTemplate = RohanRohirrimHorde
+        Quantity = 1
+    End
+    ArmyEntry
+        ThingTemplate = GondorTrebuchet
+        Quantity = 1
+    End
+    ArmyEntry
+        ThingTemplate = GondorTrebuchet
+        Quantity = 1
+    End
+End
+
+LivingWorldPlayerArmy
+    Name = MenOfTheWest_EliteArmy
+    DisplayNameTag = LWA:Garrison
+    ArmyEntry
+        ThingTemplate = GondorKnightsofDolHorde
+        Quantity = 1
+    End
+    ArmyEntry
+        ThingTemplate = GondorKnightsofDolHorde
+        Quantity = 1
+    End
+    ArmyEntry
+        ThingTemplate = GondorKnightsofDolHorde
+        Quantity = 1
+    End
+End
+
 
 //-------------------------------------------------------------------------------------------------
 // Elven starting armies
@@ -233,6 +313,86 @@ LivingWorldPlayerArmy
     End
     ArmyEntry
         ThingTemplate = RohanEntBirch
+        Quantity = 1
+    End
+End
+
+LivingWorldPlayerArmy
+    Name = Elven_SpecialtyOneArmy
+    DisplayNameTag = LWA:Garrison
+    ArmyEntry
+        ThingTemplate = ElvenLorienWarriorHorde
+        Quantity = 1
+    End
+    ArmyEntry
+        ThingTemplate = ElvenLorienWarriorHorde
+        Quantity = 1
+    End
+    ArmyEntry
+        ThingTemplate = ElvenLorienArcherHorde
+        Quantity = 1
+    End
+    ArmyEntry
+        ThingTemplate = ElvenLorienArcherHorde
+        Quantity = 1
+    End
+End
+
+LivingWorldPlayerArmy
+    Name = Elven_SpecialtyTwoArmy
+    DisplayNameTag = LWA:Garrison
+    ArmyEntry
+        ThingTemplate = ElvenRivendellLancerArmy
+        Quantity = 1
+    End
+    ArmyEntry
+        ThingTemplate = ElvenRivendellLancerArmy
+        Quantity = 1
+    End
+    ArmyEntry
+        ThingTemplate = ElvenRivendellArcherArmy
+        Quantity = 1
+    End
+    ArmyEntry
+        ThingTemplate = ElvenRivendellArcherArmy
+        Quantity = 1
+    End
+End
+
+LivingWorldPlayerArmy
+    Name = Elven_SpecialtyThreeArmy
+    DisplayNameTag = LWA:Garrison
+    ArmyEntry
+        ThingTemplate = RohanEntFir
+        Quantity = 1
+    End
+    ArmyEntry
+        ThingTemplate = RohanEntFir
+        Quantity = 1
+    End
+    ArmyEntry
+        ThingTemplate = RohanEntBirch
+        Quantity = 1
+    End
+    ArmyEntry
+        ThingTemplate = RohanEntBirch
+        Quantity = 1
+    End
+End
+
+LivingWorldPlayerArmy
+    Name = Elven_EliteArmy
+    DisplayNameTag = LWA:Garrison
+    ArmyEntry
+        ThingTemplate = NoldorWarriorHorde
+        Quantity = 1
+    End
+    ArmyEntry
+        ThingTemplate = NoldorWarriorHorde
+        Quantity = 1
+    End
+    ArmyEntry
+        ThingTemplate = NoldorWarriorHorde
         Quantity = 1
     End
 End
@@ -354,6 +514,86 @@ LivingWorldPlayerArmy
     End
 End
 
+LivingWorldPlayerArmy
+    Name = Dwarven_SpecialtyOneArmy
+    DisplayNameTag = LWA:Garrison
+    ArmyEntry
+        ThingTemplate = DwarvenGuardianHorde
+        Quantity = 1
+    End
+    ArmyEntry
+        ThingTemplate = DwarvenGuardianHorde
+        Quantity = 1
+    End
+    ArmyEntry
+        ThingTemplate = DwarvenAxeThrowerHorde
+        Quantity = 1
+    End
+    ArmyEntry
+        ThingTemplate = DwarvenAxeThrowerHorde
+        Quantity = 1
+    End
+End
+
+LivingWorldPlayerArmy
+    Name = Dwarven_SpecialtyTwoArmy
+    DisplayNameTag = LWA:Garrison
+    ArmyEntry
+        ThingTemplate = DwarvenMenOfDaleHorde
+        Quantity = 1
+    End
+    ArmyEntry
+        ThingTemplate = DwarvenMenOfDaleHorde
+        Quantity = 1
+    End
+    ArmyEntry
+        ThingTemplate = DwarvenAxeThrowerHorde
+        Quantity = 1
+    End
+    ArmyEntry
+        ThingTemplate = DwarvenAxeThrowerHorde
+        Quantity = 1
+    End
+End
+
+LivingWorldPlayerArmy
+    Name = Dwarven_SpecialtyThreeArmy
+    DisplayNameTag = LWA:Garrison
+    ArmyEntry
+        ThingTemplate = DwarvenAxeThrowerHorde
+        Quantity = 1
+    End
+    ArmyEntry
+        ThingTemplate = DwarvenCatapult
+        Quantity = 1
+    End
+    ArmyEntry
+        ThingTemplate = DwarvenMenOfDaleHorde
+        Quantity = 1
+    End
+    ArmyEntry
+        ThingTemplate = DwarvenPhalanxHorde
+        Quantity = 1
+    End
+End
+
+LivingWorldPlayerArmy
+    Name = Dwarven_EliteArmy
+    DisplayNameTag = LWA:Garrison
+    ArmyEntry
+        ThingTemplate = DwarvenZerkerHorde
+        Quantity = 1
+    End
+    ArmyEntry
+        ThingTemplate = DwarvenZerkerHorde
+        Quantity = 1
+    End
+    ArmyEntry
+        ThingTemplate = DwarvenZerkerHorde
+        Quantity = 1
+    End
+End
+
 
 //-------------------------------------------------------------------------------------------------
 // Corrupted Wild starting armies
@@ -471,6 +711,86 @@ LivingWorldPlayerArmy
     End
 End
 
+LivingWorldPlayerArmy
+    Name = Wild_SpecialtyOneArmy
+    DisplayNameTag = LWA:Garrison
+    ArmyEntry
+        ThingTemplate = WildSpiderlingHorde
+        Quantity = 1
+    End
+    ArmyEntry
+        ThingTemplate = WildSpiderlingHorde
+        Quantity = 1
+    End
+    ArmyEntry
+        ThingTemplate = GoblinSpiderRiderHorde
+        Quantity = 1
+    End
+    ArmyEntry
+        ThingTemplate = GoblinSpiderRiderHorde
+        Quantity = 1
+    End
+End
+
+LivingWorldPlayerArmy
+    Name = Wild_SpecialtyTwoArmy
+    DisplayNameTag = LWA:Garrison
+    ArmyEntry
+        ThingTemplate = WildMarauderHorde
+        Quantity = 1
+    End
+    ArmyEntry
+        ThingTemplate = WildMarauderHorde
+        Quantity = 1
+    End
+    ArmyEntry
+        ThingTemplate = WildMarauderSwordHorde
+        Quantity = 1
+    End
+    ArmyEntry
+        ThingTemplate = WildMarauderSwordHorde
+        Quantity = 1
+    End
+End
+
+LivingWorldPlayerArmy
+    Name = Wild_SpecialtyThreeArmy
+    DisplayNameTag = LWA:Garrison
+    ArmyEntry
+        ThingTemplate = GoblinCaveTroll
+        Quantity = 1
+    End
+    ArmyEntry
+        ThingTemplate = GoblinCaveTroll
+        Quantity = 1
+    End
+    ArmyEntry
+        ThingTemplate = WildMountainGiant
+        Quantity = 1
+    End
+    ArmyEntry
+        ThingTemplate = WildMountainGiant
+        Quantity = 1
+    End
+End
+
+LivingWorldPlayerArmy
+    Name = Wild_EliteArmy
+    DisplayNameTag = LWA:Garrison
+    ArmyEntry
+        ThingTemplate = WildBabyDrakeHorde
+        Quantity = 1
+    End
+    ArmyEntry
+        ThingTemplate = WildBabyDrakeHorde
+        Quantity = 1
+    End
+    ArmyEntry
+        ThingTemplate = WildBabyDrakeHorde
+        Quantity = 1
+    End
+End
+
 //-------------------------------------------------------------------------------------------------
 // Mordor starting armies
 //-------------------------------------------------------------------------------------------------
@@ -583,6 +903,86 @@ LivingWorldPlayerArmy
     End
     ArmyEntry
         ThingTemplate = MordorCatapult
+        Quantity = 1
+    End
+End
+
+LivingWorldPlayerArmy
+    Name = Mordor_SpecialtyOneArmy
+    DisplayNameTag = LWA:Garrison
+    ArmyEntry
+        ThingTemplate = MordorFighterHorde
+        Quantity = 1
+    End
+    ArmyEntry
+        ThingTemplate = MordorBlackOrcHorde
+        Quantity = 1
+    End
+    ArmyEntry
+        ThingTemplate = MordorCorsairsOfUmbarHorde
+        Quantity = 1
+    End
+    ArmyEntry
+        ThingTemplate = MordorArcherHorde
+        Quantity = 1
+    End
+End
+
+LivingWorldPlayerArmy
+    Name = Mordor_SpecialtyTwoArmy
+    DisplayNameTag = LWA:Garrison
+    ArmyEntry
+        ThingTemplate = MordorHaradrimArcherHorde
+        Quantity = 1
+    End
+    ArmyEntry
+        ThingTemplate = MordorHaradrimRiderHorde
+        Quantity = 1
+    End
+    ArmyEntry
+        ThingTemplate = MordorEasterlingHorde
+        Quantity = 1
+    End
+    ArmyEntry
+        ThingTemplate = MordorCatapult
+        Quantity = 1
+    End
+End
+
+LivingWorldPlayerArmy
+    Name = Mordor_SpecialtyThreeArmy
+    DisplayNameTag = LWA:Garrison
+    ArmyEntry
+        ThingTemplate = GoblinCaveTroll
+        Quantity = 1
+    End
+    ArmyEntry
+        ThingTemplate = MordorMountainTroll
+        Quantity = 1
+    End
+    ArmyEntry
+        ThingTemplate = MordorAttackTroll
+        Quantity = 1
+    End
+    ArmyEntry
+        ThingTemplate = MordorMumakil
+        Quantity = 1
+    End
+End
+
+LivingWorldPlayerArmy
+    Name = Mordor_EliteArmy
+    DisplayNameTag = LWA:Garrison
+    ArmyEntry
+        ThingTemplate = MordorBlackRiderHorde
+        Quantity = 1
+    End
+    ArmyEntry
+        ThingTemplate = MordorBlackRiderHorde
+        Quantity = 1
+    End
+    ArmyEntry
+        ThingTemplate = MordorBlackRiderHorde
         Quantity = 1
     End
 End
@@ -711,6 +1111,87 @@ LivingWorldPlayerArmy
         Quantity = 1
     End
 End
+
+LivingWorldPlayerArmy
+    Name = Isengard_SpecialtyOneArmy
+    DisplayNameTag = LWA:Garrison
+    ArmyEntry
+        ThingTemplate = IsengardWildmanHorde
+        Quantity = 1
+    End
+    ArmyEntry
+        ThingTemplate = IsengardWildmanHorde
+        Quantity = 1
+    End
+    ArmyEntry
+        ThingTemplate = IsengardWildmanAxeHorde
+        Quantity = 1
+    End
+    ArmyEntry
+        ThingTemplate = IsengardWildmanAxeHorde
+        Quantity = 1
+    End
+End
+
+LivingWorldPlayerArmy
+    Name = Isengard_SpecialtyTwoArmy
+    DisplayNameTag = LWA:Garrison
+    ArmyEntry
+        ThingTemplate = IsengardWargPackHorde
+        Quantity = 1
+    End
+    ArmyEntry
+        ThingTemplate = IsengardWargPackHorde
+        Quantity = 1
+    End
+    ArmyEntry
+        ThingTemplate = IsengardWargRiderHorde
+        Quantity = 1
+    End
+    ArmyEntry
+        ThingTemplate = IsengardWargRiderHorde
+        Quantity = 1
+    End
+End
+
+LivingWorldPlayerArmy
+    Name = Isengard_SpecialtyThreeArmy
+    DisplayNameTag = LWA:Garrison
+    ArmyEntry
+        ThingTemplate = IsengardBeserker
+        Quantity = 1
+    End
+    ArmyEntry
+        ThingTemplate = IsengardBeserker
+        Quantity = 1
+    End
+    ArmyEntry
+        ThingTemplate = IsengardBallista
+        Quantity = 1
+    End
+    ArmyEntry
+        ThingTemplate = IsengardExplosiveMine
+        Quantity = 1
+    End
+End
+
+LivingWorldPlayerArmy
+    Name = Isengard_EliteArmy
+    DisplayNameTag = LWA:Garrison
+    ArmyEntry
+        ThingTemplate = IsengardBeserkerHorde
+        Quantity = 1
+    End
+    ArmyEntry
+        ThingTemplate = IsengardBeserkerHorde
+        Quantity = 1
+    End
+    ArmyEntry
+        ThingTemplate = IsengardBeserkerHorde
+        Quantity = 1
+    End
+End
+
 //-------------------------------------------------------------------------------------------------
 // Angmar starting armies
 //-------------------------------------------------------------------------------------------------
@@ -819,6 +1300,86 @@ LivingWorldPlayerArmy
     End
     ArmyEntry
         ThingTemplate = AngmarTrollSling
+        Quantity = 1
+    End
+End
+
+LivingWorldPlayerArmy
+    Name = Angmar_SpecialtyOneArmy
+    DisplayNameTag = LWA:Garrison
+    ArmyEntry
+        ThingTemplate = AngmarDarkDunedainHorde
+        Quantity = 1
+    End
+    ArmyEntry
+        ThingTemplate = AngmarDarkRangerHorde
+        Quantity = 1
+    End
+    ArmyEntry
+        ThingTemplate = AngmarDarkRangerHorde
+        Quantity = 1
+    End
+    ArmyEntry
+        ThingTemplate = AngmarNecromancerHorde
+        Quantity = 1
+    End
+End
+
+LivingWorldPlayerArmy
+    Name = Angmar_SpecialtyTwoArmy
+    DisplayNameTag = LWA:Garrison
+    ArmyEntry
+        ThingTemplate = AngmarSnowTrollHorde
+        Quantity = 1
+    End
+    ArmyEntry
+        ThingTemplate = AngmarSnowTrollHorde
+        Quantity = 1
+    End
+    ArmyEntry
+        ThingTemplate = AngmarHillTrollHorde
+        Quantity = 1
+    End
+    ArmyEntry
+        ThingTemplate = AngmarHillTrollHorde
+        Quantity = 1
+    End
+End
+
+LivingWorldPlayerArmy
+    Name = Angmar_SpecialtyThreeArmy
+    DisplayNameTag = LWA:Garrison
+    ArmyEntry
+        ThingTemplate = AngmarThrallMaster
+        Quantity = 1
+    End
+    ArmyEntry
+        ThingTemplate = AngmarThrallMaster
+        Quantity = 1
+    End
+    ArmyEntry
+        ThingTemplate = AngmarTrollSling
+        Quantity = 1
+    End
+    ArmyEntry
+        ThingTemplate = AngmarTrollSling
+        Quantity = 1
+    End
+End
+
+LivingWorldPlayerArmy
+    Name = Angmar_EliteArmy
+    DisplayNameTag = LWA:Garrison
+    ArmyEntry
+        ThingTemplate = WildBabyDrakeHorde
+        Quantity = 1
+    End
+    ArmyEntry
+        ThingTemplate = WildBabyDrakeHorde
+        Quantity = 1
+    End
+    ArmyEntry
+        ThingTemplate = WildBabyDrakeHorde
         Quantity = 1
     End
 End

@@ -98,6 +98,56 @@ enum class Army(
         "Isengard_FortressAttackArmy",
         "CorruptedWild_FortressAttackArmy",
         "Angmar_FortressAttackArmy"
+    ),
+    EXTRA_HERO_ONE_ARMY(
+        "ExtraHeroOneArmy",
+        menArmyName = "GandalfArmy",
+        elvesArmyName = "LegolasArmy"
+    ),
+    EXTRA_HERO_TWO_ARMY(
+        "ExtraHeroTwoArmy",
+        menArmyName = "FaramirArmy",
+        elvesArmyName = "ArwenArmy"
+    ),
+    SPECIALTY_ONE_ARMY(
+        "SpecialtyOneArmy",
+        "MenOfTheWest_SpecialtyOneArmy",
+        "Elven_SpecialtyOneArmy",
+        "Dwarven_SpecialtyOneArmy",
+        "Mordor_SpecialtyOneArmy",
+        "Isengard_SpecialtyOneArmy",
+        "Wild_SpecialtyOneArmy",
+        "Angmar_SpecialtyOneArmy"
+    ),
+    SPECIALTY_TWO_ARMY(
+        "SpecialtyTwoArmy",
+        "MenOfTheWest_SpecialtyTwoArmy",
+        "Elven_SpecialtyTwoArmy",
+        "Dwarven_SpecialtyTwoArmy",
+        "Mordor_SpecialtyTwoArmy",
+        "Isengard_SpecialtyTwoArmy",
+        "Wild_SpecialtyTwoArmy",
+        "Angmar_SpecialtyTwoArmy"
+    ),
+    SPECIALTY_THREE_ARMY(
+        "SpecialtyThreeArmy",
+        "MenOfTheWest_SpecialtyThreeArmy",
+        "Elven_SpecialtyThreeArmy",
+        "Dwarven_SpecialtyThreeArmy",
+        "Mordor_SpecialtyThreeArmy",
+        "Isengard_SpecialtyThreeArmy",
+        "Wild_SpecialtyThreeArmy",
+        "Angmar_SpecialtyThreeArmy"
+    ),
+    ELITE_ARMY(
+        "EliteArmy",
+        "MenOfTheWest_EliteArmy",
+        "Elven_EliteArmy",
+        "Dwarven_EliteArmy",
+        "Mordor_EliteArmy",
+        "Isengard_EliteArmy",
+        "Wild_EliteArmy",
+        "Angmar_EliteArmy"
     );
 
     /**

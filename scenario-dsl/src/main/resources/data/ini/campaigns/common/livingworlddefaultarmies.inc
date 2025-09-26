@@ -82,6 +82,53 @@ SpawnArmy
     Icon = MoWArmyIcon
 End
 
+SpawnArmy
+    ScriptingName = SpecialtyOneArmy
+    SpawnAtActStart = No
+    SpawnForTemplates = PlayerMen
+    PlayerArmy = MenOfTheWest_SpecialtyOneArmy
+    Icon = MoWArmyIcon
+End
+
+SpawnArmy
+    ScriptingName = SpecialtyTwoArmy
+    SpawnAtActStart = No
+    SpawnForTemplates = PlayerMen
+    PlayerArmy = MenOfTheWest_SpecialtyTwoArmy
+    Icon = MoWArmyIcon
+End
+
+SpawnArmy
+    ScriptingName = SpecialtyThreeArmy
+    SpawnAtActStart = No
+    SpawnForTemplates = PlayerMen
+    PlayerArmy = MenOfTheWest_SpecialtyThreeArmy
+    Icon = MoWArmyIcon
+End
+
+SpawnArmy
+    ScriptingName = EliteArmy
+    SpawnAtActStart = No
+    SpawnForTemplates = PlayerMen
+    PlayerArmy = MenOfTheWest_EliteArmy
+    Icon = MoWArmyIcon
+End
+
+SpawnArmy
+    ScriptingName = ExtraHeroOneArmy
+    SpawnAtActStart = No
+    SpawnForTemplates = PlayerMen
+    PlayerArmy = GandalfArmy
+    Icon = MoWArmyIcon
+End
+
+SpawnArmy
+    ScriptingName = ExtraHeroTwoArmy
+    SpawnAtActStart = No
+    SpawnForTemplates = PlayerMen
+    PlayerArmy = FaramirArmy
+    Icon = MoWArmyIcon
+End
 
 //-------------------------------------------------------------------------------------------------
 // Elves
@@ -158,6 +205,54 @@ SpawnArmy
     SpawnAtActStart = No
     SpawnForTemplates = PlayerElves
     PlayerArmy = Elven_FortressAttackArmy
+    Icon = ElfArmyIcon
+End
+
+SpawnArmy
+    ScriptingName = SpecialtyOneArmy
+    SpawnAtActStart = No
+    SpawnForTemplates = PlayerElves
+    PlayerArmy = Elven_SpecialtyOneArmy
+    Icon = ElfArmyIcon
+End
+
+SpawnArmy
+    ScriptingName = SpecialtyTwoArmy
+    SpawnAtActStart = No
+    SpawnForTemplates = PlayerElves
+    PlayerArmy = Elven_SpecialtyTwoArmy
+    Icon = ElfArmyIcon
+End
+
+SpawnArmy
+    ScriptingName = SpecialtyThreeArmy
+    SpawnAtActStart = No
+    SpawnForTemplates = PlayerElves
+    PlayerArmy = Elven_SpecialtyThreeArmy
+    Icon = ElfArmyIcon
+End
+
+SpawnArmy
+    ScriptingName = EliteArmy
+    SpawnAtActStart = No
+    SpawnForTemplates = PlayerElves
+    PlayerArmy = Elven_EliteArmy
+    Icon = ElfArmyIcon
+End
+
+SpawnArmy
+    ScriptingName = ExtraHeroOneArmy
+    SpawnAtActStart = No
+    SpawnForTemplates = PlayerElves
+    PlayerArmy = LegolasArmy
+    Icon = ElfArmyIcon
+End
+
+SpawnArmy
+    ScriptingName = ExtraHeroTwoArmy
+    SpawnAtActStart = No
+    SpawnForTemplates = PlayerElves
+    PlayerArmy = ArwenArmy
     Icon = ElfArmyIcon
 End
 
@@ -240,6 +335,38 @@ SpawnArmy
     Icon = DwarfArmyIcon
 End
 
+SpawnArmy
+    ScriptingName = SpecialtyOneArmy
+    SpawnAtActStart = No
+    SpawnForTemplates = PlayerDwarves
+    PlayerArmy = Dwarven_SpecialtyOneArmy
+    Icon = DwarfArmyIcon
+End
+
+SpawnArmy
+    ScriptingName = SpecialtyTwoArmy
+    SpawnAtActStart = No
+    SpawnForTemplates = PlayerDwarves
+    PlayerArmy = Dwarven_SpecialtyTwoArmy
+    Icon = DwarfArmyIcon
+End
+
+SpawnArmy
+    ScriptingName = SpecialtyThreeArmy
+    SpawnAtActStart = No
+    SpawnForTemplates = PlayerDwarves
+    PlayerArmy = Dwarven_SpecialtyThreeArmy
+    Icon = DwarfArmyIcon
+End
+
+SpawnArmy
+    ScriptingName = EliteArmy
+    SpawnAtActStart = No
+    SpawnForTemplates = PlayerDwarves
+    PlayerArmy = Dwarven_EliteArmy
+    Icon = DwarfArmyIcon
+End
+
 
 //-------------------------------------------------------------------------------------------------
 // Mordor
@@ -316,6 +443,38 @@ SpawnArmy
     SpawnAtActStart = No
     SpawnForTemplates = PlayerMordor
     PlayerArmy = Mordor_FortressAttackArmy
+    Icon = MordorArmyIcon
+End
+
+SpawnArmy
+    ScriptingName = SpecialtyOneArmy
+    SpawnAtActStart = No
+    SpawnForTemplates = PlayerMordor
+    PlayerArmy = Mordor_SpecialtyOneArmy
+    Icon = MordorArmyIcon
+End
+
+SpawnArmy
+    ScriptingName = SpecialtyTwoArmy
+    SpawnAtActStart = No
+    SpawnForTemplates = PlayerMordor
+    PlayerArmy = Mordor_SpecialtyTwoArmy
+    Icon = MordorArmyIcon
+End
+
+SpawnArmy
+    ScriptingName = SpecialtyThreeArmy
+    SpawnAtActStart = No
+    SpawnForTemplates = PlayerMordor
+    PlayerArmy = Mordor_SpecialtyThreeArmy
+    Icon = MordorArmyIcon
+End
+
+SpawnArmy
+    ScriptingName = EliteArmy
+    SpawnAtActStart = No
+    SpawnForTemplates = PlayerMordor
+    PlayerArmy = Mordor_EliteArmy
     Icon = MordorArmyIcon
 End
 
@@ -398,6 +557,38 @@ SpawnArmy
     Icon = IsengardArmyIcon
 End
 
+SpawnArmy
+    ScriptingName = SpecialtyOneArmy
+    SpawnAtActStart = No
+    SpawnForTemplates = PlayerIsengard
+    PlayerArmy = Isengard_SpecialtyOneArmy
+    Icon = IsengardArmyIcon
+End
+
+SpawnArmy
+    ScriptingName = SpecialtyTwoArmy
+    SpawnAtActStart = No
+    SpawnForTemplates = PlayerIsengard
+    PlayerArmy = Isengard_SpecialtyTwoArmy
+    Icon = IsengardArmyIcon
+End
+
+SpawnArmy
+    ScriptingName = SpecialtyThreeArmy
+    SpawnAtActStart = No
+    SpawnForTemplates = PlayerIsengard
+    PlayerArmy = Isengard_SpecialtyThreeArmy
+    Icon = IsengardArmyIcon
+End
+
+SpawnArmy
+    ScriptingName = EliteArmy
+    SpawnAtActStart = No
+    SpawnForTemplates = PlayerIsengard
+    PlayerArmy = Isengard_EliteArmy
+    Icon = IsengardArmyIcon
+End
+
 
 //-------------------------------------------------------------------------------------------------
 // Wild
@@ -477,6 +668,38 @@ SpawnArmy
     Icon = WildArmyIcon
 End
 
+SpawnArmy
+    ScriptingName = SpecialtyOneArmy
+    SpawnAtActStart = No
+    SpawnForTemplates = PlayerWild
+    PlayerArmy = Wild_SpecialtyOneArmy
+    Icon = WildArmyIcon
+End
+
+SpawnArmy
+    ScriptingName = SpecialtyTwoArmy
+    SpawnAtActStart = No
+    SpawnForTemplates = PlayerWild
+    PlayerArmy = Wild_SpecialtyTwoArmy
+    Icon = WildArmyIcon
+End
+
+SpawnArmy
+    ScriptingName = SpecialtyThreeArmy
+    SpawnAtActStart = No
+    SpawnForTemplates = PlayerWild
+    PlayerArmy = Wild_SpecialtyThreeArmy
+    Icon = WildArmyIcon
+End
+
+SpawnArmy
+    ScriptingName = EliteArmy
+    SpawnAtActStart = No
+    SpawnForTemplates = PlayerWild
+    PlayerArmy = Wild_EliteArmy
+    Icon = WildArmyIcon
+End
+
 //-------------------------------------------------------------------------------------------------
 // Angmar
 //-------------------------------------------------------------------------------------------------
@@ -552,6 +775,38 @@ SpawnArmy
     SpawnAtActStart = No
     SpawnForTemplates = PlayerAngmar
     PlayerArmy = Angmar_FortressAttackArmy
+    Icon = AngmarArmyIcon
+End
+
+SpawnArmy
+    ScriptingName = SpecialtyOneArmy
+    SpawnAtActStart = No
+    SpawnForTemplates = PlayerAngmar
+    PlayerArmy = Angmar_SpecialtyOneArmy
+    Icon = AngmarArmyIcon
+End
+
+SpawnArmy
+    ScriptingName = SpecialtyTwoArmy
+    SpawnAtActStart = No
+    SpawnForTemplates = PlayerAngmar
+    PlayerArmy = Angmar_SpecialtyTwoArmy
+    Icon = AngmarArmyIcon
+End
+
+SpawnArmy
+    ScriptingName = SpecialtyThreeArmy
+    SpawnAtActStart = No
+    SpawnForTemplates = PlayerAngmar
+    PlayerArmy = Angmar_SpecialtyThreeArmy
+    Icon = AngmarArmyIcon
+End
+
+SpawnArmy
+    ScriptingName = EliteArmy
+    SpawnAtActStart = No
+    SpawnForTemplates = PlayerAngmar
+    PlayerArmy = Angmar_EliteArmy
     Icon = AngmarArmyIcon
 End
 

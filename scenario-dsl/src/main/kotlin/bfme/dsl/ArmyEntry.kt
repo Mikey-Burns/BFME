@@ -24,7 +24,7 @@ class ArmyEntry : WotrElement {
         appendLine(2, "SpawnArmy")
         appendLine(3, "ScriptingName = $name")
         appendLine(3, "SpawnForTemplates = ${faction?.spawnForTemplate}")
-        appendLine(3, "PlayerArmy = ${faction?.armyPrefix}_${army?.codeName}")
+        appendLine(3, "PlayerArmy = ${army?.forFaction(faction!!)}")
         appendLine(3, "Icon = ${faction?.armyIcon}")
         appendLine(3, "SpawnAtActStart = Yes")
         appendLine(2, "End")

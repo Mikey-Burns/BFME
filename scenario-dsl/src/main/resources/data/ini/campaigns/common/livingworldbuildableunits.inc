@@ -461,7 +461,15 @@ LivingWorldPlayerArmy
         ThingTemplate = IsengardBallista
         Quantity = 1
     End
+End
 
+LivingWorldPlayerArmy
+    Name = IsengardExplosiveMineArmy
+    DisplayNameTag = LWA:Isengard
+    ArmyEntry
+        ThingTemplate = IsengardExplosiveMine
+        Quantity = 1
+    End
 End
 
 

@@ -42,7 +42,7 @@ LivingWorldCampaign WOTRScenario200
         TeamVictoryCondition
             Teams = 1 2
             ControlledRegions = Erebor
-            ControlledRegionsHeldForTurns = 2
+            ControlledRegionsHeldForTurns = 3
         End
 
         StartingRestriction
@@ -332,6 +332,20 @@ LivingWorldCampaign WOTRScenario200
         End
         SpawnArmy
             ScriptingName = ExtraArmy
+            SpawnForTemplates = PlayerElves
+            PlayerArmy = LegolasArmy
+            Icon = ElfArmyIcon
+            SpawnAtActStart = Yes
+        End
+        SpawnArmy
+            ScriptingName = ExtraArmy
+            SpawnForTemplates = PlayerElves
+            PlayerArmy = ElrondArmy
+            Icon = ElfArmyIcon
+            SpawnAtActStart = Yes
+        End
+        SpawnArmy
+            ScriptingName = ExtraArmy
             SpawnForTemplates = PlayerDwarves
             PlayerArmy = Dwarven_FortressAttackArmy
             Icon = DwarfArmyIcon
@@ -350,6 +364,13 @@ LivingWorldCampaign WOTRScenario200
             ScriptingName = ExtraArmy
             SpawnForTemplates = PlayerElves
             PlayerArmy = Elven_FortressAttackArmy
+            Icon = ElfArmyIcon
+            SpawnAtActStart = Yes
+        End
+        SpawnArmy
+            ScriptingName = ExtraArmy
+            SpawnForTemplates = PlayerElves
+            PlayerArmy = LegolasArmy
             Icon = ElfArmyIcon
             SpawnAtActStart = Yes
         End

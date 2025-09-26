@@ -1,9 +1,6 @@
 package bfme
 
-import bfme.scenarios.fortressDefense
-import bfme.scenarios.fortressDefenseEscalation
-import bfme.scenarios.twoCornerChaos
-import bfme.scenarios.twoCornerChaosCreateAHero
+import bfme.scenarios.*
 import java.io.File
 
 fun main() {
@@ -19,4 +16,7 @@ fun main() {
     val scenario104 = fortressDefenseEscalation()
     File("scenario-dsl/src/main/resources/data/ini/campaigns/scenarios/wotrscenario104.inc")
         .writeText(scenario104)
+    val scenario105 = ereborMadness()
+    File("scenario-dsl/src/main/resources/data/ini/campaigns/scenarios/wotrscenario105.inc")
+        .writeText(scenario105)
 }

@@ -61737,6 +61737,14 @@ LWScenario:WOTRScenario104Description
 "# Of Players: 6\nObjective: Begin with control of the fortresses of Middle Earth, but no heroes nearby.\nSend your armies forth to defend your lands.\nThe AI will spawn increasingly large armies in their home bases for 10 turns, even if the territory has been captured."
 END
 
+LWScenario:WOTRScenario105
+"Erebor Madness"
+END
+
+LWScenario:WOTRScenario105Description
+"# Of Players: 6\nObjective: Begin with control of Erebor and Dol Guldur whilst enemies surround you.\nAttempt to hold the fortresses for 10 turns to win. If you lose both at a given time, you lose.\nEnemies will spawn escalating armies, so strike quickly and then hold the territory."
+END
+
 LWScenario:WOTRScenario200
 "Testing scenario"
 END

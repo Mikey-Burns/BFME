@@ -1,9 +1,0 @@
-=== VERSION 1.0.0 ===
-First official workshop version as a mod.
-Adds "2 Corner Chaos" Scenario
-    - Humans start in Iron Hills and Belfalas
-    - AI start in Fangorn, Gap of Rohan, High Pass, and Dunland
-    - Humans start with 2 hero armies and a garrison in each of the starting locations
-    - AI start with 1 hear army in each of the starting locations
-    - AI start with 1 garrison in their respective starting locations
-    - Victory condition is total elimination, conquering a player's territory does not eliminate them if they have armies

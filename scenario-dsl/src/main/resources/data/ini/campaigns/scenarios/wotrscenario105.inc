@@ -21,7 +21,7 @@ LivingWorldCampaign WOTRScenario105
         DisplayVictoriousText = LWScenario:WOTRScenarioWin101
         DisplayDefeatedText = LWScenario:WOTRScenarioLose101
 
-        RegionCampaign = DefaultCampaign
+        RegionCampaign = FortressRegion
 
         UseMpRulesVictoryCondition = No
         MinPlayers = 6
@@ -95,12 +95,12 @@ LivingWorldCampaign WOTRScenario105
             StartRegion = Dol_Guldur
 
             SpawnArmies
-                Armies = ExtraHeroOneArmy FortressAttackArmy
+                Armies = ExtraHeroOneArmy FortressAttackArmy FortressDefenseArmy
                 Region = Dol_Guldur
             End
 
             SpawnArmies
-                Armies = ExtraHeroTwoArmy FortressAttackArmy
+                Armies = ExtraHeroTwoArmy FortressAttackArmy FortressDefenseArmy
                 Region = Erebor
             End
 
@@ -2055,5 +2055,38 @@ LivingWorldCampaign WOTRScenario105
             Icon = AngmarArmyIcon
             SpawnAtActStart = Yes
         End
+    End
+End
+
+LivingWorldRegionCampaign FortressRegion
+    RegionConqueredSound = Gui_RegionConquered
+    RegionEffectsManagerName = WotRRegionEffects
+    RegionBonusArmy = LW:RegionBonusArmy_Good
+    RegionBonusResource = LW:RegionBonusResource
+    RegionBonusLegendary = LW:RegionLegendaryBonus
+    HeroOnlyArmyCommandPoints = 0
+    SmallArmyCommandPoints = 120
+    MediumArmyCommandPoints = 240
+
+    // Regions
+    #include "..\common\livingworldregionswithoutbonus.inc"
+
+    ConcurrentRegionBonus
+        Territory = LW:TerritoryCustom
+        EffectName = CustomEffect
+        Regions = Dol_Guldur Erebor
+        ArmyBonus = 0
+        ResourceBonus = 0
+        LegendaryBonus = 45
+        AttackBonus = 0
+        DefenseBonus = 5
+        ExperienceBonus = 5
+        FreeInnUnitsBonus = 0
+        FreeBuilderBonus = 0
+        UnifiedEvaEvent = WorldUnifyNorthernWastes
+        LostEvaEvent = WorldLostNorthernWastes
+        LookAtCenter = X:-65 Y:2085
+        LookAtHeading = 0
+        LookAtZoom = 0.71
     End
 End

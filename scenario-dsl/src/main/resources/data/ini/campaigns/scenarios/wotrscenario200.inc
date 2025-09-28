@@ -19,7 +19,7 @@ LivingWorldCampaign WOTRScenario200
         DisplayVictoriousText = LWScenario:WOTRScenarioWin101
         DisplayDefeatedText = LWScenario:WOTRScenarioLose101
 
-        RegionCampaign = DefaultCampaign
+        RegionCampaign = TestingRegion
 
         UseMpRulesVictoryCondition = No
         MinPlayers = 6
@@ -374,5 +374,38 @@ LivingWorldCampaign WOTRScenario200
             Icon = ElfArmyIcon
             SpawnAtActStart = Yes
         End
+    End
+End
+
+LivingWorldRegionCampaign TestingRegion
+    RegionConqueredSound = Gui_RegionConquered
+    RegionEffectsManagerName = WotRRegionEffects
+    RegionBonusArmy = LW:RegionBonusArmy_Good
+    RegionBonusResource = LW:RegionBonusResource
+    RegionBonusLegendary = LW:RegionLegendaryBonus
+    HeroOnlyArmyCommandPoints = 0
+    SmallArmyCommandPoints = 120
+    MediumArmyCommandPoints = 240
+
+    // Regions
+    #include "..\common\livingworldregionswithoutbonus.inc"
+
+    ConcurrentRegionBonus
+        Territory = LW:TerritoryCustom
+        EffectName = CustomEffect
+        Regions = Iron_Hills
+        ArmyBonus = 0
+        ResourceBonus = 1
+        LegendaryBonus = 5
+        AttackBonus = 1
+        DefenseBonus = 5
+        ExperienceBonus = 4
+        FreeInnUnitsBonus = 2
+        FreeBuilderBonus = 3
+        UnifiedEvaEvent = WorldUnifyNorthernWastes
+        LostEvaEvent = WorldLostNorthernWastes
+        LookAtCenter = X:-65 Y:2085
+        LookAtHeading = 0
+        LookAtZoom = 0.71
     End
 End

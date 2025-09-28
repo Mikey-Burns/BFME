@@ -106,12 +106,14 @@ fun ereborMadness(): String = livingWorldCampaign {
             spawnArmies {
                 army(EXTRA_HERO_ONE_ARMY)
                 army(FORTRESS_ATTACK_ARMY)
+                army(FORTRESS_DEFENSE_ARMY)
                 region = DOL_GULDUR
             }
 
             spawnArmies {
                 army(EXTRA_HERO_TWO_ARMY)
                 army(FORTRESS_ATTACK_ARMY)
+                army(FORTRESS_DEFENSE_ARMY)
                 region = EREBOR
             }
 
@@ -322,6 +324,24 @@ fun ereborMadness(): String = livingWorldCampaign {
                     }
                 }
             }
+        }
+    }
+
+    livingWorldRegionCampaign {
+        name = "FortressRegion"
+
+        concurrentRegionBonus {
+            armyBonus = 0
+            resourceBonus = 0
+            legendaryBonus = 45
+            attackBonus = 0
+            defenseBonus = 5
+            experienceBonus = 5
+            freeInnUnitsBonus = 0
+            freeBuilderBonus = 0
+
+            region(DOL_GULDUR)
+            region(EREBOR)
         }
     }
 }

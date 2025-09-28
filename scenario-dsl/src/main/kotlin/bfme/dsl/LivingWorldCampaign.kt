@@ -10,6 +10,7 @@ class LivingWorldCampaign : WotrElement {
     var description: String = ""
     var number: Int = -1
     var scenario: Scenario? = null
+    var livingWorldRegionCampaign: LivingWorldRegionCampaign? = null
     private val _acts = mutableListOf<Act>()
     val acts: List<Act> get() = _acts.toList()
 
@@ -19,6 +20,7 @@ class LivingWorldCampaign : WotrElement {
         if (number < 0) add(violation("'number' must be greater than 0"))
         if (scenario == null) add(violation("'scenario' must not be null"))
         addAll(scenario?.validate() ?: emptyList())
+        addAll(livingWorldRegionCampaign?.validate() ?: emptyList())
         addAll(acts.flatMap(Act::validate))
     }
 
@@ -38,6 +40,8 @@ class LivingWorldCampaign : WotrElement {
             appendLine(1, ";////////////// RTS Settings /////////////")
             appendLine(1, "#include \"..\\Common\\LivingWorldDefaultRTSSettings.inc\"")
             appendLine()
+            // Set the scenario region campaign name
+            livingWorldRegionCampaign?.name.let { scenario?.regionCampaign = it ?: "DefaultCampaign" }
             append(scenario?.render())
             appendLine()
             appendLine(1, ";//////////////////////////////////////////////////")
@@ -67,6 +71,10 @@ class LivingWorldCampaign : WotrElement {
 
             append(acts.joinToString("\n", transform = Act::render))
             appendLine("End")
+            if (livingWorldRegionCampaign != null) {
+                appendLine()
+                append(livingWorldRegionCampaign?.render())
+            }
         }
     }
 
@@ -76,6 +84,14 @@ class LivingWorldCampaign : WotrElement {
      */
     fun LivingWorldCampaign.scenario(block: Scenario.() -> Unit) {
         scenario = Scenario().apply(block)
+    }
+
+    /**
+     * Add a LivingWorldRegionCampaign to the campaign.
+     * There should only be a single one added.
+     */
+    fun LivingWorldCampaign.livingWorldRegionCampaign(block: LivingWorldRegionCampaign.() -> Unit) {
+        livingWorldRegionCampaign = LivingWorldRegionCampaign().apply(block)
     }
 
     /**

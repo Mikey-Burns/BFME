@@ -220,6 +220,48 @@ class DslTest {
         errorMessages.expectMessage("'Celduin' cannot be a default start spot if it is disallowed")
         errorMessages.expectMessage("'Fangorn' cannot be a default start spot if it is disallowed")
     }
+
+    @Test
+    fun `LivingWorldRegionCampaign must be named`() {
+        val validationErrors = livingWorldCampaign {
+            livingWorldRegionCampaign { }
+        }.validate()
+        assertTrue(validationErrors.isNotEmpty())
+        val errorsByClass = validationErrors.groupBy { it.source }
+        assertTrue { errorsByClass.contains(LivingWorldRegionCampaign::class.java) }
+        val errorMessages = errorsByClass.getValue(LivingWorldRegionCampaign::class.java).map(Violation::error)
+        errorMessages.expectMessage("'name' must not be empty")
+    }
+
+    @Test
+    fun `ConcurrentRegionBonus must populate fields with real values`() {
+        val validationErrors = livingWorldCampaign {
+            livingWorldRegionCampaign {
+                concurrentRegionBonus {
+                    armyBonus = -1
+                    resourceBonus = -1
+                    legendaryBonus = -1
+                    attackBonus = -1
+                    defenseBonus = -1
+                    experienceBonus = -1
+                    freeInnUnitsBonus = -1
+                    freeBuilderBonus = -1
+                }
+            }
+        }.validate()
+        assertTrue(validationErrors.isNotEmpty())
+        val errorsByClass = validationErrors.groupBy { it.source }
+        assertTrue { errorsByClass.contains(ConcurrentRegionBonus::class.java) }
+        val errorMessages = errorsByClass.getValue(ConcurrentRegionBonus::class.java).map(Violation::error)
+        errorMessages.expectMessage("'armyBonus' must be greater than or equal to 0")
+        errorMessages.expectMessage("'resourceBonus' must be greater than or equal to 0")
+        errorMessages.expectMessage("'legendaryBonus' must be greater than or equal to 0")
+        errorMessages.expectMessage("'attackBonus' must be greater than or equal to 0")
+        errorMessages.expectMessage("'defenseBonus' must be greater than or equal to 0")
+        errorMessages.expectMessage("'experienceBonus' must be greater than or equal to 0")
+        errorMessages.expectMessage("'freeInnUnitsBonus' must be greater than or equal to 0")
+        errorMessages.expectMessage("'freeBuilderBonus' must be greater than or equal to 0")
+    }
     // endregion
 
     // region Render tests
@@ -933,6 +975,158 @@ class DslTest {
                     region(EREBOR)
                     region(HELMS_DEEP)
                     numTurns = 3
+                }
+            }
+        }
+        assertEquals(expectedRendering, campaign.render())
+    }
+
+    @Test
+    fun `Campaign can set custom region definitions`() {
+        val expectedRendering = """
+            //-------------------------------------------------------------------------------------------------
+            // Scenario Name: Regions Name
+            // Scenario Description: Regions Description
+            //-------------------------------------------------------------------------------------------------
+
+            LivingWorldCampaign WOTRScenario006
+
+                IsEvilCampaign = No
+
+                ;////////////// RTS Settings /////////////
+                #include "..\Common\LivingWorldDefaultRTSSettings.inc"
+
+                Scenario
+                    DisplayName = LWScenario:WOTRScenario006
+                    DisplayDescription = LWScenario:WOTRScenario006Description
+                    DisplayGameType = LWScenario:WOTRGameType006
+                    DisplayObjectives = LWScenario:WOTRObjectives006
+                    DisplayFiction = LWScenario:WOTRScenarioFiction006
+                    DisplayVictoriousText = LWScenario:WOTRScenarioWin006
+                    DisplayDefeatedText = LWScenario:WOTRScenarioLose006
+
+                    RegionCampaign = CustomRegion
+
+                    UseMpRulesVictoryCondition = Yes
+                    MinPlayers = 6
+                    MaxPlayers = 6
+
+                    PlayerDefeatCondition
+                        Teams = 1 2
+                        LoseIfCapitalLost = No
+                        NumControlledRegionsLessOrEqualTo = -1
+                    End
+
+                    TeamDefeatCondition
+                        Teams = 1 2
+                        NumControlledRegionsLessOrEqualTo = -1
+                    End
+                End
+
+                ;//////////////////////////////////////////////////
+                Act One
+                ;//////////////////////////////////////////////////
+
+                    ;///////////////// Armies ////////////////
+                    #include "..\Common\LivingWorldDefaultArmies.inc"
+
+                    ;//////////////// VISUAL FLUFF ////////////////
+                    EyeTowerPoints
+                        LookPoint = X:436 Y:687 ; Rohan
+                        LookPoint = X:481 Y:287
+                        LookPoint = X:1179 Y:461
+                        LookPoint = X:947 Y:917
+                        LookPoint = X:172 Y:573 ; Isengard
+                        LookPoint = X:160 Y:560 ; Isengard
+                        LookPoint = X:175 Y:557 ; Isengard
+                        LookPoint = X:171 Y:348 ; Helm's Deep
+                        LookPoint = X:257 Y:535 ; Helm's Deep
+                        LookPoint = X:120 Y:350 ; Helm's Deep
+                        LookPoint = X:157 Y:420 ; Helm's Deep
+                    End
+                End
+            End
+
+            LivingWorldRegionCampaign CustomRegion
+                RegionConqueredSound = Gui_RegionConquered
+                RegionEffectsManagerName = WotRRegionEffects
+                RegionBonusArmy = LW:RegionBonusArmy_Good
+                RegionBonusResource = LW:RegionBonusResource
+                RegionBonusLegendary = LW:RegionLegendaryBonus
+                HeroOnlyArmyCommandPoints = 0
+                SmallArmyCommandPoints = 120
+                MediumArmyCommandPoints = 240
+
+                // Regions
+                #include "..\common\livingworldregionswithoutbonus.inc"
+
+                ConcurrentRegionBonus
+                    Territory = LW:TerritoryCustom
+                    EffectName = CustomEffect
+                    Regions = Dol_Guldur Erebor
+                    ArmyBonus = 1
+                    ResourceBonus = 2
+                    LegendaryBonus = 3
+                    AttackBonus = 4
+                    DefenseBonus = 5
+                    ExperienceBonus = 6
+                    FreeInnUnitsBonus = 7
+                    FreeBuilderBonus = 8
+                    UnifiedEvaEvent = WorldUnifyNorthernWastes
+                    LostEvaEvent = WorldLostNorthernWastes
+                    LookAtCenter = X:-65 Y:2085
+                    LookAtHeading = 0
+                    LookAtZoom = 0.71
+                End
+            End
+            
+        """.trimIndent()
+        val campaign = livingWorldCampaign {
+            name = "Regions Name"
+            description = "Regions Description"
+            number = 6
+
+            scenario {
+                name = "LWScenario:WOTRScenario006"
+                description = "LWScenario:WOTRScenario006Description"
+                gameType = "LWScenario:WOTRGameType006"
+                objectives = "LWScenario:WOTRObjectives006"
+                fiction = "LWScenario:WOTRScenarioFiction006"
+                victoriousText = "LWScenario:WOTRScenarioWin006"
+                defeatedText = "LWScenario:WOTRScenarioLose006"
+
+                minPlayers = 6
+                maxPlayers = 6
+
+                playerDefeatCondition {
+                    team(1)
+                    team(2)
+                    loseIfCapitalLost = false
+                    numControlledRegionsLessOrEqualTo = -1
+                }
+
+                teamDefeatCondition {
+                    team(1)
+                    team(2)
+                    numControlledRegionsLessOrEqualTo = -1
+                }
+            }
+
+            livingWorldRegionCampaign {
+                name = "CustomRegion"
+
+                concurrentRegionBonus {
+                    armyBonus = 1
+                    resourceBonus = 2
+                    legendaryBonus = 3
+                    attackBonus = 4
+                    defenseBonus = 5
+                    experienceBonus = 6
+                    freeInnUnitsBonus = 7
+                    freeBuilderBonus = 8
+
+                    region(EREBOR)
+                    region(DOL_GULDUR)
                 }
             }
         }

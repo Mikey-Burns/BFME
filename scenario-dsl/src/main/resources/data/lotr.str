@@ -61752,3 +61752,8 @@ END
 LWScenario:WOTRScenario200Description
 "Scenario to test stuff out"
 END
+
+LW:TerritoryCustom
+// Large world territory made up of multiple regions
+"Custom Region"
+End

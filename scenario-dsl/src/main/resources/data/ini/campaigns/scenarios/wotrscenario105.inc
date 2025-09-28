@@ -116,12 +116,12 @@ LivingWorldCampaign WOTRScenario105
             StartRegion = Erebor
 
             SpawnArmies
-                Armies = ExtraHeroOneArmy FortressAttackArmy
+                Armies = ExtraHeroOneArmy FortressAttackArmy FortressDefenseArmy
                 Region = Erebor
             End
 
             SpawnArmies
-                Armies = ExtraHeroTwoArmy FortressAttackArmy
+                Armies = ExtraHeroTwoArmy FortressAttackArmy FortressDefenseArmy
                 Region = Dol_Guldur
             End
 

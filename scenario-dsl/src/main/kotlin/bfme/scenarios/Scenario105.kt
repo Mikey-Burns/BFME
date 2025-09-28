@@ -106,12 +106,14 @@ fun ereborMadness(): String = livingWorldCampaign {
             spawnArmies {
                 army(EXTRA_HERO_ONE_ARMY)
                 army(FORTRESS_ATTACK_ARMY)
+                army(FORTRESS_DEFENSE_ARMY)
                 region = DOL_GULDUR
             }
 
             spawnArmies {
                 army(EXTRA_HERO_TWO_ARMY)
                 army(FORTRESS_ATTACK_ARMY)
+                army(FORTRESS_DEFENSE_ARMY)
                 region = EREBOR
             }
 

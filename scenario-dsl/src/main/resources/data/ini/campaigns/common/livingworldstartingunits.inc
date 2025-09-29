@@ -2063,3 +2063,22 @@ LivingWorldPlayerArmy
         Quantity = 1
     End
 End
+
+// Ring Heros
+LivingWorldPlayerArmy
+    Name = SauronArmy
+    DisplayNameTag = LWA:Garrison
+    ArmyEntry
+        ThingTemplate = MordorSauron_RingHero
+        Quantity = 1
+    End
+End
+
+LivingWorldPlayerArmy
+    Name = GaladrielArmy
+    DisplayNameTag = LWA:Garrison
+    ArmyEntry
+        ThingTemplate = ElvenGaladriel_RingHero
+        Quantity = 1
+    End
+End

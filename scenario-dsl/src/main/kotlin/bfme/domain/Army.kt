@@ -148,6 +148,16 @@ enum class Army(
         "Isengard_EliteArmy",
         "Wild_EliteArmy",
         "Angmar_EliteArmy"
+    ),
+    RING_ARMY(
+        "RingHeroArmy",
+        "GaladrielArmy",
+        "GaladrielArmy",
+        "GaladrielArmy",
+        "SauronArmy",
+        "SauronArmy",
+        "SauronArmy",
+        "SauronArmy"
     );
 
     /**

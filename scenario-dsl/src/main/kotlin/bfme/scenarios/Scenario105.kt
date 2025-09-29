@@ -105,6 +105,7 @@ fun ereborMadness(): String = livingWorldCampaign {
 
             spawnArmies {
                 army(EXTRA_HERO_ONE_ARMY)
+                army(HERO_ARMY_5)
                 army(FORTRESS_ATTACK_ARMY)
                 army(FORTRESS_DEFENSE_ARMY)
                 region = DOL_GULDUR
@@ -130,6 +131,7 @@ fun ereborMadness(): String = livingWorldCampaign {
 
             spawnArmies {
                 army(EXTRA_HERO_ONE_ARMY)
+                army(HERO_ARMY_5)
                 army(FORTRESS_ATTACK_ARMY)
                 army(FORTRESS_DEFENSE_ARMY)
                 region = EREBOR
@@ -302,15 +304,14 @@ fun ereborMadness(): String = livingWorldCampaign {
         "Eight" to listOf(FORTRESS_ATTACK_ARMY, FORTRESS_ATTACK_ARMY, FORTRESS_ATTACK_ARMY, ELITE_ARMY),
         "Nine" to listOf(
             FORTRESS_ATTACK_ARMY, FORTRESS_ATTACK_ARMY, FORTRESS_ATTACK_ARMY, ELITE_ARMY,
-            SPECIALTY_THREE_ARMY, SPECIALTY_THREE_ARMY, SPECIALTY_THREE_ARMY,
-            HERO_ARMY_1, HERO_ARMY_2, HERO_ARMY_3, HERO_ARMY_4, HERO_ARMY_5
+            SPECIALTY_THREE_ARMY, SPECIALTY_THREE_ARMY, SPECIALTY_THREE_ARMY
         ),
         "Ten" to listOf(
             FORTRESS_ATTACK_ARMY, FORTRESS_ATTACK_ARMY, FORTRESS_ATTACK_ARMY, ELITE_ARMY,
             SPECIALTY_THREE_ARMY, SPECIALTY_THREE_ARMY, SPECIALTY_THREE_ARMY,
             SPECIALTY_ONE_ARMY, SPECIALTY_ONE_ARMY, SPECIALTY_ONE_ARMY,
             SPECIALTY_TWO_ARMY, SPECIALTY_TWO_ARMY, SPECIALTY_TWO_ARMY,
-            HERO_ARMY_1, HERO_ARMY_2, HERO_ARMY_3, HERO_ARMY_4, HERO_ARMY_5
+            RING_ARMY
         ),
     )
 

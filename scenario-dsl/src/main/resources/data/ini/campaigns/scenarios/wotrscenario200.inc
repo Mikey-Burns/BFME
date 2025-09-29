@@ -19,14 +19,14 @@ LivingWorldCampaign WOTRScenario200
         DisplayVictoriousText = LWScenario:WOTRScenarioWin101
         DisplayDefeatedText = LWScenario:WOTRScenarioLose101
 
-        RegionCampaign = TestingRegion
+        RegionCampaign = DefaultCampaign
 
         UseMpRulesVictoryCondition = No
         MinPlayers = 6
         MaxPlayers = 6
 
-        DisallowStartInRegions = Amon_Sul Anfalas Angmar Arnor Barrow_Downs Buckland Cair_Andros Cardolan CarnDum Carrock Celduin Dagorlad Dol_Guldur Enedwaith Erebor Ettenmoors Forlindon Fornost Forodwaith Grey_Havens Harad Harlindon Helms_Deep Isengard Ithilien Lostriand Lothlorien Minas_Morgul Minas_Tirith Minhiriath Mirkwood Mordor MountGundabad Mount_Doom Osgiliath Redhorn_Pass Rhudaur Rhun Rivendell Rohan The_Black_Gate The_Brown_Lands The_Dead_Marshes The_Shire Tower_Hills Umbar
-        DefaultStartSpots = Iron_Hills Belfalas Fangorn Gap_Of_Rohan High_Pass Dunland
+        DisableRegions = Amon_Sul Anfalas Angmar Arnor Barrow_Downs Belfalas Buckland Cair_Andros Cardolan CarnDum Carrock Dunland Enedwaith Ettenmoors Fangorn Forlindon Fornost Forodwaith Gap_Of_Rohan Grey_Havens Harad Harlindon Helms_Deep High_Pass Isengard Ithilien Lostriand Lothlorien Minas_Morgul Minas_Tirith Minhiriath Mordor MountGundabad Mount_Doom Osgiliath Redhorn_Pass Rhudaur Rhun Rivendell Rohan The_Black_Gate The_Brown_Lands The_Dead_Marshes The_Shire Tower_Hills Umbar
+        DefaultStartSpots = Dol_Guldur Erebor Celduin Mirkwood Iron_Hills Dagorlad
 
         PlayerDefeatCondition
             Teams = 1 2
@@ -40,254 +40,216 @@ LivingWorldCampaign WOTRScenario200
         End
 
         TeamVictoryCondition
-            Teams = 1 2
-            ControlledRegions = Erebor
-            ControlledRegionsHeldForTurns = 3
+            Teams = 1
+            ControlledRegions = Dol_Guldur Erebor
+            ControlledRegionsHeldForTurns = 10
+        End
+
+        TeamVictoryCondition
+            Teams = 2
+            ControlledRegions = Dol_Guldur Erebor
+            ControlledRegionsHeldForTurns = 1
         End
 
         StartingRestriction
+            Factions = FactionElves
+            Regions = Dol_Guldur
+            Teams = 1
+        End
+
+        StartingRestriction
+            Factions = FactionMen
+            Regions = Erebor
+            Teams = 1
+        End
+
+        StartingRestriction
+            Factions = FactionMordor
+            Regions = Celduin
+            Teams = 2
+        End
+
+        StartingRestriction
+            Factions = FactionDwarves
+            Regions = Mirkwood
+            Teams = 2
+        End
+
+        StartingRestriction
+            Factions = FactionIsengard
             Regions = Iron_Hills
-            Teams = 1
-        End
-
-        StartingRestriction
-            Regions = Belfalas
-            Teams = 1
-        End
-
-        StartingRestriction
-            Regions = Fangorn
             Teams = 2
         End
 
         StartingRestriction
-            Regions = Gap_Of_Rohan
-            Teams = 2
-        End
-
-        StartingRestriction
-            Regions = High_Pass
-            Teams = 2
-        End
-
-        StartingRestriction
-            Regions = Dunland
+            Factions = FactionAngmar
+            Regions = Dagorlad
             Teams = 2
         End
 
         ; Player One
         OwnershipSet
-            Regions = Iron_Hills Anfalas
-            StartRegion = Iron_Hills
+            Regions = Dol_Guldur
+            StartRegion = Dol_Guldur
 
             SpawnArmies
-                Armies = HeroArmy1 GarrisonArmy1
-                Region = Iron_Hills
+                Armies = ExtraHeroOneArmy HeroArmy5 FortressAttackArmy FortressDefenseArmy FortressAttackArmy
+                Region = Dol_Guldur
             End
 
             SpawnArmies
-                Armies = HeroArmy2
-                Region = Iron_Hills
-            End
-
-            SpawnArmies
-                Armies = HeroArmy3 GarrisonArmy1
-                Region = Belfalas
-            End
-
-            SpawnArmies
-                Armies = HeroArmy5
-                Region = Belfalas
+                Armies = ExtraHeroTwoArmy FortressAttackArmy FortressDefenseArmy FortressAttackArmy
+                Region = Erebor
             End
 
             SpawnBuildings
-                Buildings = LW_BARRACKS LW_SUPER_FARM
-                Region = Iron_Hills
-            End
-
-            SpawnBuildings
-                Buildings = LW_FORT LW_SUPER_FARM
-                Region = Anfalas
+                Buildings = LW_ARMORY
+                Region = Dol_Guldur
             End
         End
 
         ; Player Two
         OwnershipSet
-            Regions = Belfalas Rhun
-            StartRegion = Belfalas
+            Regions = Erebor
+            StartRegion = Erebor
 
             SpawnArmies
-                Armies = HeroArmy1 GarrisonArmy1
-                Region = Belfalas
+                Armies = ExtraHeroOneArmy HeroArmy5 FortressAttackArmy FortressDefenseArmy FortressAttackArmy
+                Region = Erebor
             End
 
             SpawnArmies
-                Armies = HeroArmy2
-                Region = Belfalas
-            End
-
-            SpawnArmies
-                Armies = HeroArmy3 GarrisonArmy1
-                Region = Iron_Hills
-            End
-
-            SpawnArmies
-                Armies = HeroArmy5
-                Region = Iron_Hills
+                Armies = ExtraHeroTwoArmy FortressAttackArmy FortressDefenseArmy FortressAttackArmy
+                Region = Dol_Guldur
             End
 
             SpawnBuildings
-                Buildings = LW_BARRACKS LW_SUPER_FARM
-                Region = Belfalas
-            End
-
-            SpawnBuildings
-                Buildings = LW_BARRACKS LW_SUPER_FARM
-                Region = Rhun
+                Buildings = LW_ARMORY
+                Region = Erebor
             End
         End
 
         ; Computer 1
         OwnershipSet
-            Regions = Fangorn Forlindon
-            StartRegion = Fangorn
+            Regions = Celduin
+            StartRegion = Celduin
 
             SpawnArmies
-                Armies = HeroArmy1 GarrisonArmy1
-                Region = Fangorn
+                Armies = HeroArmy1
+                Region = Celduin
             End
 
             SpawnArmies
                 Armies = HeroArmy2
-                Region = Forlindon
+                Region = Mirkwood
             End
 
             SpawnArmies
                 Armies = HeroArmy3
-                Region = High_Pass
+                Region = Iron_Hills
             End
 
             SpawnArmies
-                Armies = HeroArmy5
-                Region = Dunland
+                Armies = HeroArmy4
+                Region = Dagorlad
             End
 
             SpawnBuildings
-                Buildings = LW_FARM LW_SUPER_FARM
-                Region = Fangorn
-            End
-
-            SpawnBuildings
-                Buildings = LW_FORT LW_BARRACKS
-                Region = Forlindon
+                Buildings = LW_FORT LW_FARM
+                Region = Celduin
             End
         End
 
         ; Computer 2
         OwnershipSet
-            Regions = Gap_Of_Rohan Harlindon
-            StartRegion = Gap_Of_Rohan
+            Regions = Mirkwood
+            StartRegion = Mirkwood
 
             SpawnArmies
                 Armies = HeroArmy1
-                Region = Harlindon
+                Region = Mirkwood
             End
 
             SpawnArmies
-                Armies = HeroArmy2 GarrisonArmy1
-                Region = Gap_Of_Rohan
+                Armies = HeroArmy2
+                Region = Iron_Hills
             End
 
             SpawnArmies
                 Armies = HeroArmy3
-                Region = High_Pass
+                Region = Dagorlad
             End
 
             SpawnArmies
-                Armies = HeroArmy5
-                Region = Dunland
+                Armies = HeroArmy4
+                Region = Celduin
             End
 
             SpawnBuildings
-                Buildings = LW_FARM LW_SUPER_FARM
-                Region = Gap_Of_Rohan
-            End
-
-            SpawnBuildings
-                Buildings = LW_FORT LW_BARRACKS
-                Region = Harlindon
+                Buildings = LW_FORT LW_FARM LW_BARRACKS
+                Region = Mirkwood
             End
         End
 
         ; Computer 3
         OwnershipSet
-            Regions = High_Pass Forodwaith
-            StartRegion = High_Pass
+            Regions = Iron_Hills
+            StartRegion = Iron_Hills
 
             SpawnArmies
                 Armies = HeroArmy1
-                Region = Fangorn
+                Region = Iron_Hills
             End
 
             SpawnArmies
                 Armies = HeroArmy2
-                Region = Gap_Of_Rohan
+                Region = Dagorlad
             End
 
             SpawnArmies
-                Armies = HeroArmy3 GarrisonArmy1
-                Region = High_Pass
+                Armies = HeroArmy3
+                Region = Celduin
             End
 
             SpawnArmies
-                Armies = HeroArmy5
-                Region = Forodwaith
+                Armies = HeroArmy4
+                Region = Mirkwood
             End
 
             SpawnBuildings
-                Buildings = LW_FARM LW_SUPER_FARM
-                Region = High_Pass
-            End
-
-            SpawnBuildings
-                Buildings = LW_FORT LW_BARRACKS
-                Region = Forodwaith
+                Buildings = LW_FORT LW_FARM LW_BARRACKS
+                Region = Iron_Hills
             End
         End
 
         ; Computer 4
         OwnershipSet
-            Regions = Dunland Arnor
-            StartRegion = Dunland
+            Regions = Dagorlad
+            StartRegion = Dagorlad
 
             SpawnArmies
                 Armies = HeroArmy1
-                Region = Fangorn
+                Region = Dagorlad
             End
 
             SpawnArmies
                 Armies = HeroArmy2
-                Region = Gap_Of_Rohan
+                Region = Celduin
             End
 
             SpawnArmies
                 Armies = HeroArmy3
-                Region = Arnor
+                Region = Mirkwood
             End
 
             SpawnArmies
-                Armies = HeroArmy5 GarrisonArmy1
-                Region = Dunland
+                Armies = HeroArmy4
+                Region = Iron_Hills
             End
 
             SpawnBuildings
-                Buildings = LW_FARM LW_SUPER_FARM
-                Region = Dunland
-            End
-
-            SpawnBuildings
-                Buildings = LW_FORT LW_BARRACKS
-                Region = Arnor
+                Buildings = LW_FORT LW_FARM
+                Region = Dagorlad
             End
         End
     End
@@ -319,93 +281,27 @@ LivingWorldCampaign WOTRScenario200
         SpawnArmy
             ScriptingName = ExtraArmy
             SpawnForTemplates = PlayerMen
-            PlayerArmy = MenOfTheWest_FortressAttackArmy
+            PlayerArmy = GaladrielArmy
             Icon = MoWArmyIcon
             SpawnAtActStart = Yes
         End
         SpawnArmy
             ScriptingName = ExtraArmy
-            SpawnForTemplates = PlayerElves
-            PlayerArmy = Elven_FortressAttackArmy
-            Icon = ElfArmyIcon
-            SpawnAtActStart = Yes
-        End
-        SpawnArmy
-            ScriptingName = ExtraArmy
-            SpawnForTemplates = PlayerElves
-            PlayerArmy = LegolasArmy
-            Icon = ElfArmyIcon
-            SpawnAtActStart = Yes
-        End
-        SpawnArmy
-            ScriptingName = ExtraArmy
-            SpawnForTemplates = PlayerElves
-            PlayerArmy = ElrondArmy
-            Icon = ElfArmyIcon
-            SpawnAtActStart = Yes
-        End
-        SpawnArmy
-            ScriptingName = ExtraArmy
-            SpawnForTemplates = PlayerDwarves
-            PlayerArmy = Dwarven_FortressAttackArmy
-            Icon = DwarfArmyIcon
-            SpawnAtActStart = Yes
-        End
-        SpawnArmy
-            ScriptingName = MineArmy
             SpawnForTemplates = PlayerIsengard
-            PlayerArmy = Isengard_MineArmy
-            Icon = IsengardArmyIcon
+            PlayerArmy = SauronArmy
+            Icon = IsengardIcon
             SpawnAtActStart = Yes
         End
     End
+
     Act Three
         SpawnArmy
             ScriptingName = ExtraArmy
             SpawnForTemplates = PlayerElves
-            PlayerArmy = Elven_FortressAttackArmy
+            PlayerArmy = ThranduilPlayerArmy
             Icon = ElfArmyIcon
             SpawnAtActStart = Yes
+            Banner = BannerElves
         End
-        SpawnArmy
-            ScriptingName = ExtraArmy
-            SpawnForTemplates = PlayerElves
-            PlayerArmy = LegolasArmy
-            Icon = ElfArmyIcon
-            SpawnAtActStart = Yes
-        End
-    End
-End
-
-LivingWorldRegionCampaign TestingRegion
-    RegionConqueredSound = Gui_RegionConquered
-    RegionEffectsManagerName = WotRRegionEffects
-    RegionBonusArmy = LW:RegionBonusArmy_Good
-    RegionBonusResource = LW:RegionBonusResource
-    RegionBonusLegendary = LW:RegionLegendaryBonus
-    HeroOnlyArmyCommandPoints = 0
-    SmallArmyCommandPoints = 120
-    MediumArmyCommandPoints = 240
-
-    // Regions
-    #include "..\common\livingworldregionswithoutbonus.inc"
-
-    ConcurrentRegionBonus
-        Territory = LW:TerritoryCustom
-        EffectName = CustomEffect
-        Regions = Iron_Hills
-        ArmyBonus = 0
-        ResourceBonus = 1
-        LegendaryBonus = 5
-        AttackBonus = 1
-        DefenseBonus = 5
-        ExperienceBonus = 4
-        FreeInnUnitsBonus = 2
-        FreeBuilderBonus = 3
-        UnifiedEvaEvent = WorldUnifyNorthernWastes
-        LostEvaEvent = WorldLostNorthernWastes
-        LookAtCenter = X:-65 Y:2085
-        LookAtHeading = 0
-        LookAtZoom = 0.71
     End
 End

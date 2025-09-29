@@ -130,6 +130,14 @@ SpawnArmy
     Icon = MoWArmyIcon
 End
 
+SpawnArmy
+    ScriptingName = RingHeroArmy
+    SpawnAtActStart = No
+    SpawnForTemplates = PlayerMen
+    PlayerArmy = GaladrielArmy
+    Icon = MoWArmyIcon
+End
+
 //-------------------------------------------------------------------------------------------------
 // Elves
 //-------------------------------------------------------------------------------------------------
@@ -256,6 +264,13 @@ SpawnArmy
     Icon = ElfArmyIcon
 End
 
+SpawnArmy
+    ScriptingName = RingHeroArmy
+    SpawnAtActStart = No
+    SpawnForTemplates = PlayerElves
+    PlayerArmy = GaladrielArmy
+    Icon = ElfArmyIcon
+End
 
 //-------------------------------------------------------------------------------------------------
 // Dwarves
@@ -367,6 +382,13 @@ SpawnArmy
     Icon = DwarfArmyIcon
 End
 
+SpawnArmy
+    ScriptingName = RingHeroArmy
+    SpawnAtActStart = No
+    SpawnForTemplates = PlayerDwarves
+    PlayerArmy = GaladrielArmy
+    Icon = DwarfArmyIcon
+End
 
 //-------------------------------------------------------------------------------------------------
 // Mordor
@@ -478,6 +500,13 @@ SpawnArmy
     Icon = MordorArmyIcon
 End
 
+SpawnArmy
+    ScriptingName = RingHeroArmy
+    SpawnAtActStart = No
+    SpawnForTemplates = PlayerMordor
+    PlayerArmy = SauronArmy
+    Icon = MordorArmyIcon
+End
 
 //-------------------------------------------------------------------------------------------------
 // Isengard
@@ -589,6 +618,13 @@ SpawnArmy
     Icon = IsengardArmyIcon
 End
 
+SpawnArmy
+    ScriptingName = RingHeroArmy
+    SpawnAtActStart = No
+    SpawnForTemplates = PlayerIsengard
+    PlayerArmy = SauronArmy
+    Icon = IsengardArmyIcon
+End
 
 //-------------------------------------------------------------------------------------------------
 // Wild
@@ -697,6 +733,14 @@ SpawnArmy
     SpawnAtActStart = No
     SpawnForTemplates = PlayerWild
     PlayerArmy = Wild_EliteArmy
+    Icon = WildArmyIcon
+End
+
+SpawnArmy
+    ScriptingName = RingHeroArmy
+    SpawnAtActStart = No
+    SpawnForTemplates = PlayerWild
+    PlayerArmy = SauronArmy
     Icon = WildArmyIcon
 End
 
@@ -810,3 +854,10 @@ SpawnArmy
     Icon = AngmarArmyIcon
 End
 
+SpawnArmy
+    ScriptingName = RingHeroArmy
+    SpawnAtActStart = No
+    SpawnForTemplates = PlayerAngmar
+    PlayerArmy = SauronArmy
+    Icon = AngmarArmyIcon
+End

@@ -95,7 +95,7 @@ LivingWorldCampaign WOTRScenario105
             StartRegion = Dol_Guldur
 
             SpawnArmies
-                Armies = HeroArmy1 HeroArmy2 HeroArmy3 HeroArmy4 HeroArmy5
+                Armies = HeroArmy1 HeroArmy2 HeroArmy3 HeroArmy5
                 Region = Dol_Guldur
             End
 
@@ -116,7 +116,7 @@ LivingWorldCampaign WOTRScenario105
             StartRegion = Erebor
 
             SpawnArmies
-                Armies = HeroArmy1 HeroArmy2 HeroArmy3 HeroArmy4 HeroArmy5
+                Armies = HeroArmy1 HeroArmy2 HeroArmy3 HeroArmy5
                 Region = Erebor
             End
 

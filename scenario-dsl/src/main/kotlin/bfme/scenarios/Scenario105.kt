@@ -107,7 +107,6 @@ fun ereborMadness(): String = livingWorldCampaign {
                 army(HERO_ARMY_1)
                 army(HERO_ARMY_2)
                 army(HERO_ARMY_3)
-                army(HERO_ARMY_4)
                 army(HERO_ARMY_5)
                 region = DOL_GULDUR
             }
@@ -133,7 +132,6 @@ fun ereborMadness(): String = livingWorldCampaign {
                 army(HERO_ARMY_1)
                 army(HERO_ARMY_2)
                 army(HERO_ARMY_3)
-                army(HERO_ARMY_4)
                 army(HERO_ARMY_5)
                 region = EREBOR
             }

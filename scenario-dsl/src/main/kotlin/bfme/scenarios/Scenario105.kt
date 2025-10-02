@@ -329,11 +329,11 @@ fun ereborMadness(): String = livingWorldCampaign {
 
         concurrentRegionBonus {
             armyBonus = 0
-            resourceBonus = 20
+            resourceBonus = 30 * 2
             legendaryBonus = 55 * 2
             attackBonus = 0
-            defenseBonus = 10 * 2
-            experienceBonus = 10 * 2
+            defenseBonus = 20 * 2
+            experienceBonus = 20 * 2
             freeInnUnitsBonus = 0
             freeBuilderBonus = 0
 

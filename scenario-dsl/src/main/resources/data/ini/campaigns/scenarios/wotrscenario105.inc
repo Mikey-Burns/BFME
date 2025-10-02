@@ -1788,11 +1788,11 @@ LivingWorldRegionCampaign FortressRegion
         EffectName = CustomEffect
         Regions = Dol_Guldur Erebor
         ArmyBonus = 0
-        ResourceBonus = 20
+        ResourceBonus = 60
         LegendaryBonus = 110
         AttackBonus = 0
-        DefenseBonus = 20
-        ExperienceBonus = 20
+        DefenseBonus = 40
+        ExperienceBonus = 40
         FreeInnUnitsBonus = 0
         FreeBuilderBonus = 0
         UnifiedEvaEvent = WorldUnifyNorthernWastes

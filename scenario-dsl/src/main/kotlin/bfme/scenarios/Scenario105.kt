@@ -330,12 +330,12 @@ fun ereborMadness(): String = livingWorldCampaign {
         concurrentRegionBonus {
             armyBonus = 0
             resourceBonus = 30 * 2
-            legendaryBonus = 55 * 2
+            legendaryBonus = 135 * 2
             attackBonus = 0
             defenseBonus = 20 * 2
             experienceBonus = 20 * 2
-            freeInnUnitsBonus = 0
-            freeBuilderBonus = 0
+            freeInnUnitsBonus = 2
+            freeBuilderBonus = 1
 
             region(DOL_GULDUR)
             region(EREBOR)

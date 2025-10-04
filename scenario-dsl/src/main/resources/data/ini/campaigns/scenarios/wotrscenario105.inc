@@ -1789,12 +1789,12 @@ LivingWorldRegionCampaign FortressRegion
         Regions = Dol_Guldur Erebor
         ArmyBonus = 0
         ResourceBonus = 60
-        LegendaryBonus = 110
+        LegendaryBonus = 270
         AttackBonus = 0
         DefenseBonus = 40
         ExperienceBonus = 40
-        FreeInnUnitsBonus = 0
-        FreeBuilderBonus = 0
+        FreeInnUnitsBonus = 2
+        FreeBuilderBonus = 1
         UnifiedEvaEvent = WorldUnifyNorthernWastes
         LostEvaEvent = WorldLostNorthernWastes
         LookAtCenter = X:-65 Y:2085

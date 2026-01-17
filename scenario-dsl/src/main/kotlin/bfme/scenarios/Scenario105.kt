@@ -104,17 +104,16 @@ fun ereborMadness(): String = livingWorldCampaign {
             region(DOL_GULDUR)
 
             spawnArmies {
-                army(EXTRA_HERO_ONE_ARMY)
+                army(HERO_ARMY_1)
+                army(HERO_ARMY_2)
+                army(HERO_ARMY_3)
                 army(HERO_ARMY_5)
-                army(FORTRESS_ATTACK_ARMY)
-                army(FORTRESS_DEFENSE_ARMY)
                 region = DOL_GULDUR
             }
 
             spawnArmies {
+                army(EXTRA_HERO_ONE_ARMY)
                 army(EXTRA_HERO_TWO_ARMY)
-                army(FORTRESS_ATTACK_ARMY)
-                army(FORTRESS_DEFENSE_ARMY)
                 region = EREBOR
             }
 
@@ -130,17 +129,16 @@ fun ereborMadness(): String = livingWorldCampaign {
             region(EREBOR)
 
             spawnArmies {
-                army(EXTRA_HERO_ONE_ARMY)
+                army(HERO_ARMY_1)
+                army(HERO_ARMY_2)
+                army(HERO_ARMY_3)
                 army(HERO_ARMY_5)
-                army(FORTRESS_ATTACK_ARMY)
-                army(FORTRESS_DEFENSE_ARMY)
                 region = EREBOR
             }
 
             spawnArmies {
+                army(EXTRA_HERO_ONE_ARMY)
                 army(EXTRA_HERO_TWO_ARMY)
-                army(FORTRESS_ATTACK_ARMY)
-                army(FORTRESS_DEFENSE_ARMY)
                 region = DOL_GULDUR
             }
 
@@ -158,7 +156,6 @@ fun ereborMadness(): String = livingWorldCampaign {
 
             spawnArmies {
                 army(HERO_ARMY_1)
-                army(FORTRESS_ATTACK_ARMY)
                 region = CELDUIN
             }
 
@@ -191,7 +188,6 @@ fun ereborMadness(): String = livingWorldCampaign {
 
             spawnArmies {
                 army(HERO_ARMY_1)
-                army(FORTRESS_ATTACK_ARMY)
                 region = MIRKWOOD
             }
 
@@ -225,7 +221,6 @@ fun ereborMadness(): String = livingWorldCampaign {
 
             spawnArmies {
                 army(HERO_ARMY_1)
-                army(FORTRESS_ATTACK_ARMY)
                 region = IRON_HILLS
             }
 
@@ -259,7 +254,6 @@ fun ereborMadness(): String = livingWorldCampaign {
 
             spawnArmies {
                 army(HERO_ARMY_1)
-                army(FORTRESS_ATTACK_ARMY)
                 region = DAGORLAD
             }
 
@@ -335,13 +329,13 @@ fun ereborMadness(): String = livingWorldCampaign {
 
         concurrentRegionBonus {
             armyBonus = 0
-            resourceBonus = 0
-            legendaryBonus = 45
+            resourceBonus = 30 * 2
+            legendaryBonus = 135 * 2
             attackBonus = 0
-            defenseBonus = 5
-            experienceBonus = 5
-            freeInnUnitsBonus = 0
-            freeBuilderBonus = 0
+            defenseBonus = 20 * 2
+            experienceBonus = 20 * 2
+            freeInnUnitsBonus = 2
+            freeBuilderBonus = 1
 
             region(DOL_GULDUR)
             region(EREBOR)

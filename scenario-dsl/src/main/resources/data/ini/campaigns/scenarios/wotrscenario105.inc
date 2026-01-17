@@ -95,12 +95,12 @@ LivingWorldCampaign WOTRScenario105
             StartRegion = Dol_Guldur
 
             SpawnArmies
-                Armies = ExtraHeroOneArmy HeroArmy5 FortressAttackArmy FortressDefenseArmy
+                Armies = HeroArmy1 HeroArmy2 HeroArmy3 HeroArmy5
                 Region = Dol_Guldur
             End
 
             SpawnArmies
-                Armies = ExtraHeroTwoArmy FortressAttackArmy FortressDefenseArmy
+                Armies = ExtraHeroOneArmy ExtraHeroTwoArmy
                 Region = Erebor
             End
 
@@ -116,12 +116,12 @@ LivingWorldCampaign WOTRScenario105
             StartRegion = Erebor
 
             SpawnArmies
-                Armies = ExtraHeroOneArmy HeroArmy5 FortressAttackArmy FortressDefenseArmy
+                Armies = HeroArmy1 HeroArmy2 HeroArmy3 HeroArmy5
                 Region = Erebor
             End
 
             SpawnArmies
-                Armies = ExtraHeroTwoArmy FortressAttackArmy FortressDefenseArmy
+                Armies = ExtraHeroOneArmy ExtraHeroTwoArmy
                 Region = Dol_Guldur
             End
 
@@ -137,7 +137,7 @@ LivingWorldCampaign WOTRScenario105
             StartRegion = Celduin
 
             SpawnArmies
-                Armies = HeroArmy1 FortressAttackArmy
+                Armies = HeroArmy1
                 Region = Celduin
             End
 
@@ -168,7 +168,7 @@ LivingWorldCampaign WOTRScenario105
             StartRegion = Mirkwood
 
             SpawnArmies
-                Armies = HeroArmy1 FortressAttackArmy
+                Armies = HeroArmy1
                 Region = Mirkwood
             End
 
@@ -199,7 +199,7 @@ LivingWorldCampaign WOTRScenario105
             StartRegion = Iron_Hills
 
             SpawnArmies
-                Armies = HeroArmy1 FortressAttackArmy
+                Armies = HeroArmy1
                 Region = Iron_Hills
             End
 
@@ -230,7 +230,7 @@ LivingWorldCampaign WOTRScenario105
             StartRegion = Dagorlad
 
             SpawnArmies
-                Armies = HeroArmy1 FortressAttackArmy
+                Armies = HeroArmy1
                 Region = Dagorlad
             End
 
@@ -1788,13 +1788,13 @@ LivingWorldRegionCampaign FortressRegion
         EffectName = CustomEffect
         Regions = Dol_Guldur Erebor
         ArmyBonus = 0
-        ResourceBonus = 0
-        LegendaryBonus = 45
+        ResourceBonus = 60
+        LegendaryBonus = 270
         AttackBonus = 0
-        DefenseBonus = 5
-        ExperienceBonus = 5
-        FreeInnUnitsBonus = 0
-        FreeBuilderBonus = 0
+        DefenseBonus = 40
+        ExperienceBonus = 40
+        FreeInnUnitsBonus = 2
+        FreeBuilderBonus = 1
         UnifiedEvaEvent = WorldUnifyNorthernWastes
         LostEvaEvent = WorldLostNorthernWastes
         LookAtCenter = X:-65 Y:2085

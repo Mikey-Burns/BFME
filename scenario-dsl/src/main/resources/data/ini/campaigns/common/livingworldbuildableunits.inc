@@ -175,6 +175,15 @@ LivingWorldPlayerArmy
     End
 End
 
+LivingWorldPlayerArmy ;,;
+	Name = ElvenGuardianEntArmy
+	DisplayNameTag = LWA:Elves
+	ArmyEntry
+		ThingTemplate = RohanEntAshMelee
+		Quantity = 1
+	End
+End
+
 
 ;////////////// Dwarves //////////////
 

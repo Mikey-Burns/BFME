@@ -1323,30 +1323,6 @@ LivingWorldCampaign WOTRScenario105
         SpawnArmy
             ScriptingName = ExtraArmy
             SpawnForTemplates = PlayerMordor
-            PlayerArmy = Mordor_FortressAttackArmy
-            Icon = MordorArmyIcon
-            SpawnAtActStart = Yes
-        End
-
-        SpawnArmy
-            ScriptingName = ExtraArmy
-            SpawnForTemplates = PlayerMordor
-            PlayerArmy = Mordor_FortressAttackArmy
-            Icon = MordorArmyIcon
-            SpawnAtActStart = Yes
-        End
-
-        SpawnArmy
-            ScriptingName = ExtraArmy
-            SpawnForTemplates = PlayerMordor
-            PlayerArmy = Mordor_FortressAttackArmy
-            Icon = MordorArmyIcon
-            SpawnAtActStart = Yes
-        End
-
-        SpawnArmy
-            ScriptingName = ExtraArmy
-            SpawnForTemplates = PlayerMordor
             PlayerArmy = Mordor_EliteArmy
             Icon = MordorArmyIcon
             SpawnAtActStart = Yes
@@ -1371,14 +1347,6 @@ LivingWorldCampaign WOTRScenario105
         SpawnArmy
             ScriptingName = ExtraArmy
             SpawnForTemplates = PlayerMordor
-            PlayerArmy = Mordor_SpecialtyThreeArmy
-            Icon = MordorArmyIcon
-            SpawnAtActStart = Yes
-        End
-
-        SpawnArmy
-            ScriptingName = ExtraArmy
-            SpawnForTemplates = PlayerMordor
             PlayerArmy = Mordor_SpecialtyOneArmy
             Icon = MordorArmyIcon
             SpawnAtActStart = Yes
@@ -1388,22 +1356,6 @@ LivingWorldCampaign WOTRScenario105
             ScriptingName = ExtraArmy
             SpawnForTemplates = PlayerMordor
             PlayerArmy = Mordor_SpecialtyOneArmy
-            Icon = MordorArmyIcon
-            SpawnAtActStart = Yes
-        End
-
-        SpawnArmy
-            ScriptingName = ExtraArmy
-            SpawnForTemplates = PlayerMordor
-            PlayerArmy = Mordor_SpecialtyOneArmy
-            Icon = MordorArmyIcon
-            SpawnAtActStart = Yes
-        End
-
-        SpawnArmy
-            ScriptingName = ExtraArmy
-            SpawnForTemplates = PlayerMordor
-            PlayerArmy = Mordor_SpecialtyTwoArmy
             Icon = MordorArmyIcon
             SpawnAtActStart = Yes
         End
@@ -1435,30 +1387,6 @@ LivingWorldCampaign WOTRScenario105
         SpawnArmy
             ScriptingName = ExtraArmy
             SpawnForTemplates = PlayerDwarves
-            PlayerArmy = Dwarven_FortressAttackArmy
-            Icon = DwarfArmyIcon
-            SpawnAtActStart = Yes
-        End
-
-        SpawnArmy
-            ScriptingName = ExtraArmy
-            SpawnForTemplates = PlayerDwarves
-            PlayerArmy = Dwarven_FortressAttackArmy
-            Icon = DwarfArmyIcon
-            SpawnAtActStart = Yes
-        End
-
-        SpawnArmy
-            ScriptingName = ExtraArmy
-            SpawnForTemplates = PlayerDwarves
-            PlayerArmy = Dwarven_FortressAttackArmy
-            Icon = DwarfArmyIcon
-            SpawnAtActStart = Yes
-        End
-
-        SpawnArmy
-            ScriptingName = ExtraArmy
-            SpawnForTemplates = PlayerDwarves
             PlayerArmy = Dwarven_EliteArmy
             Icon = DwarfArmyIcon
             SpawnAtActStart = Yes
@@ -1483,14 +1411,6 @@ LivingWorldCampaign WOTRScenario105
         SpawnArmy
             ScriptingName = ExtraArmy
             SpawnForTemplates = PlayerDwarves
-            PlayerArmy = Dwarven_SpecialtyThreeArmy
-            Icon = DwarfArmyIcon
-            SpawnAtActStart = Yes
-        End
-
-        SpawnArmy
-            ScriptingName = ExtraArmy
-            SpawnForTemplates = PlayerDwarves
             PlayerArmy = Dwarven_SpecialtyOneArmy
             Icon = DwarfArmyIcon
             SpawnAtActStart = Yes
@@ -1500,22 +1420,6 @@ LivingWorldCampaign WOTRScenario105
             ScriptingName = ExtraArmy
             SpawnForTemplates = PlayerDwarves
             PlayerArmy = Dwarven_SpecialtyOneArmy
-            Icon = DwarfArmyIcon
-            SpawnAtActStart = Yes
-        End
-
-        SpawnArmy
-            ScriptingName = ExtraArmy
-            SpawnForTemplates = PlayerDwarves
-            PlayerArmy = Dwarven_SpecialtyOneArmy
-            Icon = DwarfArmyIcon
-            SpawnAtActStart = Yes
-        End
-
-        SpawnArmy
-            ScriptingName = ExtraArmy
-            SpawnForTemplates = PlayerDwarves
-            PlayerArmy = Dwarven_SpecialtyTwoArmy
             Icon = DwarfArmyIcon
             SpawnAtActStart = Yes
         End
@@ -1547,30 +1451,6 @@ LivingWorldCampaign WOTRScenario105
         SpawnArmy
             ScriptingName = ExtraArmy
             SpawnForTemplates = PlayerIsengard
-            PlayerArmy = Isengard_FortressAttackArmy
-            Icon = IsengardArmyIcon
-            SpawnAtActStart = Yes
-        End
-
-        SpawnArmy
-            ScriptingName = ExtraArmy
-            SpawnForTemplates = PlayerIsengard
-            PlayerArmy = Isengard_FortressAttackArmy
-            Icon = IsengardArmyIcon
-            SpawnAtActStart = Yes
-        End
-
-        SpawnArmy
-            ScriptingName = ExtraArmy
-            SpawnForTemplates = PlayerIsengard
-            PlayerArmy = Isengard_FortressAttackArmy
-            Icon = IsengardArmyIcon
-            SpawnAtActStart = Yes
-        End
-
-        SpawnArmy
-            ScriptingName = ExtraArmy
-            SpawnForTemplates = PlayerIsengard
             PlayerArmy = Isengard_EliteArmy
             Icon = IsengardArmyIcon
             SpawnAtActStart = Yes
@@ -1595,14 +1475,6 @@ LivingWorldCampaign WOTRScenario105
         SpawnArmy
             ScriptingName = ExtraArmy
             SpawnForTemplates = PlayerIsengard
-            PlayerArmy = Isengard_SpecialtyThreeArmy
-            Icon = IsengardArmyIcon
-            SpawnAtActStart = Yes
-        End
-
-        SpawnArmy
-            ScriptingName = ExtraArmy
-            SpawnForTemplates = PlayerIsengard
             PlayerArmy = Isengard_SpecialtyOneArmy
             Icon = IsengardArmyIcon
             SpawnAtActStart = Yes
@@ -1612,22 +1484,6 @@ LivingWorldCampaign WOTRScenario105
             ScriptingName = ExtraArmy
             SpawnForTemplates = PlayerIsengard
             PlayerArmy = Isengard_SpecialtyOneArmy
-            Icon = IsengardArmyIcon
-            SpawnAtActStart = Yes
-        End
-
-        SpawnArmy
-            ScriptingName = ExtraArmy
-            SpawnForTemplates = PlayerIsengard
-            PlayerArmy = Isengard_SpecialtyOneArmy
-            Icon = IsengardArmyIcon
-            SpawnAtActStart = Yes
-        End
-
-        SpawnArmy
-            ScriptingName = ExtraArmy
-            SpawnForTemplates = PlayerIsengard
-            PlayerArmy = Isengard_SpecialtyTwoArmy
             Icon = IsengardArmyIcon
             SpawnAtActStart = Yes
         End
@@ -1659,30 +1515,6 @@ LivingWorldCampaign WOTRScenario105
         SpawnArmy
             ScriptingName = ExtraArmy
             SpawnForTemplates = PlayerAngmar
-            PlayerArmy = Angmar_FortressAttackArmy
-            Icon = AngmarArmyIcon
-            SpawnAtActStart = Yes
-        End
-
-        SpawnArmy
-            ScriptingName = ExtraArmy
-            SpawnForTemplates = PlayerAngmar
-            PlayerArmy = Angmar_FortressAttackArmy
-            Icon = AngmarArmyIcon
-            SpawnAtActStart = Yes
-        End
-
-        SpawnArmy
-            ScriptingName = ExtraArmy
-            SpawnForTemplates = PlayerAngmar
-            PlayerArmy = Angmar_FortressAttackArmy
-            Icon = AngmarArmyIcon
-            SpawnAtActStart = Yes
-        End
-
-        SpawnArmy
-            ScriptingName = ExtraArmy
-            SpawnForTemplates = PlayerAngmar
             PlayerArmy = Angmar_EliteArmy
             Icon = AngmarArmyIcon
             SpawnAtActStart = Yes
@@ -1707,14 +1539,6 @@ LivingWorldCampaign WOTRScenario105
         SpawnArmy
             ScriptingName = ExtraArmy
             SpawnForTemplates = PlayerAngmar
-            PlayerArmy = Angmar_SpecialtyThreeArmy
-            Icon = AngmarArmyIcon
-            SpawnAtActStart = Yes
-        End
-
-        SpawnArmy
-            ScriptingName = ExtraArmy
-            SpawnForTemplates = PlayerAngmar
             PlayerArmy = Angmar_SpecialtyOneArmy
             Icon = AngmarArmyIcon
             SpawnAtActStart = Yes
@@ -1724,22 +1548,6 @@ LivingWorldCampaign WOTRScenario105
             ScriptingName = ExtraArmy
             SpawnForTemplates = PlayerAngmar
             PlayerArmy = Angmar_SpecialtyOneArmy
-            Icon = AngmarArmyIcon
-            SpawnAtActStart = Yes
-        End
-
-        SpawnArmy
-            ScriptingName = ExtraArmy
-            SpawnForTemplates = PlayerAngmar
-            PlayerArmy = Angmar_SpecialtyOneArmy
-            Icon = AngmarArmyIcon
-            SpawnAtActStart = Yes
-        End
-
-        SpawnArmy
-            ScriptingName = ExtraArmy
-            SpawnForTemplates = PlayerAngmar
-            PlayerArmy = Angmar_SpecialtyTwoArmy
             Icon = AngmarArmyIcon
             SpawnAtActStart = Yes
         End
